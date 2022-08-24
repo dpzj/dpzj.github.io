@@ -150,105 +150,6 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-设计模式/策略模式" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/02/24/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" class="article-date">
-  	<time datetime="2019-02-24T10:41:19.000Z" itemprop="datePublished">2019-02-24</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/24/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/">
-        策略模式
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、是什么"><a href="#一、是什么" class="headerlink" title="一、是什么"></a>一、是什么</h2><p>策略模式（Strategy Pattern）指的是定义一系列的算法，把它们一个个封装起来，目的就是将算法的使用与算法的实现分离开来</p>
-<p>一个基于策略模式的程序至少由两部分组成：</p>
-<ul>
-<li>策略类，策略类封装了具体的算法，并负责具体的计算过程</li>
-<li>环境类Context，Context 接受客户的请求，随后 把请求委托给某一个策略类</li>
-</ul>
-<h2 id="二、使用"><a href="#二、使用" class="headerlink" title="二、使用"></a>二、使用</h2><p>举个例子，公司的年终奖是根据员工的工资和绩效来考核的，绩效为A的人，年终奖为工资的4倍，绩效为B的人，年终奖为工资的3倍，绩效为C的人，年终奖为工资的2倍</p>
-<p>若使用<code>if</code>来实现，代码则如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> calculateBouns = <span class="keyword">function</span>(<span class="params">salary,level</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(level === <span class="string">&#x27;A&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> salary * <span class="number">4</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(level === <span class="string">&#x27;B&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> salary * <span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(level === <span class="string">&#x27;C&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> salary * <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 调用如下：</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">calculateBouns</span>(<span class="number">4000</span>,<span class="string">&#x27;A&#x27;</span>)); <span class="comment">// 16000</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">calculateBouns</span>(<span class="number">2500</span>,<span class="string">&#x27;B&#x27;</span>)); <span class="comment">// 7500</span></span><br></pre></td></tr></table></figure>
-
-<p>从上述可有看到，函数内部包含过多<code>if...else</code>，并且后续改正的时候，需要在函数内部添加逻辑，违反了开放封闭原则</p>
-<p>而如果使用策略模式，就是先定义一系列算法，把它们一个个封装起来，将不变的部分和变化的部分隔开，如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">        <span class="string">&quot;A&quot;</span>: <span class="keyword">function</span>(<span class="params">salary</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> salary * <span class="number">4</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&quot;B&quot;</span> : <span class="keyword">function</span>(<span class="params">salary</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> salary * <span class="number">3</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&quot;C&quot;</span> : <span class="keyword">function</span>(<span class="params">salary</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> salary * <span class="number">2</span>;</span><br><span class="line">        &#125; </span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> calculateBouns =<span class="keyword">function</span>(<span class="params">level,salary</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> obj[level](salary);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">calculateBouns</span>(<span class="string">&#x27;A&#x27;</span>,<span class="number">10000</span>)); <span class="comment">// 40000</span></span><br></pre></td></tr></table></figure>
-
-<p>上述代码中，<code>obj</code>对应的是策略类，而<code>calculateBouns</code>对应上下通信类</p>
-<p>又比如实现一个表单校验的代码，常常会像如下写法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> registerForm = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;registerForm&quot;</span>);</span><br><span class="line">registerForm.<span class="property">onsubmit</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(registerForm.<span class="property">userName</span>.<span class="property">value</span> === <span class="string">&#x27;&#x27;</span>) &#123;</span><br><span class="line">        <span class="title function_">alert</span>(<span class="string">&#x27;用户名不能为空&#x27;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(registerForm.<span class="property">password</span>.<span class="property">value</span>.<span class="property">length</span> &lt; <span class="number">6</span>) &#123;</span><br><span class="line">        <span class="title function_">alert</span>(<span class="string">&quot;密码的长度不能小于6位&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="regexp">/(^1[3|5|8][0-9]&#123;9&#125;$)/</span>.<span class="title function_">test</span>(registerForm.<span class="property">phoneNumber</span>.<span class="property">value</span>)) &#123;</span><br><span class="line">        <span class="title function_">alert</span>(<span class="string">&quot;手机号码格式不正确&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>上述代码包含多处<code>if</code>语句，并且违反了开放封闭原则，如果应用中还有其他的表单，需要重复编写代码</p>
-<p>此处也可以使用策略模式进行重构校验，第一步确定不变的内容，即策略规则对象，如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> strategy = &#123;</span><br><span class="line">    <span class="attr">isNotEmpty</span>: <span class="keyword">function</span>(<span class="params">value,errorMsg</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(value === <span class="string">&#x27;&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> errorMsg;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 限制最小长度</span></span><br><span class="line">    <span class="attr">minLength</span>: <span class="keyword">function</span>(<span class="params">value,length,errorMsg</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(value.<span class="property">length</span> &lt; length) &#123;</span><br><span class="line">            <span class="keyword">return</span> errorMsg;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 手机号码格式</span></span><br><span class="line">    <span class="attr">mobileFormat</span>: <span class="keyword">function</span>(<span class="params">value,errorMsg</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!<span class="regexp">/(^1[3|5|8][0-9]&#123;9&#125;$)/</span>.<span class="title function_">test</span>(value)) &#123;</span><br><span class="line">            <span class="keyword">return</span> errorMsg;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>然后找出变的地方，作为环境类<code>context</code>，负责接收用户的要求并委托给策略规则对象，如下<code>Validator</code>类：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title class_">Validator</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">cache</span> = [];  <span class="comment">// 保存效验规则</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="title class_">Validator</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">add</span> = <span class="keyword">function</span>(<span class="params">dom,rule,errorMsg</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> str = rule.<span class="title function_">split</span>(<span class="string">&quot;:&quot;</span>);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">cache</span>.<span class="title function_">push</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="comment">// str 返回的是 minLength:6 </span></span><br><span class="line">        <span class="keyword">var</span> strategy = str.<span class="title function_">shift</span>();</span><br><span class="line">        str.<span class="title function_">unshift</span>(dom.<span class="property">value</span>); <span class="comment">// 把input的value添加进参数列表</span></span><br><span class="line">        str.<span class="title function_">push</span>(errorMsg);  <span class="comment">// 把errorMsg添加进参数列表</span></span><br><span class="line">        <span class="keyword">return</span> strategys[strategy].<span class="title function_">apply</span>(dom,str);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="title class_">Validator</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">start</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, validatorFunc; validatorFunc = <span class="variable language_">this</span>.<span class="property">cache</span>[i++]; ) &#123;</span><br><span class="line">        <span class="keyword">var</span> msg = <span class="title function_">validatorFunc</span>(); <span class="comment">// 开始效验 并取得效验后的返回信息</span></span><br><span class="line">        <span class="keyword">if</span>(msg) &#123;</span><br><span class="line">            <span class="keyword">return</span> msg;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>通过<code>validator.add</code>方法添加校验规则和错误信息提示，使用如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> validateFunc = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> validator = <span class="keyword">new</span> <span class="title class_">Validator</span>(); <span class="comment">// 创建一个Validator对象</span></span><br><span class="line">    <span class="comment">/* 添加一些效验规则 */</span></span><br><span class="line">    validator.<span class="title function_">add</span>(registerForm.<span class="property">userName</span>,<span class="string">&#x27;isNotEmpty&#x27;</span>,<span class="string">&#x27;用户名不能为空&#x27;</span>);</span><br><span class="line">    validator.<span class="title function_">add</span>(registerForm.<span class="property">password</span>,<span class="string">&#x27;minLength:6&#x27;</span>,<span class="string">&#x27;密码长度不能小于6位&#x27;</span>);</span><br><span class="line">    validator.<span class="title function_">add</span>(registerForm.<span class="property">userName</span>,<span class="string">&#x27;mobileFormat&#x27;</span>,<span class="string">&#x27;手机号码格式不正确&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> errorMsg = validator.<span class="title function_">start</span>(); <span class="comment">// 获得效验结果</span></span><br><span class="line">    <span class="keyword">return</span> errorMsg; <span class="comment">// 返回效验结果</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> registerForm = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;registerForm&quot;</span>);</span><br><span class="line">registerForm.<span class="property">onsubmit</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> errorMsg = <span class="title function_">validateFunc</span>();</span><br><span class="line">    <span class="keyword">if</span>(errorMsg)&#123;</span><br><span class="line">        <span class="title function_">alert</span>(errorMsg);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>上述通过策略模式完成表单的验证，并且可以随时调用，在修改表单验证规则的时候，也非常方便，通过传递参数即可调用</p>
-<h2 id="三、应用场景"><a href="#三、应用场景" class="headerlink" title="三、应用场景"></a>三、应用场景</h2><p>从上面可以看到，使用策略模式的优点有如下：</p>
-<ul>
-<li>策略模式利用组合，委托等技术和思想，有效的避免很多if条件语句</li>
-<li>策略模式提供了开放-封闭原则，使代码更容易理解和扩展</li>
-<li>策略模式中的代码可以复用</li>
-</ul>
-<p>策略模式不仅仅用来封装算法，在实际开发中，通常会把算法的含义扩散开来，使策略模式也可以用来封装 一系列的“业务规则”</p>
-<p>只要这些业务规则指向的目标一致，并且可以被替换使用，我们就可以用策略模式来封装它们</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
     <article id="post-设计模式/设计模式的理解、有哪些" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1489,7 +1390,7 @@
 <h4 id="3-4-4-Mock-setup"><a href="#3-4-4-Mock-setup" class="headerlink" title="3.4.4 Mock.setup()"></a>3.4.4 Mock.setup()</h4><ul>
 <li>&#96;&#96;&#96;<br>Mock.setup( settings )<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  - 配置拦截 `Ajax` 请求时的行为。支持的配置项有：`timeout`</span><br><span class="line"></span><br><span class="line">&gt; 指定被拦截的 `Ajax` 请求的响应时间，单位是毫秒。值可以是正整数，例如 `400`，表示 `400` 毫秒 后才会返回响应内容；也可以是横杠 `&#x27;-&#x27;` 风格的字符串，例如 `&#x27;200-600&#x27;`，表示响应时间介于 `200` 和 `600` 毫秒之间。默认值是`&#x27;10-100&#x27;`</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 Mock.setup({<br>  timeout: 400<br>})<br>Mock.setup({<br>  timeout: ‘200-600’<br>})<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 目前，接口 `Mock.setup( settings )`仅用于配置 `Ajax` 请求</span><br><span class="line"></span><br><span class="line">#### 3.4.5 Mock.Random</span><br><span class="line"></span><br><span class="line">- `Mock.Random` 是一个工具类，用于生成各种随机数据</span><br><span class="line">- `Mock.Random`的方法在数据模板中称为『占位符』，书写格式为 `@`占位符(参数 [, 参数])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-var Random &#x3D; Mock.Random<br>Random.email()<br>&#x2F;&#x2F; &#x3D;&gt; “<a href="mailto:&#x6e;&#46;&#99;&#108;&#97;&#114;&#x6b;&#64;&#109;&#105;&#108;&#x6c;&#x65;&#x72;&#x2e;&#x69;&#x6f;">&#x6e;&#46;&#99;&#108;&#97;&#114;&#x6b;&#64;&#109;&#105;&#108;&#x6c;&#x65;&#x72;&#x2e;&#x69;&#x6f;</a>“<br>Mock.mock(‘@email’)<br>&#x2F;&#x2F; &#x3D;&gt; “<a href="mailto:&#x79;&#x2e;&#x6c;&#101;&#x65;&#64;&#108;&#101;&#x77;&#x69;&#115;&#x2e;&#111;&#x72;&#103;">&#x79;&#x2e;&#x6c;&#101;&#x65;&#64;&#108;&#101;&#x77;&#x69;&#115;&#x2e;&#111;&#x72;&#103;</a>“<br>Mock.mock( { email: ‘@email’ } )<br>&#x2F;&#x2F; &#x3D;&gt; { email: “<a href="mailto:&#118;&#46;&#108;&#x65;&#119;&#105;&#x73;&#64;&#x68;&#x61;&#x6c;&#x6c;&#46;&#103;&#x6f;&#x76;">&#118;&#46;&#108;&#x65;&#119;&#105;&#x73;&#64;&#x68;&#x61;&#x6c;&#x6c;&#46;&#103;&#x6f;&#x76;</a>“ }<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 四、简单构建一套mock-server</span><br><span class="line"></span><br><span class="line">&gt; 为了更好的分工合作，让前端能在不依赖后端环境的情况下进行开发，其中一种手段就是为前端开发者提供一个 web 容器，这个本地环境就是 mock-server</span><br><span class="line"></span><br><span class="line">**一个比较好的 mock-server 该有的能力**</span><br><span class="line"></span><br><span class="line">- 与线上环境一致的接口地址，每次构建前端代码时不需要修改调用接口的代码</span><br><span class="line">- 所改即所得，具有热更新的能力，每次增加修改 `mock` 接口时不需要重启 `mock` 服务，更不用重启前端构建服务</span><br><span class="line">- 能配合 `Webpack`</span><br><span class="line">- `mock` 数据可以由工具生成不需要自己手动写</span><br><span class="line">- 能模拟 `POST`、`GET` 请求</span><br><span class="line"></span><br><span class="line">**搭建主要思路**</span><br><span class="line"></span><br><span class="line">&gt; 以 `json-server` 作为 `mock` 服务器， `mock.js` 生成`mock` 数据，利用 `gulp + nodemon + browser-sync` 监听`mock`文件的改动重启 `node` 服务，刷新浏览器，以此达到一种相对完美的 `mock-server`要求</span><br><span class="line"></span><br><span class="line">### 4.1 json-server 搭配 mock.js</span><br><span class="line"></span><br><span class="line">- 这里以`Webpack` 的前端工程为例</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+var Random &#x3D; Mock.Random<br>Random.email()<br>&#x2F;&#x2F; &#x3D;&gt; “<a href="mailto:&#110;&#x2e;&#x63;&#x6c;&#97;&#114;&#x6b;&#x40;&#x6d;&#x69;&#x6c;&#x6c;&#x65;&#114;&#46;&#x69;&#x6f;">&#110;&#x2e;&#x63;&#x6c;&#97;&#114;&#x6b;&#x40;&#x6d;&#x69;&#x6c;&#x6c;&#x65;&#114;&#46;&#x69;&#x6f;</a>“<br>Mock.mock(‘@email’)<br>&#x2F;&#x2F; &#x3D;&gt; “<a href="mailto:&#x79;&#46;&#108;&#x65;&#x65;&#64;&#108;&#x65;&#119;&#105;&#115;&#x2e;&#x6f;&#114;&#x67;">&#x79;&#46;&#108;&#x65;&#x65;&#64;&#108;&#x65;&#119;&#105;&#115;&#x2e;&#x6f;&#114;&#x67;</a>“<br>Mock.mock( { email: ‘@email’ } )<br>&#x2F;&#x2F; &#x3D;&gt; { email: “<a href="mailto:&#x76;&#x2e;&#108;&#101;&#119;&#105;&#x73;&#64;&#104;&#97;&#x6c;&#108;&#x2e;&#103;&#111;&#118;">&#x76;&#x2e;&#108;&#101;&#119;&#105;&#x73;&#64;&#104;&#97;&#x6c;&#108;&#x2e;&#103;&#111;&#118;</a>“ }<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 四、简单构建一套mock-server</span><br><span class="line"></span><br><span class="line">&gt; 为了更好的分工合作，让前端能在不依赖后端环境的情况下进行开发，其中一种手段就是为前端开发者提供一个 web 容器，这个本地环境就是 mock-server</span><br><span class="line"></span><br><span class="line">**一个比较好的 mock-server 该有的能力**</span><br><span class="line"></span><br><span class="line">- 与线上环境一致的接口地址，每次构建前端代码时不需要修改调用接口的代码</span><br><span class="line">- 所改即所得，具有热更新的能力，每次增加修改 `mock` 接口时不需要重启 `mock` 服务，更不用重启前端构建服务</span><br><span class="line">- 能配合 `Webpack`</span><br><span class="line">- `mock` 数据可以由工具生成不需要自己手动写</span><br><span class="line">- 能模拟 `POST`、`GET` 请求</span><br><span class="line"></span><br><span class="line">**搭建主要思路**</span><br><span class="line"></span><br><span class="line">&gt; 以 `json-server` 作为 `mock` 服务器， `mock.js` 生成`mock` 数据，利用 `gulp + nodemon + browser-sync` 监听`mock`文件的改动重启 `node` 服务，刷新浏览器，以此达到一种相对完美的 `mock-server`要求</span><br><span class="line"></span><br><span class="line">### 4.1 json-server 搭配 mock.js</span><br><span class="line"></span><br><span class="line">- 这里以`Webpack` 的前端工程为例</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 cnpm install json-server mockjs –save<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 在项目根目录新建 `mock`文件夹，新建 `mock/db.js` 作为 `mock` 数据源，`mock/server.js`作为 `mock`服务，`mock/routes.js`重写路由表</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 var Mock &#x3D; require(‘mockjs’);</li>
 </ul>
@@ -1645,6 +1546,106 @@ var Mock &#x3D; require(‘mockjs’);</li>
         <p class="article-more-link">
           <a  href="/2018/12/26/%E5%B7%A5%E5%85%B7/hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more">learn more >></a>
         </p>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-工具/Git中 fork, clone,branch" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/12/20/%E5%B7%A5%E5%85%B7/Git%E4%B8%AD%20fork,%20clone,branch/" class="article-date">
+  	<time datetime="2018-12-20T14:13:19.000Z" itemprop="datePublished">2018-12-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/20/%E5%B7%A5%E5%85%B7/Git%E4%B8%AD%20fork,%20clone,branch/">
+        Git中 fork, clone,branch
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、是什么"><a href="#一、是什么" class="headerlink" title="一、是什么"></a>一、是什么</h2><h3 id="fork"><a href="#fork" class="headerlink" title="fork"></a>fork</h3><p><code>fork</code>，英语翻译过来就是叉子，动词形式则是分叉，如下图，从左到右，一条直线变成多条直线</p>
+<p><img src="https://static.vue-js.com/ad04ade0-f7ad-11eb-991d-334fd31f0201.png" alt="img"></p>
+<p>转到<code>git</code>仓库中，<code>fork</code>则可以代表分叉、克隆 出一个（仓库的）新拷贝</p>
+<p><img src="https://static.vue-js.com/b4b31450-f7ad-11eb-991d-334fd31f0201.png" alt="img"></p>
+<p>包含了原来的仓库（即upstream repository，上游仓库）所有内容，如分支、Tag、提交</p>
+<p>如果想将你的修改合并到原项目中时，可以通过的 Pull Request 把你的提交贡献回 原仓库</p>
+<h3 id="clone"><a href="#clone" class="headerlink" title="clone"></a>clone</h3><p><code>clone</code>，译为克隆，它的作用是将文件从远程代码仓下载到本地，从而形成一个本地代码仓</p>
+<p>执行<code>clone</code>命令后，会在当前目录下创建一个名为<code>xxx</code>的目录，并在这个目录下初始化一个 <code>.git</code> 文件夹，然后从中读取最新版本的文件的拷贝</p>
+<p>默认配置下远程 <code>Git</code> 仓库中的每一个文件的每一个版本都将被拉取下来</p>
+<h3 id="branch"><a href="#branch" class="headerlink" title="branch"></a>branch</h3><p><code>branch</code>，译为分支，其作用简单而言就是开启另一个分支， 使用分支意味着你可以把你的工作从开发主线上分离开来，以免影响开发主线</p>
+<p><code>Git</code> 处理分支的方式十分轻量，创建新分支这一操作几乎能在瞬间完成，并且在不同分支之间的切换操作也是一样便捷</p>
+<p>在我们开发中，默认只有一条<code>master</code>分支，如下图所示：</p>
+<p><img src="https://static.vue-js.com/7fa8e9c0-f923-11eb-991d-334fd31f0201.png" alt="img"></p>
+<p>通过<code>git branch</code>可以创建一个分支，但并不会自动切换到新分支中去</p>
+<p><img src="https://static.vue-js.com/89efd560-f923-11eb-bc6f-3f06e1491664.png" alt="img"></p>
+<p>通过<code>git checkout</code>可以切换到另一个<code>testing</code>分支</p>
+<p><img src="https://static.vue-js.com/91d1cef0-f923-11eb-bc6f-3f06e1491664.png" alt="img"></p>
+<h2 id="二、如何使用"><a href="#二、如何使用" class="headerlink" title="二、如何使用"></a>二、如何使用</h2><h3 id="fork-1"><a href="#fork-1" class="headerlink" title="fork"></a>fork</h3><p>当你在<code>github</code>发现感兴趣开源项目的时候，可以通过点击<code>github</code>仓库中右上角<code>fork</code>标识的按钮，如下图：</p>
+<p><img src="https://static.vue-js.com/bc4c4510-f7ad-11eb-991d-334fd31f0201.png" alt="img"></p>
+<p>点击这个操作后会将这个仓库的文件、提交历史、issues和其余东西的仓库复制到自己的<code>github</code>仓库中，而你本地仓库是不会存在任何更改</p>
+<p>然后你就可以通过<code>git clone</code>对你这个复制的远程仓库进行克隆</p>
+<p>后续更改任何东西都可以在本地完成，如<code>git add</code>、<code>git commit</code>一系列的操作，然后通过<code>push</code>命令推到自己的远程仓库</p>
+<p>如果希望对方接受你的修改，可以通过发送<code>pull requests</code>给对方，如果对方接受。则会将你的修改内容更新到仓库中</p>
+<p><img src="https://static.vue-js.com/c5265a40-f7ad-11eb-991d-334fd31f0201.png" alt="img"></p>
+<p>整体流程如下图：</p>
+<p><img src="https://static.vue-js.com/ced8ce10-f7ad-11eb-bc6f-3f06e1491664.png" alt="img"></p>
+<h3 id="clone-1"><a href="#clone-1" class="headerlink" title="clone"></a>clone</h3><p>在<code>github</code>中，开源项目右侧存在<code>code</code>按钮，点击后则会显示开源项目<code>url</code>信息，如下图所示：</p>
+<p><img src="https://static.vue-js.com/d8685090-f7ad-11eb-bc6f-3f06e1491664.png" alt="img"></p>
+<p>通过<code>git clone xxx</code>则能完成远程项目的下载</p>
+<h3 id="branch-1"><a href="#branch-1" class="headerlink" title="branch"></a>branch</h3><p>可通过<code>git branch</code>进行查看当前的分支状态，</p>
+<p>如果给了<code>--list</code>，或者没有非选项参数，现有的分支将被列出；当前的分支将以绿色突出显示，并标有星号</p>
+<p>以及通过<code>git branch</code>创建一个新的分支出来</p>
+<h2 id="三、区别"><a href="#三、区别" class="headerlink" title="三、区别"></a>三、区别</h2><p>其三者区别如下：</p>
+<ul>
+<li>fork 只能对代码仓进行操作，且 fork 不属于 git 的命令，通常用于代码仓托管平台的一种“操作”</li>
+<li>clone 是 git 的一种命令，它的作用是将文件从远程代码仓下载到本地，从而形成一个本地代码仓</li>
+<li>branch 特征与 fork 很类似，fork 得到的是一个新的、自己的代码仓，而 branch 得到的是一个代码仓的一个新分支</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
       
     
   </div>

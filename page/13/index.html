@@ -150,106 +150,6 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-工具/Git中 fork, clone,branch" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/12/20/%E5%B7%A5%E5%85%B7/Git%E4%B8%AD%20fork,%20clone,branch/" class="article-date">
-  	<time datetime="2018-12-20T14:13:19.000Z" itemprop="datePublished">2018-12-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/20/%E5%B7%A5%E5%85%B7/Git%E4%B8%AD%20fork,%20clone,branch/">
-        Git中 fork, clone,branch
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、是什么"><a href="#一、是什么" class="headerlink" title="一、是什么"></a>一、是什么</h2><h3 id="fork"><a href="#fork" class="headerlink" title="fork"></a>fork</h3><p><code>fork</code>，英语翻译过来就是叉子，动词形式则是分叉，如下图，从左到右，一条直线变成多条直线</p>
-<p><img src="https://static.vue-js.com/ad04ade0-f7ad-11eb-991d-334fd31f0201.png" alt="img"></p>
-<p>转到<code>git</code>仓库中，<code>fork</code>则可以代表分叉、克隆 出一个（仓库的）新拷贝</p>
-<p><img src="https://static.vue-js.com/b4b31450-f7ad-11eb-991d-334fd31f0201.png" alt="img"></p>
-<p>包含了原来的仓库（即upstream repository，上游仓库）所有内容，如分支、Tag、提交</p>
-<p>如果想将你的修改合并到原项目中时，可以通过的 Pull Request 把你的提交贡献回 原仓库</p>
-<h3 id="clone"><a href="#clone" class="headerlink" title="clone"></a>clone</h3><p><code>clone</code>，译为克隆，它的作用是将文件从远程代码仓下载到本地，从而形成一个本地代码仓</p>
-<p>执行<code>clone</code>命令后，会在当前目录下创建一个名为<code>xxx</code>的目录，并在这个目录下初始化一个 <code>.git</code> 文件夹，然后从中读取最新版本的文件的拷贝</p>
-<p>默认配置下远程 <code>Git</code> 仓库中的每一个文件的每一个版本都将被拉取下来</p>
-<h3 id="branch"><a href="#branch" class="headerlink" title="branch"></a>branch</h3><p><code>branch</code>，译为分支，其作用简单而言就是开启另一个分支， 使用分支意味着你可以把你的工作从开发主线上分离开来，以免影响开发主线</p>
-<p><code>Git</code> 处理分支的方式十分轻量，创建新分支这一操作几乎能在瞬间完成，并且在不同分支之间的切换操作也是一样便捷</p>
-<p>在我们开发中，默认只有一条<code>master</code>分支，如下图所示：</p>
-<p><img src="https://static.vue-js.com/7fa8e9c0-f923-11eb-991d-334fd31f0201.png" alt="img"></p>
-<p>通过<code>git branch</code>可以创建一个分支，但并不会自动切换到新分支中去</p>
-<p><img src="https://static.vue-js.com/89efd560-f923-11eb-bc6f-3f06e1491664.png" alt="img"></p>
-<p>通过<code>git checkout</code>可以切换到另一个<code>testing</code>分支</p>
-<p><img src="https://static.vue-js.com/91d1cef0-f923-11eb-bc6f-3f06e1491664.png" alt="img"></p>
-<h2 id="二、如何使用"><a href="#二、如何使用" class="headerlink" title="二、如何使用"></a>二、如何使用</h2><h3 id="fork-1"><a href="#fork-1" class="headerlink" title="fork"></a>fork</h3><p>当你在<code>github</code>发现感兴趣开源项目的时候，可以通过点击<code>github</code>仓库中右上角<code>fork</code>标识的按钮，如下图：</p>
-<p><img src="https://static.vue-js.com/bc4c4510-f7ad-11eb-991d-334fd31f0201.png" alt="img"></p>
-<p>点击这个操作后会将这个仓库的文件、提交历史、issues和其余东西的仓库复制到自己的<code>github</code>仓库中，而你本地仓库是不会存在任何更改</p>
-<p>然后你就可以通过<code>git clone</code>对你这个复制的远程仓库进行克隆</p>
-<p>后续更改任何东西都可以在本地完成，如<code>git add</code>、<code>git commit</code>一系列的操作，然后通过<code>push</code>命令推到自己的远程仓库</p>
-<p>如果希望对方接受你的修改，可以通过发送<code>pull requests</code>给对方，如果对方接受。则会将你的修改内容更新到仓库中</p>
-<p><img src="https://static.vue-js.com/c5265a40-f7ad-11eb-991d-334fd31f0201.png" alt="img"></p>
-<p>整体流程如下图：</p>
-<p><img src="https://static.vue-js.com/ced8ce10-f7ad-11eb-bc6f-3f06e1491664.png" alt="img"></p>
-<h3 id="clone-1"><a href="#clone-1" class="headerlink" title="clone"></a>clone</h3><p>在<code>github</code>中，开源项目右侧存在<code>code</code>按钮，点击后则会显示开源项目<code>url</code>信息，如下图所示：</p>
-<p><img src="https://static.vue-js.com/d8685090-f7ad-11eb-bc6f-3f06e1491664.png" alt="img"></p>
-<p>通过<code>git clone xxx</code>则能完成远程项目的下载</p>
-<h3 id="branch-1"><a href="#branch-1" class="headerlink" title="branch"></a>branch</h3><p>可通过<code>git branch</code>进行查看当前的分支状态，</p>
-<p>如果给了<code>--list</code>，或者没有非选项参数，现有的分支将被列出；当前的分支将以绿色突出显示，并标有星号</p>
-<p>以及通过<code>git branch</code>创建一个新的分支出来</p>
-<h2 id="三、区别"><a href="#三、区别" class="headerlink" title="三、区别"></a>三、区别</h2><p>其三者区别如下：</p>
-<ul>
-<li>fork 只能对代码仓进行操作，且 fork 不属于 git 的命令，通常用于代码仓托管平台的一种“操作”</li>
-<li>clone 是 git 的一种命令，它的作用是将文件从远程代码仓下载到本地，从而形成一个本地代码仓</li>
-<li>branch 特征与 fork 很类似，fork 得到的是一个新的、自己的代码仓，而 branch 得到的是一个代码仓的一个新分支</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
     <article id="post-工具/git指令集合" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1477,6 +1377,115 @@ Idea集成GitLab
       
 	<div class="article-category tagcloud">
 	<a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-小程序+uniapp/小程序速度提升" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/11/02/%E5%B0%8F%E7%A8%8B%E5%BA%8F+uniapp/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%80%9F%E5%BA%A6%E6%8F%90%E5%8D%87/" class="article-date">
+  	<time datetime="2018-11-02T12:42:58.000Z" itemprop="datePublished">2018-11-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/02/%E5%B0%8F%E7%A8%8B%E5%BA%8F+uniapp/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%80%9F%E5%BA%A6%E6%8F%90%E5%8D%87/">
+        小程序应用速度提升
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、是什么"><a href="#一、是什么" class="headerlink" title="一、是什么"></a>一、是什么</h2><p>小程序启动会常常遇到如下图场景：</p>
+<p><img src="https://static.vue-js.com/03941230-3279-11ec-8e64-91fdec0f05a1.png" alt="img"></p>
+<p>这是因为，小程序首次启动前，微信会在小程序启动前为小程序准备好通用的运行环境，如运行中的县城和一些基础库的初始化</p>
+<p>然后才开始进入启动状态，展示一个固定的启动界面，界面内包含小程序的图标、名称和加载提示图标。此时，微信会在背后完成几项工作：</p>
+<ul>
+<li>下载小程序代码包</li>
+<li>加载小程序代码包</li>
+<li>初始化小程序首页</li>
+</ul>
+<p>下载到的小程序代码包不是小程序的源代码，而是编译、压缩、打包之后的代码包</p>
+<p>整体流程如下图：</p>
+<p><img src="https://static.vue-js.com/11c0ea90-3279-11ec-a752-75723a64e8f5.png" alt="img"></p>
+<h2 id="二、手段"><a href="#二、手段" class="headerlink" title="二、手段"></a>二、手段</h2><p>围绕上图小程序的启动流程， 我们可以从加载、渲染两个纬度进行切入：</p>
+<h3 id="加载"><a href="#加载" class="headerlink" title="加载"></a>加载</h3><p>提升体验最直接的方法是控制小程序包的大小，常见手段有如下：</p>
+<ul>
+<li>代码包的体积压缩可以通过勾选开发者工具中“上传代码时，压缩代码”选项</li>
+<li>及时清理无用的代码和资源文件</li>
+<li>减少资源包中的图片等资源的数量和大小（理论上除了小icon，其他图片资源从网络下载），图片资源压缩率有限</li>
+</ul>
+<p>并且可以采取分包加载的操作，将用户访问率高的页面放在主包里，将访问率低的页面放入子包里，按需加载</p>
+<p>当用户点击到子包的目录时，还是有一个代码包下载的过程，这会感觉到明显的卡顿，所以子包也不建议拆的太大，当然我们可以采用子包预加载技术，并不需要等到用户点击到子包页面后在下载子包</p>
+<p><img src="https://static.vue-js.com/2034de10-3279-11ec-8e64-91fdec0f05a1.png" alt="img"></p>
+<h3 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h3><p>关于微信小程序首屏渲染优化的手段如下：</p>
+<ul>
+<li>请求可以在页面onLoad就加载，不需要等页面ready后在异步请求数据</li>
+<li>尽量减少不必要的https请求，可使用 getStorageSync() 及 setStorageSync() 方法将数据存储在本地</li>
+<li>可以在前置页面将一些有用的字段带到当前页，进行首次渲染（列表页的某些数据–&gt; 详情页），没有数据的模块可以进行骨架屏的占位</li>
+</ul>
+<p>在微信小程序中，提高页面的多次渲染效率主要在于正确使用<code>setData</code>：</p>
+<ul>
+<li>不要过于频繁调用setData，应考虑将多次setData合并成一次setData调用</li>
+<li>数据通信的性能与数据量正相关，因而如果有一些数据字段不在界面中展示且数据结构比较复杂或包含长字符串，则不应使用<code>setData</code>来设置这些数据</li>
+<li>与界面渲染无关的数据最好不要设置在data中，可以考虑设置在page对象的其他字段下</li>
+</ul>
+<p>除此之外，对于一些独立的模块我们尽可能抽离出来，这是因为自定义组件的更新并不会影响页面上其他元素的更新</p>
+<p>各个组件也将具有各自独立的逻辑空间。每个组件都分别拥有自己的独立的数据、<code>setData</code>调用</p>
+<h2 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h2><p><strong>小程序启动加载性能</strong>：</p>
+<ul>
+<li>控制代码包的大小</li>
+<li>分包加载</li>
+<li>首屏体验（预请求，利用缓存，避免白屏，及时反馈</li>
+</ul>
+<p><strong>小程序渲染性能</strong>：</p>
+<ul>
+<li>避免不当的使用setData</li>
+<li>使用自定义组件</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">小程序</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">小程序</a>
 	</div>
 
 
