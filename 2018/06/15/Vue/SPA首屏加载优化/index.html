@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>SPA首屏加载优化 | Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="面试官：SPA首屏加载速度慢的怎么解决？ 一、什么是首屏加载首屏时间（First Contentful Paint），指的是浏览器从响应用户输入网址地址，到首屏内容渲染完成的时间，此时整个网页不一定要全部渲染完成，但需要展示当前视窗需要的内容 首屏加载可以说是用户体验中最重要的环节 关于计算首屏时间利用performance.timing提供的数据：  通过DOMContentLoad或者perf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SPA首屏加载优化">
+<meta property="og:url" content="http://example.com/2018/06/15/Vue/SPA%E9%A6%96%E5%B1%8F%E5%8A%A0%E8%BD%BD%E4%BC%98%E5%8C%96/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="面试官：SPA首屏加载速度慢的怎么解决？ 一、什么是首屏加载首屏时间（First Contentful Paint），指的是浏览器从响应用户输入网址地址，到首屏内容渲染完成的时间，此时整个网页不一定要全部渲染完成，但需要展示当前视窗需要的内容 首屏加载可以说是用户体验中最重要的环节 关于计算首屏时间利用performance.timing提供的数据：  通过DOMContentLoad或者perf">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://static.vue-js.com/24617c00-3acc-11eb-ab90-d9ae814b240d.png">
+<meta property="og:image" content="https://static.vue-js.com/2e2491a0-3acc-11eb-85f6-6fac77c0c9b3.png">
+<meta property="og:image" content="https://static.vue-js.com/486cee90-3acc-11eb-ab90-d9ae814b240d.png">
+<meta property="og:image" content="https://static.vue-js.com/4fafe900-3acc-11eb-85f6-6fac77c0c9b3.png">
+<meta property="article:published_time" content="2018-06-15T07:19:34.000Z">
+<meta property="article:modified_time" content="2022-06-06T07:32:36.000Z">
+<meta property="article:author" content="mr.杜">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://static.vue-js.com/24617c00-3acc-11eb-ab90-d9ae814b240d.png">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="https://img1.baidu.com/it/u=412709218,617594518&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=504&amp;h=500" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">mr.杜</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Event-Loop/" style="font-size: 10px;">Event Loop</a> <a href="/tags/Graphviz/" style="font-size: 10px;">Graphviz</a> <a href="/tags/Mock/" style="font-size: 10px;">Mock</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/RESTful/" style="font-size: 10px;">RESTful</a> <a href="/tags/React/" style="font-size: 19.29px;">React</a> <a href="/tags/Redux/" style="font-size: 11.43px;">Redux</a> <a href="/tags/async-await/" style="font-size: 10px;">async/await</a> <a href="/tags/css/" style="font-size: 13.57px;">css</a> <a href="/tags/echart/" style="font-size: 10px;">echart</a> <a href="/tags/es6/" style="font-size: 16.43px;">es6</a> <a href="/tags/eslint/" style="font-size: 10px;">eslint</a> <a href="/tags/git/" style="font-size: 15.71px;">git</a> <a href="/tags/glup/" style="font-size: 10.71px;">glup</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 14.29px;">html</a> <a href="/tags/http/" style="font-size: 17.14px;">http</a> <a href="/tags/javascript/" style="font-size: 18.57px;">javascript</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 10.71px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 12.86px;">nodejs</a> <a href="/tags/python/" style="font-size: 10.71px;">python</a> <a href="/tags/qiankun/" style="font-size: 10px;">qiankun</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/serveless/" style="font-size: 10px;">serveless</a> <a href="/tags/typescript/" style="font-size: 12.14px;">typescript</a> <a href="/tags/vs-code/" style="font-size: 11.43px;">vs code</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue3/" style="font-size: 10px;">vue3</a> <a href="/tags/webpack/" style="font-size: 17.86px;">webpack</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 13.57px;">优化</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10.71px;">前端</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 15px;">小程序</a> <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 10px;">抓包</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 10px;">正则表达式</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 12.86px;">浏览器</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" style="font-size: 10.71px;">移动端</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.57px;">设计模式</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://img1.baidu.com/it/u=412709218,617594518&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=504&amp;h=500" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Vue/SPA首屏加载优化" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/06/15/Vue/SPA%E9%A6%96%E5%B1%8F%E5%8A%A0%E8%BD%BD%E4%BC%98%E5%8C%96/" class="article-date">
+  	<time datetime="2018-06-15T07:19:34.000Z" itemprop="datePublished">2018-06-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SPA首屏加载优化
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E6%A1%86%E6%9E%B6/">框架</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="面试官：SPA首屏加载速度慢的怎么解决？"><a href="#面试官：SPA首屏加载速度慢的怎么解决？" class="headerlink" title="面试官：SPA首屏加载速度慢的怎么解决？"></a>面试官：SPA首屏加载速度慢的怎么解决？</h1><p><img src="https://static.vue-js.com/24617c00-3acc-11eb-ab90-d9ae814b240d.png" alt="image.png"></p>
+<h2 id="一、什么是首屏加载"><a href="#一、什么是首屏加载" class="headerlink" title="一、什么是首屏加载"></a>一、什么是首屏加载</h2><p>首屏时间（First Contentful Paint），指的是浏览器从响应用户输入网址地址，到首屏内容渲染完成的时间，此时整个网页不一定要全部渲染完成，但需要展示当前视窗需要的内容</p>
+<p>首屏加载可以说是用户体验中<strong>最重要</strong>的环节</p>
+<h3 id="关于计算首屏时间"><a href="#关于计算首屏时间" class="headerlink" title="关于计算首屏时间"></a>关于计算首屏时间</h3><p>利用<code>performance.timing</code>提供的数据：</p>
+<p><img src="https://static.vue-js.com/2e2491a0-3acc-11eb-85f6-6fac77c0c9b3.png" alt="image.png"></p>
+<p>通过<code>DOMContentLoad</code>或者<code>performance</code>来计算出首屏时间</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方案一：</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;DOMContentLoaded&#x27;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;first contentful painting&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 方案二：</span></span><br><span class="line">performance.<span class="title function_">getEntriesByName</span>(<span class="string">&quot;first-contentful-paint&quot;</span>)[<span class="number">0</span>].<span class="property">startTime</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// performance.getEntriesByName(&quot;first-contentful-paint&quot;)[0]</span></span><br><span class="line"><span class="comment">// 会返回一个 PerformancePaintTiming的实例，结构如下：</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;first-contentful-paint&quot;</span>,</span><br><span class="line">  <span class="attr">entryType</span>: <span class="string">&quot;paint&quot;</span>,</span><br><span class="line">  <span class="attr">startTime</span>: <span class="number">507.80000002123415</span>,</span><br><span class="line">  <span class="attr">duration</span>: <span class="number">0</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="二、加载慢的原因"><a href="#二、加载慢的原因" class="headerlink" title="二、加载慢的原因"></a>二、加载慢的原因</h2><p>在页面渲染的过程，导致加载速度慢的因素可能如下：</p>
+<ul>
+<li>网络延时问题</li>
+<li>资源文件体积是否过大</li>
+<li>资源是否重复发送请求去加载了</li>
+<li>加载脚本的时候，渲染内容堵塞了</li>
+</ul>
+<h2 id="三、解决方案"><a href="#三、解决方案" class="headerlink" title="三、解决方案"></a>三、解决方案</h2><p>常见的几种SPA首屏优化方式</p>
+<ul>
+<li>减小入口文件积</li>
+<li>静态资源本地缓存</li>
+<li>UI框架按需加载</li>
+<li>图片资源的压缩</li>
+<li>组件重复打包</li>
+<li>开启GZip压缩</li>
+<li>使用SSR</li>
+</ul>
+<h3 id="减小入口文件体积"><a href="#减小入口文件体积" class="headerlink" title="减小入口文件体积"></a>减小入口文件体积</h3><p>常用的手段是路由懒加载，把不同路由对应的组件分割成不同的代码块，待路由被请求的时候会单独打包路由，使得入口文件变小，加载速度大大增加</p>
+<p><img src="https://static.vue-js.com/486cee90-3acc-11eb-ab90-d9ae814b240d.png" alt="image.png"></p>
+<p>在<code>vue-router</code>配置路由的时候，采用动态加载路由的形式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">routes</span>:[ </span><br><span class="line">    <span class="attr">path</span>: <span class="string">&#x27;Blogs&#x27;</span>,</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;ShowBlogs&#x27;</span>,</span><br><span class="line">    <span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="title function_">import</span>(<span class="string">&#x27;./components/ShowBlogs.vue&#x27;</span>)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+
+
+<p>以函数的形式加载路由，这样就可以把各自的路由文件分别打包，只有在解析给定的路由时，才会加载路由组件</p>
+<h3 id="静态资源本地缓存"><a href="#静态资源本地缓存" class="headerlink" title="静态资源本地缓存"></a>静态资源本地缓存</h3><p>后端返回资源问题：</p>
+<ul>
+<li>采用<code>HTTP</code>缓存，设置<code>Cache-Control</code>，<code>Last-Modified</code>，<code>Etag</code>等响应头</li>
+<li>采用<code>Service Worker</code>离线缓存</li>
+</ul>
+<p>前端合理利用<code>localStorage</code></p>
+<h3 id="UI框架按需加载"><a href="#UI框架按需加载" class="headerlink" title="UI框架按需加载"></a>UI框架按需加载</h3><p>在日常使用<code>UI</code>框架，例如<code>element-UI</code>、或者<code>antd</code>，我们经常性直接引用整个<code>UI</code>库</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">ElementUI</span> <span class="keyword">from</span> <span class="string">&#x27;element-ui&#x27;</span></span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">use</span>(<span class="title class_">ElementUI</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>但实际上我用到的组件只有按钮，分页，表格，输入与警告 所以我们要按需引用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Button</span>, <span class="title class_">Input</span>, <span class="title class_">Pagination</span>, <span class="title class_">Table</span>, <span class="title class_">TableColumn</span>, <span class="title class_">MessageBox</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;element-ui&#x27;</span>;</span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">use</span>(<span class="title class_">Button</span>)</span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">use</span>(<span class="title class_">Input</span>)</span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">use</span>(<span class="title class_">Pagination</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="组件重复打包"><a href="#组件重复打包" class="headerlink" title="组件重复打包"></a>组件重复打包</h3><p>假设<code>A.js</code>文件是一个常用的库，现在有多个路由使用了<code>A.js</code>文件，这就造成了重复下载</p>
+<p>解决方案：在<code>webpack</code>的<code>config</code>文件中，修改<code>CommonsChunkPlugin</code>的配置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">minChunks</span>: <span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>minChunks</code>为3表示会把使用3次及以上的包抽离出来，放进公共依赖文件，避免了重复加载组件</p>
+<h3 id="图片资源的压缩"><a href="#图片资源的压缩" class="headerlink" title="图片资源的压缩"></a>图片资源的压缩</h3><p>图片资源虽然不在编码过程中，但它却是对页面性能影响最大的因素</p>
+<p>对于所有的图片资源，我们可以进行适当的压缩</p>
+<p>对页面上使用到的<code>icon</code>，可以使用在线字体图标，或者雪碧图，将众多小图标合并到同一张图上，用以减轻<code>http</code>请求压力。</p>
+<h3 id="开启GZip压缩"><a href="#开启GZip压缩" class="headerlink" title="开启GZip压缩"></a>开启GZip压缩</h3><p>拆完包之后，我们再用<code>gzip</code>做一下压缩 安装<code>compression-webpack-plugin</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnmp i compression-webpack-plugin -D</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在<code>vue.congig.js</code>中引入并修改<code>webpack</code>配置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">CompressionPlugin</span> = <span class="built_in">require</span>(<span class="string">&#x27;compression-webpack-plugin&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="attr">configureWebpack</span>: <span class="function">(<span class="params">config</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (process.<span class="property">env</span>.<span class="property">NODE_ENV</span> === <span class="string">&#x27;production&#x27;</span>) &#123;</span><br><span class="line">            <span class="comment">// 为生产环境修改配置...</span></span><br><span class="line">            config.<span class="property">mode</span> = <span class="string">&#x27;production&#x27;</span></span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="attr">plugins</span>: [<span class="keyword">new</span> <span class="title class_">CompressionPlugin</span>(&#123;</span><br><span class="line">                    <span class="attr">test</span>: <span class="regexp">/\.js$|\.html$|\.css/</span>, <span class="comment">//匹配文件名</span></span><br><span class="line">                    <span class="attr">threshold</span>: <span class="number">10240</span>, <span class="comment">//对超过10k的数据进行压缩</span></span><br><span class="line">                    <span class="attr">deleteOriginalAssets</span>: <span class="literal">false</span> <span class="comment">//是否删除原文件</span></span><br><span class="line">                &#125;)]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在服务器我们也要做相应的配置 如果发送请求的浏览器支持<code>gzip</code>，就发送给它<code>gzip</code>格式的文件 我的服务器是用<code>express</code>框架搭建的 只要安装一下<code>compression</code>就能使用</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const compression = require(&#x27;compression&#x27;)</span><br><span class="line">app.use(compression())  // 在其他中间件使用之前调用</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用SSR"><a href="#使用SSR" class="headerlink" title="使用SSR"></a>使用SSR</h3><p>SSR（Server side ），也就是服务端渲染，组件或页面通过服务器生成html字符串，再发送到浏览器</p>
+<p>从头搭建一个服务端渲染是很复杂的，<code>vue</code>应用建议使用<code>Nuxt.js</code>实现服务端渲染</p>
+<h3 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h3><p>减少首屏渲染时间的方法有很多，总的来讲可以分成两大部分 ：资源加载优化 和 页面渲染优化</p>
+<p>下图是更为全面的首屏优化的方案</p>
+<p><img src="https://static.vue-js.com/4fafe900-3acc-11eb-85f6-6fac77c0c9b3.png" alt="image.png"></p>
+<p>大家可以根据自己项目的情况选择各种方式进行首屏渲染的优化</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/18/Vue/vue-$nextTick/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          vue-$nextTick
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/11/Vue/Object.defineProperty%E8%AF%A6%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Object.defineProperty详解</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 mr.杜
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

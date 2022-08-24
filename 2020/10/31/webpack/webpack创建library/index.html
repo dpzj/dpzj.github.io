@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>webpack创建library | Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="除了打包应用程序，webpack 还可以用于打包 JavaScript library。例如：当我们想要自己开发一个组件库工具或者框架的时候也就是说我们自己造一个轮子给别人用的时候我们免不了要开发很多的模块，最终都可以请webpack来帮我们打包。 创建一个 library假设我们正在编写一个名为 webpack-numbers 的小的 library，可以将数字 1 到 5转换为文本表示，反之亦">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack创建library">
+<meta property="og:url" content="http://example.com/2020/10/31/webpack/webpack%E5%88%9B%E5%BB%BAlibrary/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="除了打包应用程序，webpack 还可以用于打包 JavaScript library。例如：当我们想要自己开发一个组件库工具或者框架的时候也就是说我们自己造一个轮子给别人用的时候我们免不了要开发很多的模块，最终都可以请webpack来帮我们打包。 创建一个 library假设我们正在编写一个名为 webpack-numbers 的小的 library，可以将数字 1 到 5转换为文本表示，反之亦">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-10-31T06:21:26.000Z">
+<meta property="article:modified_time" content="2022-06-06T14:52:30.000Z">
+<meta property="article:author" content="mr.杜">
+<meta property="article:tag" content="webpack">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="https://img1.baidu.com/it/u=412709218,617594518&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=504&amp;h=500" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">mr.杜</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Event-Loop/" style="font-size: 10px;">Event Loop</a> <a href="/tags/Graphviz/" style="font-size: 10px;">Graphviz</a> <a href="/tags/Mock/" style="font-size: 10px;">Mock</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/RESTful/" style="font-size: 10px;">RESTful</a> <a href="/tags/React/" style="font-size: 19.29px;">React</a> <a href="/tags/Redux/" style="font-size: 11.43px;">Redux</a> <a href="/tags/async-await/" style="font-size: 10px;">async/await</a> <a href="/tags/css/" style="font-size: 13.57px;">css</a> <a href="/tags/echart/" style="font-size: 10px;">echart</a> <a href="/tags/es6/" style="font-size: 16.43px;">es6</a> <a href="/tags/eslint/" style="font-size: 10px;">eslint</a> <a href="/tags/git/" style="font-size: 15.71px;">git</a> <a href="/tags/glup/" style="font-size: 10.71px;">glup</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 14.29px;">html</a> <a href="/tags/http/" style="font-size: 17.14px;">http</a> <a href="/tags/javascript/" style="font-size: 18.57px;">javascript</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 10.71px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 12.86px;">nodejs</a> <a href="/tags/python/" style="font-size: 10.71px;">python</a> <a href="/tags/qiankun/" style="font-size: 10px;">qiankun</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/serveless/" style="font-size: 10px;">serveless</a> <a href="/tags/typescript/" style="font-size: 12.14px;">typescript</a> <a href="/tags/vs-code/" style="font-size: 11.43px;">vs code</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue3/" style="font-size: 10px;">vue3</a> <a href="/tags/webpack/" style="font-size: 17.86px;">webpack</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 13.57px;">优化</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10.71px;">前端</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 15px;">小程序</a> <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 10px;">抓包</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 10px;">正则表达式</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 12.86px;">浏览器</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" style="font-size: 10.71px;">移动端</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.57px;">设计模式</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://img1.baidu.com/it/u=412709218,617594518&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=504&amp;h=500" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-webpack/webpack创建library" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/10/31/webpack/webpack%E5%88%9B%E5%BB%BAlibrary/" class="article-date">
+  	<time datetime="2020-10-31T06:21:26.000Z" itemprop="datePublished">2020-10-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      webpack创建library
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/">前端工程化</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>除了打包应用程序，webpack 还可以用于打包 JavaScript library。<br>例如：当我们想要自己开发一个组件库工具或者框架的时候也就是说我们自己造一个轮子给别人用的时候我们免不了要开发很多的模块，最终都可以请webpack来帮我们打包。</p>
+<p><strong>创建一个 library</strong><br>假设我们正在编写一个名为 webpack-numbers 的小的 library，可以将数字 1 到 5转换为文本表示，反之亦然，例如将 2 转换为 ‘two’。<br>使用 npm 初始化项目，然后安装 webpack ， webpack-cli 和 lodash ：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i webpack webpack-cli lodash -D</span><br></pre></td></tr></table></figure>
+<p>我们将 lodash 安装为 devDependencies 而不是 dependencies ，因为我们不需要将其打包到我们的库中，否则我们的库体积很容易变大。</p>
+<p>src&#x2F;ref.json</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">&#123;</span><br><span class="line">  &quot;num&quot;: 1,</span><br><span class="line">  &quot;word&quot;: &quot;One&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">  &quot;num&quot;: 2,</span><br><span class="line">  &quot;word&quot;: &quot;Two&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">  &quot;num&quot;: 3,</span><br><span class="line">  &quot;word&quot;: &quot;Three&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">  &quot;num&quot;: 4,</span><br><span class="line">  &quot;word&quot;: &quot;Four&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">  &quot;num&quot;: 5,</span><br><span class="line">  &quot;word&quot;: &quot;Five&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">  &quot;num&quot;: 0,</span><br><span class="line">  &quot;word&quot;: &quot;Zero&quot;</span><br><span class="line">&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>src&#x2F;index.js</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import _ from &#x27;lodash&#x27;;</span><br><span class="line">import numRef from &#x27;./ref.json&#x27;;</span><br><span class="line">export function numToWord(num) &#123;</span><br><span class="line"> return _.reduce(</span><br><span class="line">  numRef,</span><br><span class="line"> (accum, ref) =&gt; &#123;</span><br><span class="line">   return ref.num === num ? ref.word : accum;</span><br><span class="line"> &#125;,</span><br><span class="line">  &#x27;&#x27;</span><br><span class="line">);</span><br><span class="line">&#125;</span><br><span class="line">export function wordToNum(word) &#123;</span><br><span class="line"> return _.reduce(</span><br><span class="line">  numRef,</span><br><span class="line"> (accum, ref) =&gt; &#123;</span><br><span class="line">   return ref.word === word &amp;&amp; word.toLowerCase() ? ref.num :</span><br><span class="line">accum;</span><br><span class="line"> &#125;,</span><br><span class="line">  -1</span><br><span class="line">);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&#x27;path&#x27;);</span><br><span class="line">module.exports = &#123;</span><br><span class="line"> mode:&#x27;production&#x27;,</span><br><span class="line"> entry: &#x27;./src/index.js&#x27;,</span><br><span class="line"> output: &#123;</span><br><span class="line">  path: path.resolve(__dirname, &#x27;dist&#x27;),</span><br><span class="line">  filename: &#x27;webpack-numbers.js&#x27;,</span><br><span class="line">  library:&#123;</span><br><span class="line">    name:&#x27;webpackNumbers&#x27;,</span><br><span class="line">	type&#x27;umd&#x27;</span><br><span class="line">  &#125;,</span><br><span class="line">  globalObject:&#x27;globalThis&#x27;</span><br><span class="line">&#125;,</span><br><span class="line"> externals:&#123;</span><br><span class="line"> 	lodash:&#123;   lodash  引入包的名字</span><br><span class="line">		commonjs:&#x27;lodash&#x27;,   //  兼容引入形式</span><br><span class="line">		commonjs2:&#x27;lodash&#x27;,</span><br><span class="line">		amd:&#x27;lodash&#x27;,</span><br><span class="line">		root:&#x27;_&#x27;</span><br><span class="line">	&#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>发布到线上</strong><br>拥有npm账号<br>npm config get registry   &#x2F;&#x2F; 一定要保证本地的registry的地址是<a target="_blank" rel="noopener" href="https://registry.npmjs.org/">https://registry.npmjs.org/</a>    因为这样的话才是真正的连接到npm官网的地址上   有些人可能是淘宝  那么就访问不上去了<br>npm adduser  &#x2F;&#x2F;添加用户   输入用户名密码<br>包的名字必须是全球唯一的。   npm publish    上传时package.json中的main入口必须对应：dist&#x2F;文件名   因为别人通过 require去载入包的时候  会读取 这个main这是的暴露的包的名字<br>npm install 包名就可以下载了</p>
+<p><strong>Webpack 配置</strong></p>
+<p>webpack.config.js</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">output:&#123;</span><br><span class="line">	path:&#x27;&#x27;,</span><br><span class="line">	filname:&#x27;&#x27;,</span><br><span class="line">	library:&#x27;&#x27;,    //我们只是定义了导出 并且没有使用它  所以webpack认为这个代码是没有用的。   如何让他作为一个library来进行一个对外的打包   让代码不被 Webpack Tree shaking   配置 library:&#x27;包的名字&#x27;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>到目前为止，一切都应该与打包应用程序一样，这里是不同的部分 - 我们需要通过output.library 配置项暴露从入口导出的内容。<br>我们暴露了 webpackNumbers ，以便用户可以通过 script 标签使用。	</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://example.org/webpack-numbers.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"> window.webpackNumbers.wordToNum(&#x27;Five&#x27;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>然而它只能通过被 script 标签引用而发挥作用，它不能运行在 CommonJS、AMD、Node.js 等环境中。<br>作为一个库作者，我们希望它能够兼容不同的环境，也就是说，用户应该能够通过以下方式使用打包后的库：<br>CommonJS module require:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const webpackNumbers = require(&#x27;webpack-numbers&#x27;);</span><br><span class="line">// ...</span><br><span class="line">webpackNumbers.wordToNum(&#x27;Two&#x27;);</span><br></pre></td></tr></table></figure>
+<p>AMD module require:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">require([&#x27;webpackNumbers&#x27;], function (webpackNumbers) &#123;</span><br><span class="line"> // ...</span><br><span class="line"> webpackNumbers.wordToNum(&#x27;Two&#x27;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>script tag:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">...</span><br><span class="line"> &lt;script src=&quot;https://example.org/webpack-numbers.js&quot;&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line">  // ...</span><br><span class="line">  // Global variable</span><br><span class="line">  webpackNumbers.wordToNum(&#x27;Five&#x27;);</span><br><span class="line">  // Property in the window object</span><br><span class="line">  window.webpackNumbers.wordToNum(&#x27;Five&#x27;);</span><br><span class="line">  // ...</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>我们更新 output.library 配置项，将其 type 设置为 ‘umd’ ：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&#x27;path&#x27;);</span><br><span class="line">module.exports = &#123;</span><br><span class="line"> entry: &#x27;./src/index.js&#x27;,</span><br><span class="line"> output: &#123;</span><br><span class="line">  path: path.resolve(__dirname, &#x27;dist&#x27;),</span><br><span class="line">  filename: &#x27;webpack-numbers.js&#x27;,</span><br><span class="line">  library: &#123;</span><br><span class="line">   name: &#x27;webpackNumbers&#x27;,</span><br><span class="line">   type: &#x27;umd&#x27;,   //  window&#x27;(es module)   &#x27;commonjs&#x27;   &#x27;module&#x27; 它在experiments:&#123;outputModule:true&#125;才能使用，他是一个实验性的功能，就不需要这个name了。&lt;script type=&quot;module&quot;&gt;    &#x27;umd&#x27;支持所有的类型。  esmodule 有问题</span><br><span class="line">  &#125;,</span><br><span class="line">  globalObject:&#x27;globalThis&#x27;    //需要全局的this来去  代替self   否则浏览器会self  undefined报错</span><br><span class="line"> &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>现在 webpack 将打包一个库，其可以与 CommonJS、AMD 以及 script 标签使用</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/11/01/webpack/webpack%E7%9A%84%E7%90%86%E8%A7%A3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          webpack的理解
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/10/26/webpack/webpack-proxy%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">webpack proxy工作原理</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 mr.杜
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

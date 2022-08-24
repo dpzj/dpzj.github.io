@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>js-arguments对象 | Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="每个函数都会有一个Arguments对象实例arguments，它引用着函数的实参，可以用数组下标的方式”[]”引用arguments的元素。arguments.length为函数实参个数，arguments.callee引用函数自身。 Arguments对象介绍Arguments对象是一个伪数组对象，它有length属性，可以arguments[i]来访问对象中的元素，但它不能用数组的一些方法，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js-arguments对象">
+<meta property="og:url" content="http://example.com/2017/12/15/html+css+js+ts/3-js-arguments/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="每个函数都会有一个Arguments对象实例arguments，它引用着函数的实参，可以用数组下标的方式”[]”引用arguments的元素。arguments.length为函数实参个数，arguments.callee引用函数自身。 Arguments对象介绍Arguments对象是一个伪数组对象，它有length属性，可以arguments[i]来访问对象中的元素，但它不能用数组的一些方法，">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2017-12-15T14:16:32.000Z">
+<meta property="article:modified_time" content="2022-06-04T06:33:50.000Z">
+<meta property="article:author" content="mr.杜">
+<meta property="article:tag" content="javascript">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="https://img1.baidu.com/it/u=412709218,617594518&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=504&amp;h=500" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">mr.杜</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Event-Loop/" style="font-size: 10px;">Event Loop</a> <a href="/tags/Graphviz/" style="font-size: 10px;">Graphviz</a> <a href="/tags/Mock/" style="font-size: 10px;">Mock</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/RESTful/" style="font-size: 10px;">RESTful</a> <a href="/tags/React/" style="font-size: 19.29px;">React</a> <a href="/tags/Redux/" style="font-size: 11.43px;">Redux</a> <a href="/tags/async-await/" style="font-size: 10px;">async/await</a> <a href="/tags/css/" style="font-size: 13.57px;">css</a> <a href="/tags/echart/" style="font-size: 10px;">echart</a> <a href="/tags/es6/" style="font-size: 16.43px;">es6</a> <a href="/tags/eslint/" style="font-size: 10px;">eslint</a> <a href="/tags/git/" style="font-size: 15.71px;">git</a> <a href="/tags/glup/" style="font-size: 10.71px;">glup</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 14.29px;">html</a> <a href="/tags/http/" style="font-size: 17.14px;">http</a> <a href="/tags/javascript/" style="font-size: 18.57px;">javascript</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 10.71px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 12.86px;">nodejs</a> <a href="/tags/python/" style="font-size: 10.71px;">python</a> <a href="/tags/qiankun/" style="font-size: 10px;">qiankun</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/serveless/" style="font-size: 10px;">serveless</a> <a href="/tags/typescript/" style="font-size: 12.14px;">typescript</a> <a href="/tags/vs-code/" style="font-size: 11.43px;">vs code</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue3/" style="font-size: 10px;">vue3</a> <a href="/tags/webpack/" style="font-size: 17.86px;">webpack</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 13.57px;">优化</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10.71px;">前端</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 15px;">小程序</a> <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 10px;">抓包</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 10px;">正则表达式</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 12.86px;">浏览器</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" style="font-size: 10.71px;">移动端</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.57px;">设计模式</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://img1.baidu.com/it/u=412709218,617594518&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=504&amp;h=500" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-html+css+js+ts/3-js-arguments" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/12/15/html+css+js+ts/3-js-arguments/" class="article-date">
+  	<time datetime="2017-12-15T14:16:32.000Z" itemprop="datePublished">2017-12-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js-arguments对象
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>每个函数都会有一个Arguments对象实例arguments，它引用着函数的实参，可以用数组下标的方式”[]”引用arguments的元素。<code>arguments.length</code>为函数实参个数，<code>arguments.callee</code>引用函数自身。</p>
+<h3 id="Arguments对象介绍"><a href="#Arguments对象介绍" class="headerlink" title="Arguments对象介绍"></a>Arguments对象介绍</h3><p>Arguments对象是一个伪数组对象，它有length属性，可以arguments[i]来访问对象中的元素，但它不能用数组的一些方法，例如push，pop，slice等。</p>
+<h4 id="Arguments的length属性"><a href="#Arguments的length属性" class="headerlink" title="Arguments的length属性"></a>Arguments的length属性</h4><p>Arguments的length属性，表示function函数实际所传参数的个数。函数名点length可以获取函数期望的传参个数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function argTest(a,b,c)&#123;</span><br><span class="line">	var t = arguments.length; //实际传参个数</span><br><span class="line">	var e = argTest.length;   //期望传参个数</span><br><span class="line"></span><br><span class="line">	console.log(t);</span><br><span class="line">	console.log(e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">argTest(11,12);       //t=2,e=3</span><br><span class="line">argTest(11,12,13);    //t=3,e=3</span><br><span class="line">argTest(11,12,13,14); //t=4,e=3</span><br></pre></td></tr></table></figure>
+
+<h4 id="Arguments的参数访问"><a href="#Arguments的参数访问" class="headerlink" title="Arguments的参数访问"></a>Arguments的参数访问</h4><p>Arguments对象的参数访问可以用arguments[i]来访问函数所传的参数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function argTest(a,b,c)&#123;</span><br><span class="line">	var arg = [];</span><br><span class="line">	for(var i=0;i&lt;arguments.length;i++)&#123;</span><br><span class="line">		arg.push(arguments[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	console.log(arg);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">argTest(11,12);       //[11, 12]</span><br><span class="line">argTest(11,12,13);    //[11, 12, 13]</span><br><span class="line">argTest(11,12,13,14); //[11, 12, 13, 14]</span><br></pre></td></tr></table></figure>
+
+<h4 id="Arguments的callee调用"><a href="#Arguments的callee调用" class="headerlink" title="Arguments的callee调用"></a>Arguments的callee调用</h4><p>Arguments的callee属性可以调用函数本身，当函数正在执行时才可调用，可以实现方法的递归调用。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function argTest(a,b,c)&#123;</span><br><span class="line">	var e = arguments.callee.toString();</span><br><span class="line">	console.log(e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">argTest(); //打印出函数本身</span><br></pre></td></tr></table></figure>
+
+<h4 id="Function对象caller属性"><a href="#Function对象caller属性" class="headerlink" title="Function对象caller属性"></a>Function对象caller属性</h4><p>Function对象的caller属性可以指向当前函数的调用者，当调用者函数正在执行时才可调用，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function callerTest()&#123;</span><br><span class="line"></span><br><span class="line">	if(callerTest.caller)&#123;</span><br><span class="line">		var caller = callerTest.caller.toString();</span><br><span class="line">		console.log(caller);</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		console.log(&quot;no caller&quot;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function handler()&#123;</span><br><span class="line">	callerTest();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function handlerToHandler()&#123;</span><br><span class="line">	handler();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">callerTest();        //no caller</span><br><span class="line">handler();           //返回调用者handler函数</span><br><span class="line">handlerToHandler();  //返回调用者handler函数</span><br></pre></td></tr></table></figure>
+
+<h3 id="Arguments的作用"><a href="#Arguments的作用" class="headerlink" title="Arguments的作用"></a>Arguments的作用</h3><h4 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h4><p>方法重载是指在一个类中定义多个同名的方法，但要求每个方法具有不同的参数的类型或参数的个数。<br>Javascript并没有重载函数的功能，但是Arguments对象能够模拟重载。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">//普通方法实现方法重载</span><br><span class="line"></span><br><span class="line">function test(a,b,c)&#123;</span><br><span class="line">	if(a &amp;&amp; b &amp;&amp; c)&#123;</span><br><span class="line">		console.log(a + b + c);</span><br><span class="line">	&#125;else if(a &amp;&amp; b)&#123;</span><br><span class="line">		console.log(a + b);</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		console.log(a);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test();           //undefined</span><br><span class="line">test(11,12);      //23</span><br><span class="line">test(11,12,13)    //36</span><br><span class="line">//Arguments对象实现方法重载</span><br><span class="line"></span><br><span class="line">function test()&#123;</span><br><span class="line">	var sum = 0;</span><br><span class="line">	for(var i=0;i&lt;arguments.length;i++)&#123;</span><br><span class="line">		sum += arguments[i];</span><br><span class="line">	&#125;</span><br><span class="line">	console.log(sum);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test();          //0</span><br><span class="line">test(11,12);     //23</span><br><span class="line">test(11,12,13);  //36</span><br><span class="line">//ES6实现方法重载</span><br><span class="line"></span><br><span class="line">function test(...nums)&#123;</span><br><span class="line">	var sum = 0;</span><br><span class="line">	for(var i=0;i&lt;nums.length;i++)&#123;</span><br><span class="line">		sum += nums[i];</span><br><span class="line">	&#125;</span><br><span class="line">	console.log(sum);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test();          //0</span><br><span class="line">test(11,12);     //23</span><br><span class="line">test(11,12,13);  //36</span><br></pre></td></tr></table></figure>
+
+<h4 id="递归调用"><a href="#递归调用" class="headerlink" title="递归调用"></a>递归调用</h4><p>这样的好处就是可以实现匿名函数的递归调用。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//实现一个阶乘函数</span><br><span class="line"></span><br><span class="line">function factorial(n)&#123;</span><br><span class="line">	if(n == 1)&#123;</span><br><span class="line">		return 1;</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		n * arguments.callee(n-1);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">factorial(1); //1</span><br><span class="line">factorial(5); //120</span><br></pre></td></tr></table></figure>
+
+<h4 id="不定参问题"><a href="#不定参问题" class="headerlink" title="不定参问题"></a>不定参问题</h4><p>比如说，我想判断你传给我的一些数字的大小，取出最大的那个</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function max()&#123;</span><br><span class="line">	var maxNum = Number.NEGATIVE_INFINITY;;</span><br><span class="line">	for(var i=0;i&lt;arguments.length;i++)&#123;</span><br><span class="line">		if(arguments[i]&gt; maxNum)&#123;</span><br><span class="line">			maxNum = arguments[i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return maxNum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">max(1,2,3,11,4,10); //11</span><br><span class="line">max(2,-10,22,11);   //22</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/12/16/html+css+js+ts/3-js-call+apply+bind/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          js-call apply bind
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/11/html+css+js+ts/3-JavaScript%E6%95%B0%E7%BB%84%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E5%AF%B9%E8%B1%A1%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js-字符串,对象,数组常用方法</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 mr.杜
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

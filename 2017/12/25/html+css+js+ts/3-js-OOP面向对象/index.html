@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>js-OOP面向对象 | Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一般面向对象包含：继承，封装，多态，抽象  对象形式的继承 浅拷贝 12345678910111213141516171819202122232425var Person &#x3D; &amp;#123;    name: &amp;#x27;allin&amp;#x27;,    age: 18,    address: &amp;#123;        home: &amp;#x27;home&amp;#x27;,        office:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js-OOP面向对象">
+<meta property="og:url" content="http://example.com/2017/12/25/html+css+js+ts/3-js-OOP%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一般面向对象包含：继承，封装，多态，抽象  对象形式的继承 浅拷贝 12345678910111213141516171819202122232425var Person &#x3D; &amp;#123;    name: &amp;#x27;allin&amp;#x27;,    age: 18,    address: &amp;#123;        home: &amp;#x27;home&amp;#x27;,        office:">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2017-12-25T08:56:13.000Z">
+<meta property="article:modified_time" content="2022-06-04T07:01:42.000Z">
+<meta property="article:author" content="mr.杜">
+<meta property="article:tag" content="javascript">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="https://img1.baidu.com/it/u=412709218,617594518&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=504&amp;h=500" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">mr.杜</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Event-Loop/" style="font-size: 10px;">Event Loop</a> <a href="/tags/Graphviz/" style="font-size: 10px;">Graphviz</a> <a href="/tags/Mock/" style="font-size: 10px;">Mock</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/RESTful/" style="font-size: 10px;">RESTful</a> <a href="/tags/React/" style="font-size: 19.29px;">React</a> <a href="/tags/Redux/" style="font-size: 11.43px;">Redux</a> <a href="/tags/async-await/" style="font-size: 10px;">async/await</a> <a href="/tags/css/" style="font-size: 13.57px;">css</a> <a href="/tags/echart/" style="font-size: 10px;">echart</a> <a href="/tags/es6/" style="font-size: 16.43px;">es6</a> <a href="/tags/eslint/" style="font-size: 10px;">eslint</a> <a href="/tags/git/" style="font-size: 15.71px;">git</a> <a href="/tags/glup/" style="font-size: 10.71px;">glup</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 14.29px;">html</a> <a href="/tags/http/" style="font-size: 17.14px;">http</a> <a href="/tags/javascript/" style="font-size: 18.57px;">javascript</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 10.71px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 12.86px;">nodejs</a> <a href="/tags/python/" style="font-size: 10.71px;">python</a> <a href="/tags/qiankun/" style="font-size: 10px;">qiankun</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/serveless/" style="font-size: 10px;">serveless</a> <a href="/tags/typescript/" style="font-size: 12.14px;">typescript</a> <a href="/tags/vs-code/" style="font-size: 11.43px;">vs code</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue3/" style="font-size: 10px;">vue3</a> <a href="/tags/webpack/" style="font-size: 17.86px;">webpack</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 13.57px;">优化</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10.71px;">前端</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 15px;">小程序</a> <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 10px;">抓包</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 10px;">正则表达式</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 12.86px;">浏览器</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" style="font-size: 10.71px;">移动端</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.57px;">设计模式</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://img1.baidu.com/it/u=412709218,617594518&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=504&amp;h=500" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-html+css+js+ts/3-js-OOP面向对象" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/12/25/html+css+js+ts/3-js-OOP%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="article-date">
+  	<time datetime="2017-12-25T08:56:13.000Z" itemprop="datePublished">2017-12-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js-OOP面向对象
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>一般面向对象包含：继承，封装，多态，抽象</p>
+</blockquote>
+<h4 id="对象形式的继承"><a href="#对象形式的继承" class="headerlink" title="对象形式的继承"></a>对象形式的继承</h4><hr>
+<h5 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h5><hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">var Person = &#123;</span><br><span class="line">    name: &#x27;allin&#x27;,</span><br><span class="line">    age: 18,</span><br><span class="line">    address: &#123;</span><br><span class="line">        home: &#x27;home&#x27;,</span><br><span class="line">        office: &#x27;office&#x27;,</span><br><span class="line">    &#125;</span><br><span class="line">    sclools: [&#x27;x&#x27;,&#x27;z&#x27;],</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var programer = &#123;</span><br><span class="line">    language: &#x27;js&#x27;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function extend(p, c)&#123;</span><br><span class="line">    var c = c || &#123;&#125;;</span><br><span class="line">    for( var prop in p)&#123;</span><br><span class="line">        c[prop] = p[prop];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">extend(Person, programer);</span><br><span class="line">programer.name;  // allin</span><br><span class="line">programer.address.home;  // home</span><br><span class="line">programer.address.home = &#x27;house&#x27;;  //house</span><br><span class="line">Person.address.home;  // house</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>从上面的结果看出，浅拷贝的缺陷在于修改了子对象中引用类型的值，会影响到父对象中的值，因为在浅拷贝中对引用类型的拷贝只是拷贝了地址，指向了内存中同一个副本</li>
+</ul>
+<h5 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h5><hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function extendDeeply(p, c)&#123;</span><br><span class="line">    var c = c || &#123;&#125;;</span><br><span class="line">    for (var prop in p)&#123;</span><br><span class="line">        if(typeof p[prop] === &quot;object&quot;)&#123;</span><br><span class="line">            c[prop] = (p[prop].constructor === Array)?[]:&#123;&#125;;</span><br><span class="line">            extendDeeply(p[prop], c[prop]);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            c[prop] = p[prop];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>利用递归进行深拷贝，这样子对象的修改就不会影响到父对象</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">extendDeeply(Person, programer);</span><br><span class="line">programer.address.home = &#x27;allin&#x27;;</span><br><span class="line">Person.address.home; // home</span><br></pre></td></tr></table></figure>
+
+<h5 id="利用call和apply继承"><a href="#利用call和apply继承" class="headerlink" title="利用call和apply继承"></a>利用call和apply继承</h5><hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Parent()&#123;</span><br><span class="line">    this.name = &quot;abc&quot;;</span><br><span class="line">    this.address = &#123;home: &quot;home&quot;&#125;;</span><br><span class="line">&#125;</span><br><span class="line">function Child()&#123;</span><br><span class="line">    Parent.call(this);</span><br><span class="line">    this.language = &quot;js&quot;; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="ES5中的Object-create"><a href="#ES5中的Object-create" class="headerlink" title="ES5中的Object.create()"></a>ES5中的Object.create()</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var p = &#123; name : &#x27;allin&#x27;&#125;;</span><br><span class="line">var obj = Object.create(o);</span><br><span class="line">obj.name; // allin</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>Object.create()</code>作为<code>new</code>操作符的替代方案是<code>ES5</code>之后才出来的。我们也可以自己模拟该方法：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//模拟Object.create()方法</span><br><span class="line">function myCreate(o)&#123;</span><br><span class="line">    function F()&#123;&#125;;</span><br><span class="line">    F.prototype = o;</span><br><span class="line">    o = new F();</span><br><span class="line">    return o;</span><br><span class="line">&#125;</span><br><span class="line">var p = &#123; name : &#x27;allin&#x27;&#125;;</span><br><span class="line">var obj = myCreate(o);</span><br><span class="line">obj.name; // allin</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>目前，各大浏览器的最新版本（包括<code>IE9</code>）都部署了这个方法。如果遇到老式浏览器，可以用下面的代码自行部署</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">　if (!Object.create) &#123;</span><br><span class="line">　　　　Object.create = function (o) &#123;</span><br><span class="line">　　　　　　 function F() &#123;&#125;</span><br><span class="line">　　　　　　F.prototype = o;</span><br><span class="line">　　　　　　return new F();</span><br><span class="line">　　　　&#125;;</span><br><span class="line">　　&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="类的继承"><a href="#类的继承" class="headerlink" title="类的继承"></a>类的继承</h4><hr>
+<h5 id="Object-create"><a href="#Object-create" class="headerlink" title="Object.create()"></a>Object.create()</h5><hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Person(name, age)&#123;&#125;</span><br><span class="line">Person.prototype.headCount = 1;</span><br><span class="line">Person.prototype.eat = function()&#123;</span><br><span class="line">    console.log(&#x27;eating...&#x27;);</span><br><span class="line">&#125;</span><br><span class="line">function Programmer(name, age, title)&#123;&#125;</span><br><span class="line"></span><br><span class="line">Programmer.prototype = Object.create(Person.prototype); //建立继承关系</span><br><span class="line">Programmer.prototype.constructor = Programmer;  // 修改constructor的指向</span><br></pre></td></tr></table></figure>
+
+<h5 id="调用父类方法"><a href="#调用父类方法" class="headerlink" title="调用父类方法"></a>调用父类方法</h5><hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">function Person(name, age)&#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.age = age;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.headCount = 1;</span><br><span class="line">Person.prototype.eat = function()&#123;</span><br><span class="line">    console.log(&#x27;eating...&#x27;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function Programmer(name, age, title)&#123;</span><br><span class="line">    Person.apply(this, arguments); // 调用父类的构造器</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Programmer.prototype = Object.create(Person.prototype);</span><br><span class="line">Programmer.prototype.constructor = Programmer;</span><br><span class="line"></span><br><span class="line">Programmer.prototype.language = &quot;js&quot;;</span><br><span class="line">Programmer.prototype.work = function()&#123;</span><br><span class="line">    console.log(&#x27;i am working code in &#x27;+ this.language);</span><br><span class="line">    Person.prototype.eat.apply(this, arguments); // 调用父类上的方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h4><hr>
+<h5 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h5><hr>
+<ul>
+<li><code>js</code>是没有命名空间的，因此可以用对象模拟</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var app = &#123;&#125;;  // 命名空间app</span><br><span class="line">//模块1</span><br><span class="line">app.module1 = &#123;</span><br><span class="line">    name: &#x27;allin&#x27;,</span><br><span class="line">    f: function()&#123;</span><br><span class="line">        console.log(&#x27;hi robot&#x27;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">app.module1.name; // &quot;allin&quot;</span><br><span class="line">app.module1.f();  // hi robot</span><br></pre></td></tr></table></figure>
+
+<h5 id="静态成员"><a href="#静态成员" class="headerlink" title="静态成员"></a>静态成员</h5><hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Person(name)&#123;</span><br><span class="line">    var age = 100;</span><br><span class="line">    this.name = name;</span><br><span class="line">&#125;</span><br><span class="line">//静态成员</span><br><span class="line">Person.walk = function()&#123;</span><br><span class="line">    console.log(&#x27;static&#x27;);</span><br><span class="line">&#125;;</span><br><span class="line">Person.walk();  // static</span><br></pre></td></tr></table></figure>
+
+<h5 id="私有与公有"><a href="#私有与公有" class="headerlink" title="私有与公有"></a>私有与公有</h5><hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function Person(id)&#123;</span><br><span class="line">    // 私有属性与方法</span><br><span class="line">    var name = &#x27;allin&#x27;;</span><br><span class="line">    var work = function()&#123;</span><br><span class="line">        console.log(this.id);</span><br><span class="line">    &#125;;</span><br><span class="line">    //公有属性与方法</span><br><span class="line">    this.id = id;</span><br><span class="line">    this.say = function()&#123;</span><br><span class="line">        console.log(&#x27;say hello&#x27;);</span><br><span class="line">        work.call(this);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line">var p1 = new Person(123);</span><br><span class="line">p1.name; // undefined</span><br><span class="line">p1.id;  // 123</span><br><span class="line">p1.say();  // say hello 123</span><br></pre></td></tr></table></figure>
+
+<h5 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h5><hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var moduleA;</span><br><span class="line">moduleA = function() &#123;</span><br><span class="line">    var prop = 1;</span><br><span class="line"></span><br><span class="line">    function func() &#123;&#125;</span><br><span class="line"></span><br><span class="line">    return &#123;</span><br><span class="line">        func: func,</span><br><span class="line">        prop: prop</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;(); // 立即执行匿名函数</span><br></pre></td></tr></table></figure>
+
+<h4 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h4><hr>
+<h5 id="模拟方法重载"><a href="#模拟方法重载" class="headerlink" title="模拟方法重载"></a>模拟方法重载</h5><hr>
+<ul>
+<li><code>arguments</code>属性可以取得函数调用的实参个数，可以利用这一点模拟方法的重载</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">function demo(a, b )&#123;</span><br><span class="line">    console.log(demo.length); // 得到形参个数</span><br><span class="line">    console.log(arguments.length); //得到实参个数</span><br><span class="line">    console.log(arguments[0]);  // 第一个实参 4</span><br><span class="line">    console.log(arguments[1]);  // 第二个实参 5</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">demo(4, 5, 6);</span><br><span class="line">//实现可变长度实参的相加</span><br><span class="line">function add()&#123;</span><br><span class="line">    var total = 0;</span><br><span class="line">    for( var i = arguments.length - 1; i &gt;= 0; i--)&#123;</span><br><span class="line">        total += arguments[i];</span><br><span class="line">    &#125;</span><br><span class="line">    return total;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(add(1));  // 1</span><br><span class="line">console.log(add(1, 2, 3));  // 7</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 参数不同的情况</span><br><span class="line">function fontSize()&#123;</span><br><span class="line">    var ele = document.getElementById(&#x27;js&#x27;);</span><br><span class="line">    if(arguments.length == 0)&#123;</span><br><span class="line">        return ele.style.fontSize;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        ele.style.fontSize = arguments[0];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">fontSize(18);</span><br><span class="line">console.log(fontSize());</span><br><span class="line"></span><br><span class="line">// 类型不同的情况</span><br><span class="line">function setting()&#123;</span><br><span class="line">    var ele = document.getElementById(&#x27;js&#x27;);</span><br><span class="line">    if(typeof arguments[0] === &quot;object&quot;)&#123;</span><br><span class="line">        for(var p in arguments[0])&#123;</span><br><span class="line">            ele.style[p] = arguments[0][p];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        ele.style.fontSize = arguments[0];</span><br><span class="line">        ele.style.backgroundColor = arguments[1];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">setting(18, &#x27;red&#x27;);</span><br><span class="line">setting(&#123;fontSize:20, backgroundColor: &#x27;green&#x27;&#125;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="方法重写"><a href="#方法重写" class="headerlink" title="方法重写"></a>方法重写</h5><hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function F()&#123;&#125;</span><br><span class="line">var f = new F();</span><br><span class="line">F.prototype.run = function()&#123;</span><br><span class="line">    console.log(&#x27;F&#x27;);</span><br><span class="line">&#125;</span><br><span class="line">f.run(); // F</span><br><span class="line"></span><br><span class="line">f.run = function()&#123;</span><br><span class="line">    console.log(&#x27;fff&#x27;);</span><br><span class="line">&#125;</span><br><span class="line">f.run();  // fff</span><br></pre></td></tr></table></figure>
+
+<h4 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h4><hr>
+<ul>
+<li>在构造器中 <code>throw new Error(&#39;&#39;)</code>; 抛异常。这样防止这个类被直接调用</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">function DetectorBase() &#123;</span><br><span class="line">    throw new Error(&#x27;Abstract class can not be invoked directly!&#x27;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">DetectorBase.prototype.detect = function() &#123;</span><br><span class="line">    console.log(&#x27;Detection starting...&#x27;);</span><br><span class="line">&#125;;</span><br><span class="line">DetectorBase.prototype.stop = function() &#123;</span><br><span class="line">    console.log(&#x27;Detection stopped.&#x27;);</span><br><span class="line">&#125;;</span><br><span class="line">DetectorBase.prototype.init = function() &#123;</span><br><span class="line">    throw new Error(&#x27;Error&#x27;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// var d = new DetectorBase();</span><br><span class="line">// Uncaught Error: Abstract class can not be invoked directly!</span><br><span class="line"></span><br><span class="line">function LinkDetector() &#123;&#125;</span><br><span class="line">LinkDetector.prototype = Object.create(DetectorBase.prototype);</span><br><span class="line">LinkDetector.prototype.constructor = LinkDetector;</span><br><span class="line"></span><br><span class="line">var l = new LinkDetector();</span><br><span class="line">console.log(l); //LinkDetector &#123;&#125;__proto__: LinkDetector</span><br><span class="line">l.detect(); //Detection starting...</span><br><span class="line">l.init(); //Uncaught Error: Error</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/12/27/html+css+js+ts/3-js-OOP%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          js-OOP原型与原型链
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/22/html+css+js+ts/3-js-json.stringify/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js JSON.Stringify</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 mr.杜
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

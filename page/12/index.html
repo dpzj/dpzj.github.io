@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="杜鹏之家">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/12/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="杜鹏之家">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="mr.杜">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="https://img1.baidu.com/it/u=412709218,617594518&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=504&amp;h=500" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">mr.杜</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Event-Loop/" style="font-size: 10px;">Event Loop</a> <a href="/tags/Graphviz/" style="font-size: 10px;">Graphviz</a> <a href="/tags/Mock/" style="font-size: 10px;">Mock</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/RESTful/" style="font-size: 10px;">RESTful</a> <a href="/tags/React/" style="font-size: 19.29px;">React</a> <a href="/tags/Redux/" style="font-size: 11.43px;">Redux</a> <a href="/tags/async-await/" style="font-size: 10px;">async/await</a> <a href="/tags/css/" style="font-size: 13.57px;">css</a> <a href="/tags/echart/" style="font-size: 10px;">echart</a> <a href="/tags/es6/" style="font-size: 16.43px;">es6</a> <a href="/tags/eslint/" style="font-size: 10px;">eslint</a> <a href="/tags/git/" style="font-size: 15.71px;">git</a> <a href="/tags/glup/" style="font-size: 10.71px;">glup</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 14.29px;">html</a> <a href="/tags/http/" style="font-size: 17.14px;">http</a> <a href="/tags/javascript/" style="font-size: 18.57px;">javascript</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 10.71px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 12.86px;">nodejs</a> <a href="/tags/python/" style="font-size: 10.71px;">python</a> <a href="/tags/qiankun/" style="font-size: 10px;">qiankun</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/serveless/" style="font-size: 10px;">serveless</a> <a href="/tags/typescript/" style="font-size: 12.14px;">typescript</a> <a href="/tags/vs-code/" style="font-size: 11.43px;">vs code</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue3/" style="font-size: 10px;">vue3</a> <a href="/tags/webpack/" style="font-size: 17.86px;">webpack</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 13.57px;">优化</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10.71px;">前端</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 15px;">小程序</a> <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 10px;">抓包</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 10px;">正则表达式</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 12.86px;">浏览器</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" style="font-size: 10.71px;">移动端</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.57px;">设计模式</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://img1.baidu.com/it/u=412709218,617594518&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=504&amp;h=500" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-设计模式/策略模式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/02/24/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" class="article-date">
+  	<time datetime="2019-02-24T10:41:19.000Z" itemprop="datePublished">2019-02-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/24/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/">
+        策略模式
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、是什么"><a href="#一、是什么" class="headerlink" title="一、是什么"></a>一、是什么</h2><p>策略模式（Strategy Pattern）指的是定义一系列的算法，把它们一个个封装起来，目的就是将算法的使用与算法的实现分离开来</p>
+<p>一个基于策略模式的程序至少由两部分组成：</p>
+<ul>
+<li>策略类，策略类封装了具体的算法，并负责具体的计算过程</li>
+<li>环境类Context，Context 接受客户的请求，随后 把请求委托给某一个策略类</li>
+</ul>
+<h2 id="二、使用"><a href="#二、使用" class="headerlink" title="二、使用"></a>二、使用</h2><p>举个例子，公司的年终奖是根据员工的工资和绩效来考核的，绩效为A的人，年终奖为工资的4倍，绩效为B的人，年终奖为工资的3倍，绩效为C的人，年终奖为工资的2倍</p>
+<p>若使用<code>if</code>来实现，代码则如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> calculateBouns = <span class="keyword">function</span>(<span class="params">salary,level</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(level === <span class="string">&#x27;A&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> salary * <span class="number">4</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(level === <span class="string">&#x27;B&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> salary * <span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(level === <span class="string">&#x27;C&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> salary * <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 调用如下：</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">calculateBouns</span>(<span class="number">4000</span>,<span class="string">&#x27;A&#x27;</span>)); <span class="comment">// 16000</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">calculateBouns</span>(<span class="number">2500</span>,<span class="string">&#x27;B&#x27;</span>)); <span class="comment">// 7500</span></span><br></pre></td></tr></table></figure>
+
+<p>从上述可有看到，函数内部包含过多<code>if...else</code>，并且后续改正的时候，需要在函数内部添加逻辑，违反了开放封闭原则</p>
+<p>而如果使用策略模式，就是先定义一系列算法，把它们一个个封装起来，将不变的部分和变化的部分隔开，如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">        <span class="string">&quot;A&quot;</span>: <span class="keyword">function</span>(<span class="params">salary</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> salary * <span class="number">4</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&quot;B&quot;</span> : <span class="keyword">function</span>(<span class="params">salary</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> salary * <span class="number">3</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&quot;C&quot;</span> : <span class="keyword">function</span>(<span class="params">salary</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> salary * <span class="number">2</span>;</span><br><span class="line">        &#125; </span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> calculateBouns =<span class="keyword">function</span>(<span class="params">level,salary</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> obj[level](salary);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">calculateBouns</span>(<span class="string">&#x27;A&#x27;</span>,<span class="number">10000</span>)); <span class="comment">// 40000</span></span><br></pre></td></tr></table></figure>
+
+<p>上述代码中，<code>obj</code>对应的是策略类，而<code>calculateBouns</code>对应上下通信类</p>
+<p>又比如实现一个表单校验的代码，常常会像如下写法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> registerForm = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;registerForm&quot;</span>);</span><br><span class="line">registerForm.<span class="property">onsubmit</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(registerForm.<span class="property">userName</span>.<span class="property">value</span> === <span class="string">&#x27;&#x27;</span>) &#123;</span><br><span class="line">        <span class="title function_">alert</span>(<span class="string">&#x27;用户名不能为空&#x27;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(registerForm.<span class="property">password</span>.<span class="property">value</span>.<span class="property">length</span> &lt; <span class="number">6</span>) &#123;</span><br><span class="line">        <span class="title function_">alert</span>(<span class="string">&quot;密码的长度不能小于6位&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="regexp">/(^1[3|5|8][0-9]&#123;9&#125;$)/</span>.<span class="title function_">test</span>(registerForm.<span class="property">phoneNumber</span>.<span class="property">value</span>)) &#123;</span><br><span class="line">        <span class="title function_">alert</span>(<span class="string">&quot;手机号码格式不正确&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述代码包含多处<code>if</code>语句，并且违反了开放封闭原则，如果应用中还有其他的表单，需要重复编写代码</p>
+<p>此处也可以使用策略模式进行重构校验，第一步确定不变的内容，即策略规则对象，如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> strategy = &#123;</span><br><span class="line">    <span class="attr">isNotEmpty</span>: <span class="keyword">function</span>(<span class="params">value,errorMsg</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(value === <span class="string">&#x27;&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> errorMsg;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 限制最小长度</span></span><br><span class="line">    <span class="attr">minLength</span>: <span class="keyword">function</span>(<span class="params">value,length,errorMsg</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(value.<span class="property">length</span> &lt; length) &#123;</span><br><span class="line">            <span class="keyword">return</span> errorMsg;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 手机号码格式</span></span><br><span class="line">    <span class="attr">mobileFormat</span>: <span class="keyword">function</span>(<span class="params">value,errorMsg</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!<span class="regexp">/(^1[3|5|8][0-9]&#123;9&#125;$)/</span>.<span class="title function_">test</span>(value)) &#123;</span><br><span class="line">            <span class="keyword">return</span> errorMsg;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>然后找出变的地方，作为环境类<code>context</code>，负责接收用户的要求并委托给策略规则对象，如下<code>Validator</code>类：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title class_">Validator</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">cache</span> = [];  <span class="comment">// 保存效验规则</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="title class_">Validator</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">add</span> = <span class="keyword">function</span>(<span class="params">dom,rule,errorMsg</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> str = rule.<span class="title function_">split</span>(<span class="string">&quot;:&quot;</span>);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">cache</span>.<span class="title function_">push</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="comment">// str 返回的是 minLength:6 </span></span><br><span class="line">        <span class="keyword">var</span> strategy = str.<span class="title function_">shift</span>();</span><br><span class="line">        str.<span class="title function_">unshift</span>(dom.<span class="property">value</span>); <span class="comment">// 把input的value添加进参数列表</span></span><br><span class="line">        str.<span class="title function_">push</span>(errorMsg);  <span class="comment">// 把errorMsg添加进参数列表</span></span><br><span class="line">        <span class="keyword">return</span> strategys[strategy].<span class="title function_">apply</span>(dom,str);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="title class_">Validator</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">start</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, validatorFunc; validatorFunc = <span class="variable language_">this</span>.<span class="property">cache</span>[i++]; ) &#123;</span><br><span class="line">        <span class="keyword">var</span> msg = <span class="title function_">validatorFunc</span>(); <span class="comment">// 开始效验 并取得效验后的返回信息</span></span><br><span class="line">        <span class="keyword">if</span>(msg) &#123;</span><br><span class="line">            <span class="keyword">return</span> msg;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>通过<code>validator.add</code>方法添加校验规则和错误信息提示，使用如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> validateFunc = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> validator = <span class="keyword">new</span> <span class="title class_">Validator</span>(); <span class="comment">// 创建一个Validator对象</span></span><br><span class="line">    <span class="comment">/* 添加一些效验规则 */</span></span><br><span class="line">    validator.<span class="title function_">add</span>(registerForm.<span class="property">userName</span>,<span class="string">&#x27;isNotEmpty&#x27;</span>,<span class="string">&#x27;用户名不能为空&#x27;</span>);</span><br><span class="line">    validator.<span class="title function_">add</span>(registerForm.<span class="property">password</span>,<span class="string">&#x27;minLength:6&#x27;</span>,<span class="string">&#x27;密码长度不能小于6位&#x27;</span>);</span><br><span class="line">    validator.<span class="title function_">add</span>(registerForm.<span class="property">userName</span>,<span class="string">&#x27;mobileFormat&#x27;</span>,<span class="string">&#x27;手机号码格式不正确&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> errorMsg = validator.<span class="title function_">start</span>(); <span class="comment">// 获得效验结果</span></span><br><span class="line">    <span class="keyword">return</span> errorMsg; <span class="comment">// 返回效验结果</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> registerForm = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;registerForm&quot;</span>);</span><br><span class="line">registerForm.<span class="property">onsubmit</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> errorMsg = <span class="title function_">validateFunc</span>();</span><br><span class="line">    <span class="keyword">if</span>(errorMsg)&#123;</span><br><span class="line">        <span class="title function_">alert</span>(errorMsg);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述通过策略模式完成表单的验证，并且可以随时调用，在修改表单验证规则的时候，也非常方便，通过传递参数即可调用</p>
+<h2 id="三、应用场景"><a href="#三、应用场景" class="headerlink" title="三、应用场景"></a>三、应用场景</h2><p>从上面可以看到，使用策略模式的优点有如下：</p>
+<ul>
+<li>策略模式利用组合，委托等技术和思想，有效的避免很多if条件语句</li>
+<li>策略模式提供了开放-封闭原则，使代码更容易理解和扩展</li>
+<li>策略模式中的代码可以复用</li>
+</ul>
+<p>策略模式不仅仅用来封装算法，在实际开发中，通常会把算法的含义扩散开来，使策略模式也可以用来封装 一系列的“业务规则”</p>
+<p>只要这些业务规则指向的目标一致，并且可以被替换使用，我们就可以用策略模式来封装它们</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-设计模式/设计模式的理解、有哪些" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/02/20/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%90%86%E8%A7%A3%E3%80%81%E6%9C%89%E5%93%AA%E4%BA%9B/" class="article-date">
+  	<time datetime="2019-02-20T01:25:59.000Z" itemprop="datePublished">2019-02-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/20/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%90%86%E8%A7%A3%E3%80%81%E6%9C%89%E5%93%AA%E4%BA%9B/">
+        设计模式的理解、有哪些
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、是什么"><a href="#一、是什么" class="headerlink" title="一、是什么"></a>一、是什么</h2><p>在软件工程中，设计模式是对软件设计中普遍存在的各种问题所提出的解决方案</p>
+<p>设计模式并不直接用来完成代码的编写，而是描述在各种不同情况下，要怎么解决问题的一种方案</p>
+<p>设计模式能使不稳定依赖于相对稳定、具体依赖于相对抽象，避免会引起麻烦的紧耦合，以增强软件设计面对并适应变化的能力</p>
+<p>因此，当我们遇到合适的场景时，我们可能会条件反射一样自然而然想到符合这种场景的设计模式</p>
+<p>比如，当系统中某个接口的结构已经无法满足我们现在的业务需求，但又不能改动这个接口，因为可能原来的系统很多功能都依赖于这个接口，改动接口会牵扯到太多文件</p>
+<p>因此应对这种场景，我们可以很快地想到可以用适配器模式来解决这个问题</p>
+<h2 id="二、有哪些"><a href="#二、有哪些" class="headerlink" title="二、有哪些"></a>二、有哪些</h2><p>常见的设计模式有：</p>
+<ul>
+<li>单例模式</li>
+<li>工厂模式</li>
+<li>策略模式</li>
+<li>代理模式</li>
+<li>中介者模式</li>
+<li>装饰者模式</li>
+<li>……</li>
+</ul>
+<h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><p>保证一个类仅有一个实例，并提供一个访问它的全局访问点。实现的方法为先判断实例存在与否，如果存在则直接返回，如果不存在就创建了再返回，这就确保了一个类只有一个实例对象</p>
+<p>如下图的车，只有一辆，一旦借出去则不能再借给别人：</p>
+<p><img src="https://static.vue-js.com/ea527aa0-37cd-11ec-8e64-91fdec0f05a1.png" alt="img"></p>
+<h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><p>工厂模式通常会分成3个角色：</p>
+<ul>
+<li>工厂角色-负责实现创建所有实例的内部逻辑.</li>
+<li>抽象产品角色-是所创建的所有对象的父类，负责描述所有实例所共有的公共接口</li>
+<li>具体产品角色-是创建目标，所有创建的对象都充当这个角色的某个具体类的实例</li>
+</ul>
+<p><img src="https://static.vue-js.com/fadd1920-37cd-11ec-8e64-91fdec0f05a1.png" alt="img"></p>
+<h3 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h3><p>策略模式，就是定义一系列的算法，把他们一个个封装起来，并且使他们可以相互替换</p>
+<p>至少分成两部分：</p>
+<ul>
+<li>策略类（可变），策略类封装了具体的算法，并负责具体的计算过程</li>
+<li>环境类（不变），接受客户的请求，随后将请求委托给某一个策略类</li>
+</ul>
+<h3 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h3><p>代理模式：为对象提供一个代用品或占位符，以便控制对它的访问</p>
+<p>例如实现图片懒加载的功能，先通过一张<code>loading</code>图占位，然后通过异步的方式加载图片，等图片加载好了再把完成的图片加载到<code>img</code>标签里面</p>
+<h3 id="中介者模式"><a href="#中介者模式" class="headerlink" title="中介者模式"></a>中介者模式</h3><p>中介者模式的定义：通过一个中介者对象，其他所有的相关对象都通过该中介者对象来通信，而不是相互引用，当其中的一个对象发生改变时，只需要通知中介者对象即可</p>
+<p>通过中介者模式可以解除对象与对象之间的紧耦合关系</p>
+<h3 id="装饰者模式"><a href="#装饰者模式" class="headerlink" title="装饰者模式"></a>装饰者模式</h3><p>装饰者模式的定义：在不改变对象自身的基础上，在程序运行期间给对象动态地添加方法</p>
+<p>通常运用在原有方法维持不变，在原有方法上再挂载其他方法来满足现有需求</p>
+<h2 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h2><p>不断去学习设计模式，会对我们有着极大的帮助，主要如下：</p>
+<ul>
+<li>从许多优秀的软件系统中总结出的成功的、能够实现可维护性、复用的设计方案，使用这些方案将可以让我们避免做一些重复性的工作</li>
+<li>设计模式提供了一套通用的设计词汇和一种通用的形式来方便开发人员之间沟通和交流，使得设计方案更加通俗易懂</li>
+<li>大部分设计模式都兼顾了系统的可重用性和可扩展性，这使得我们可以更好地重用一些已有的设计方案、功能模块甚至一个完整的软件系统，避免我们经常做一些重复的设计、编写一些重复的代码</li>
+<li>合理使用设计模式并对设计模式的使用情况进行文档化，将有助于别人更快地理解系统</li>
+<li>学习设计模式将有助于初学者更加深入地理解面向对象思想</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-工具/提升window开发效率快捷键与软件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/01/24/%E5%B7%A5%E5%85%B7/%E6%8F%90%E5%8D%87window%E5%BC%80%E5%8F%91%E6%95%88%E7%8E%87%E5%BF%AB%E6%8D%B7%E9%94%AE%E4%B8%8E%E8%BD%AF%E4%BB%B6/" class="article-date">
+  	<time datetime="2019-01-24T06:31:56.000Z" itemprop="datePublished">2019-01-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/24/%E5%B7%A5%E5%85%B7/%E6%8F%90%E5%8D%87window%E5%BC%80%E5%8F%91%E6%95%88%E7%8E%87%E5%BF%AB%E6%8D%B7%E9%94%AE%E4%B8%8E%E8%BD%AF%E4%BB%B6/">
+        提升window开发效率快捷键与软件
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="提升效率必备软件"><a href="#提升效率必备软件" class="headerlink" title="提升效率必备软件"></a>提升效率必备软件</h4><ul>
+<li><strong>AutoHotKey:</strong> 神器！神器！神器</li>
+<li><strong>Listary：</strong> 本地搜索神器，当然还有别的作用，More&amp;More。</li>
+<li>**Launchy :**快速启动安装的应用程序，老而弥坚，有丝Mac下Spotlight之风；</li>
+<li><strong>Chrome:</strong> Web世界里的神，的神，神。偏爱ing；如虎添翼，效率必备：Vimium~让您的Chrome起飞。</li>
+<li>SublimeText3： 编码垒字的神器，还能览图&#x2F;文件对比&#x2F;…,偏爱</li>
+<li><strong>Picasa3:</strong> 图片查看器中的佼佼者，偏爱ing。姑姑出品，必属精品！</li>
+<li><strong>Clover：</strong> 在Win下必备，快速打开文件管理</li>
+<li><strong>Foxmail：</strong> 必备</li>
+<li><strong>为知笔记&#x2F;有道云笔记</strong></li>
+<li><strong>Beyond Compare :</strong> 文件比较器; 此款为所接触中最佳。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://github.com/cmderdev/cmder/releases">Cmder</a>:</strong> windows下cmd的替换工具,支持PowerShell;同比还有PowerShell，<a target="_blank" rel="noopener" href="https://github.com/Maximus5/ConEmu">ConEmu</a> 等。自荐笔者总结的：<a target="_blank" rel="noopener" href="http://www.jeffjade.com/2016/01/13/2016-01-13-windows-software-cmder/#">Win下必备神器之Cmder</a>。</li>
+<li>**<a target="_blank" rel="noopener" href="https://www.zybuluo.com/cmd/dows-software-cmder/#">作业部落客户端</a>:**开启卓越写作之旅,支持全平台＋离线使用，一键发布文稿，社交化批注。身材苗条，面容姣好，免费Markdown书写平台的魅力战斗机。</li>
+<li><strong>网易云音乐:</strong> 初遇<code>QQ音乐</code>,处过<code>天天动听</code>,恋过<code>酷狗</code>，上过<code>酷我</code>，一夜情过<code>千千静听</code>,移情过<code>虾米</code>，和<code>豆瓣FM</code>好过，同<code>百度随心听</code>约过,最后，发现音乐的世界,还得是你～<code>网易云音乐</code>。</li>
+</ul>
+<hr>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://atom.io/"><strong>Atom:</strong></a> 新一代编码写文神器；虽还在发展，却已惊艳。</li>
+<li><strong><a target="_blank" rel="noopener" href="https://git-for-windows.github.io/">Git for Windows :</a></strong> 打包好了，直接使用；Git 一族必备。</li>
+<li><a target="_blank" rel="noopener" href="https://nodejs.org/"><strong>Nodejs:</strong></a> 可以辅助让Sublime编译Js；可以做Web开发，REST开发**，Web聊天室&#x2F;爬虫，Web博客(Hexo)，Web论坛等等，可参见分享<a target="_blank" rel="noopener" href="http://www.nodejs.net/a/20141016/233306.html">十五个NodeJS应用场景</a>；还可以利用Nodejs的包管理器<code>Npm</code><br>安装<code>Gulp Webpack</code>等屌炸天工具～做大多你可以想到的东东；Web端必备。</li>
+<li><a target="_blank" rel="noopener" href="http://www.goodsync.com/"><strong>GoodSync:</strong></a> 文件同步好帮手。可以同步 本地文件 P2P 云(Dropbox,Google,OnDrive,FTP&#x2F;SFTP等等)，还可以同步应用程序<br>以及各设备；强大且不失简洁。比如：SFTP同步，用过SublimeText的SFTP(最方便，却老弹框)，WinSCP(F5即可同步，设计却不人性化)，Gulp的SFTP(只是需要率先Watch)，Xftp4(老牌了，都是手动点来点去，额)。</li>
+<li><a target="_blank" rel="noopener" href="https://getsharex.com/"><strong>ShareX:</strong></a> 截图、注释、上传，复制 URL 一条龙服务；免费，强大而简洁；自动存储；支持双屏；支持录制；还有给力有用的工具集…大有相见恨晚之感</li>
+</ul>
+<hr>
+<h3 id="windows系统下实用不常见的快捷键："><a href="#windows系统下实用不常见的快捷键：" class="headerlink" title="windows系统下实用不常见的快捷键："></a>windows系统下实用不常见的快捷键：</h3><ul>
+<li><code>ALT+双击</code>：查看文件属性</li>
+<li><code>WIN+数字键</code>：启动任务栏上的程序；</li>
+<li><code>CTRL+SHIFT+ESC</code>：打开进程管理器</li>
+<li><code>WIN+左箭头</code>：当前窗口缩放为屏幕的一半，靠屏幕左侧显示；</li>
+<li><code>WIN+右箭头</code>：当前窗口缩放为屏幕的一半，靠屏幕右侧显示；</li>
+<li><code>WIN+上箭头</code>：最大化当前窗口；</li>
+<li><code>WIN+下箭头</code>：还原和最小化当前窗口；</li>
+<li><code>WIN+R</code>，输入“psr”后回车：打开步骤记录器；</li>
+<li><code>WIN+R</code>，输入“mip”，启动数学公式手写板；</li>
+<li><code>WIN+T</code>：切换任务栏上的程序</li>
+<li><code>Ctrl+Shilt+N</code> 新建文件夹</li>
+<li><code>Win+B</code> 将焦点移到任务栏托盘区</li>
+<li><code>Ctrl+Shift+Alt+Tab</code> 与Alt+Tab的区别在于后者按键松开后窗口会消失，而前者则不会</li>
+<li><code>Win++++</code>，是的你没看错，四个加号，第一个当然是正常的连接，后面三个表示连按三次键盘上的加号键。功能是打开Windows自带放大镜工具，将屏幕放大，在精细到像素的取色时我会用到</li>
+<li><code>Ctrl+L</code> 定位到地址栏并选中其中的文本</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vs-code/" rel="tag">vs code</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-工具/webstorm常用快捷键" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/01/23/%E5%B7%A5%E5%85%B7/webstorm%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="article-date">
+  	<time datetime="2019-01-23T05:18:26.000Z" itemprop="datePublished">2019-01-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/23/%E5%B7%A5%E5%85%B7/webstorm%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+        webstorm常用快捷键
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>webstorm常用快捷键</strong></p>
+<h3 id="查找-x2F-代替"><a href="#查找-x2F-代替" class="headerlink" title="查找&#x2F;代替"></a><strong>查找&#x2F;代替</strong></h3><ul>
+<li><code>ctrl+shift+N</code> 通过文件名快速查找工程内的文件（必记）</li>
+<li><code>ctrl+shift+alt+N</code> 通过一个字符快速查找位置（必记）</li>
+<li><code>ctrl+F</code> 在文件内快速查找代码</li>
+<li><code>F3</code> 查找下一个</li>
+<li><code>shift+F3</code> 查找上一个</li>
+<li><code>ctrl+R</code> 文件内代码替换</li>
+<li><code>ctrl+shift+R</code> 指定目录内代码批量替换</li>
+<li><code>ctrl+shift+F</code> 指定目录内代码批量查找</li>
+<li><code>ctrl+R</code> 文件内代码替换</li>
+</ul>
+<hr>
+<h3 id="界面操作"><a href="#界面操作" class="headerlink" title="界面操作"></a><strong>界面操作</strong></h3><ul>
+<li><code>ctrl+shift+A</code> 快速查找并使用编辑器所有功能（必记）</li>
+<li><code>alt+[0-9]</code> 快速拆合功能界面模块</li>
+<li><code>ctrl+shift+F12</code> 最大区域显示代码（会隐藏其他的功能界面模块）</li>
+<li><code>alt+shift+F</code> 将当前文件加入收藏夹</li>
+<li><code>ctrl+alt+s</code> 打开配置窗口</li>
+<li><code>ctrl+tab</code> 切换代码选项卡（还要进行此选择，效率差些）</li>
+<li><code>ctrl+F4</code> 关闭当前代码选项卡</li>
+</ul>
+<h3 id="代码编辑"><a href="#代码编辑" class="headerlink" title="代码编辑"></a><strong>代码编辑</strong></h3><ul>
+<li><code>ctrl+D</code> 复制当前行</li>
+<li><code>ctrl+W</code> 选中单词</li>
+<li><code>alt+Insert</code> 新建一个文件或其他</li>
+<li><code>ctrl+alt+L</code> 格式化代码</li>
+<li><code>shift+tab</code> 减少（可以在代码中减少行缩进）</li>
+<li><code>tab</code> 扩大缩进</li>
+<li><code>ctrl+Y</code> 删除一行</li>
+<li><code>shift+enter</code> 重新开始一行（无论光标在哪个位置）</li>
+<li><code>esc</code> 进入代码编辑区域</li>
+<li><code>alt+F1</code> 查找代码在其他界面模块的位置，颇为有用</li>
+<li><code>ctrl+G</code> 到指定行的代码</li>
+<li><code>ctrl+]/[</code> 光标到代码块的前面或后面</li>
+<li><code>alt+up/down</code> 上一个&#x2F;下一个方法</li>
+</ul>
+<h3 id="建议配置版本控制快捷键"><a href="#建议配置版本控制快捷键" class="headerlink" title="建议配置版本控制快捷键"></a><strong>建议配置版本控制快捷键</strong></h3><ul>
+<li>ctrl+C 提交代码</li>
+<li>ctrl+p 向远程版本库推送更新</li>
+<li>ctrl+G 到指定行的代码</li>
+</ul>
+<h3 id="常用"><a href="#常用" class="headerlink" title="常用"></a><strong>常用</strong></h3><ul>
+<li><p><code>ctrl + shift + n:</code> 打开工程中的文件</p>
+</li>
+<li><p><code>ctrl + j:</code> 输出模板</p>
+</li>
+<li><p><code>ctrl + b</code>: 跳到变量申明处</p>
+</li>
+<li><p><code>ctrl + alt + T:</code> 围绕包裹代码(包括zencoding的Wrap with Abbreviation), -</p>
+</li>
+<li><p><code>ctrl + []:</code> 匹配 {}[]</p>
+</li>
+<li><p><code>ctrl + F12:</code> 可以显示当前文件的结构，快速跳转到目标函数</p>
+</li>
+<li><p><code>alt + left/right</code>:标签切换</p>
+</li>
+<li><p><code>ctrl + r:</code> 替换 <code>ctrl + shift + r:</code> 全局替换</p>
+</li>
+<li><p>ctrl + d: 行复制</p>
+</li>
+<li><pre><code>ctrl + shift + ]/[:
+</code></pre>
+<p>选中块代码….</p>
+</li>
+<li><p><code>ctrl + / :</code> 单行注释</p>
+</li>
+<li><p><code>ctrl + shift + / :</code> 块注释</p>
+</li>
+<li><p><code>ctrl + shift + i :</code> 显示当前class,function的详细信息</p>
+</li>
+<li><p><code>ctrl + p:</code> 显示默认参数</p>
+</li>
+<li><p><code>ctrl + shift + v:</code> 可以复制多个文本</p>
+</li>
+<li><p><code>shift + enter:</code> 智能跳到下一行 ctrl + alt + enter: 在上一行添加空白行vb</p>
+</li>
+<li><p><code>ctrl + k:</code> svn 提交</p>
+</li>
+<li><p><code>ctrl + shift + u:</code> 大小写</p>
+</li>
+<li><p><code>ctrl + ~ :</code> 切换主题</p>
+</li>
+<li><p><code>ctrl + F11:</code> 添加标签 ctrl + shift + 大键盘数字键, F11:添加空标签, shift+F11:显示标签列表，方便快捷跳转</p>
+</li>
+<li><p><code>ctrl + alt + F12:</code> file path</p>
+</li>
+<li><p><code>ctrl + alt + a:</code> search keymap</p>
+</li>
+<li><p><code>shift + F6:</code> 重构标签名</p>
+</li>
+<li><p><code>Ctrl+delete</code> 删除光标后面的单词</p>
+</li>
+<li><p><code>Ctrl+BackSpace</code> 删除光标前面的单词</p>
+</li>
+<li><p><code>Ctrl+小键盘+/-</code> 折叠&#x2F;展开代码</p>
+</li>
+<li><p><code>Ctrl + Alt + V</code> 快速引进一个变量</p>
+</li>
+<li><p><code>Ctrl+Alt + I</code> 自动对齐格式</p>
+</li>
+<li><p><code>alt+j:</code> 多选单个单词</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vs-code/" rel="tag">vs code</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-工具/vs code 的常用快捷键" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/01/21/%E5%B7%A5%E5%85%B7/vs%20code%20%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="article-date">
+  	<time datetime="2019-01-20T23:18:43.000Z" itemprop="datePublished">2019-01-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/21/%E5%B7%A5%E5%85%B7/vs%20code%20%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+        vs code 的常用快捷键
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、vs-code-的常用快捷键"><a href="#一、vs-code-的常用快捷键" class="headerlink" title="一、vs code 的常用快捷键"></a>一、vs code 的常用快捷键</h1><p>1、注释：</p>
+<p>　　a) 单行注释：[ctrl+k,ctrl+c] 或 ctrl+&#x2F;</p>
+<p>　　b) 取消单行注释：[ctrl+k,ctrl+u] (按下ctrl不放，再按k + u)</p>
+<p>　　c) 多行注释：[alt+shift+A]</p>
+<p>　　d) 多行注释：&#x2F;**</p>
+<p>2、移动行：alt+up&#x2F;down</p>
+<p>3、显示&#x2F;隐藏左侧目录栏 ctrl + b</p>
+<p>4、复制当前行：shift + alt +up&#x2F;down</p>
+<p>5、删除当前行：shift + ctrl + k</p>
+<p>6、控制台终端显示与隐藏：ctrl + ~</p>
+<p>7、查找文件&#x2F;安装vs code 插件地址：ctrl + p</p>
+<p>8、代码格式化：shift + alt +f</p>
+<p>9、新建一个窗口 : ctrl + shift + n</p>
+<p>10、行增加缩进: ctrl + [</p>
+<p>11、行减少缩进: ctrl + ]</p>
+<p>12、裁剪尾随空格(去掉一行的末尾那些没用的空格) : ctrl + shift + x</p>
+<p>13、字体放大&#x2F;缩小: ctrl + ( + 或 - )</p>
+<p>14、拆分编辑器 : ctrl + 1&#x2F;2&#x2F;3</p>
+<p>15、切换窗口 : ctrl + shift + left&#x2F;right</p>
+<p>16、关闭编辑器窗口 : ctrl + w</p>
+<p>17、关闭所有窗口 : ctrl + k + w</p>
+<p>18、切换全屏 : F11</p>
+<p>19、自动换行 : alt + z</p>
+<p>20、显示git : ctrl + shift + g</p>
+<p>21、全局查找文件：ctrl + shift + f</p>
+<p>22、显示相关插件的命令(如：git log)：ctrl + shift + p</p>
+<p>23、选中文字：shift + left &#x2F; right &#x2F; up &#x2F; down</p>
+<p>24、折叠代码： ctrl + k + 0-9 (0是完全折叠)</p>
+<p>25、展开代码： ctrl + k + j (完全展开代码)</p>
+<p>26、删除行 ： ctrl + shift + k</p>
+<p>27、快速切换主题：ctrl + k &#x2F; ctrl + t</p>
+<p>28、快速回到顶部 ： ctrl + home</p>
+<p>29、快速回到底部 : ctrl + end</p>
+<p>30、格式化选定代码 ：ctrl + k &#x2F; ctrl +f</p>
+<p>31、选中代码 ： shift + 鼠标左键</p>
+<p>32、多行同时添加内容（光标） ：ctrl + alt + up&#x2F;down</p>
+<p>33、全局替换：ctrl + shift + h</p>
+<p>34、当前文件替换：ctrl + h</p>
+<p>35、打开最近打开的文件：ctrl + r</p>
+<p>36、打开新的命令窗：ctrl + shift + c</p>
+<h3 id="主命令框"><a href="#主命令框" class="headerlink" title="主命令框"></a>主命令框</h3><blockquote>
+<p><code>F1</code> 或 <code>Ctrl+Shift+P</code>: 打开命令面板。在打开的输入框内，可以输入任何命令</p>
+<ul>
+<li>按一下 <code>Backspace</code>会进入到 <code>Ctrl+P</code>模式<br>在</li>
+<li><code>Ctrl+P</code> 下输入 &gt; 可以进入 <code>Ctrl+Shift+P</code> 模式</li>
+</ul>
+</blockquote>
+<p><strong>在 <code>Ctrl+P</code> 窗口下还可以</strong></p>
+<ul>
+<li>直接输入文件名，跳转到文件</li>
+<li><code>?</code> 列出当前可执行的动作</li>
+<li>! 显示 <code>Errors</code>或 <code>Warnings</code>，也可以 <code>Ctrl+Shift+M</code></li>
+<li>: 跳转到行数，也可以 <code>Ctrl+G</code> 直接进入</li>
+<li>@ 跳转到 <code>symbol</code>（搜索变量或者函数），也可以 <code>Ctrl+Shift+O</code>直接进入</li>
+<li>@ 根据分类跳转 - <code>symbol</code>，查找属性或函数，也可以 <code>Ctrl+Shift+O</code>后输入:进入</li>
+<li>#根据名字查找 <code>symbol</code>，也可以 <code>Ctrl+T</code></li>
+</ul>
+<h3 id="编辑器与窗口管理"><a href="#编辑器与窗口管理" class="headerlink" title="编辑器与窗口管理"></a>编辑器与窗口管理</h3><ul>
+<li>打开一个新窗口： <code>Ctrl+Shift+N</code></li>
+<li>关闭窗口： <code>Ctrl+Shift+W</code></li>
+<li>新建文件 <code>Ctrl+N</code></li>
+<li>文件之间切换 <code>Ctrl+Tab</code></li>
+</ul>
+<h3 id="代码编辑"><a href="#代码编辑" class="headerlink" title="代码编辑"></a>代码编辑</h3><h4 id="格式调整"><a href="#格式调整" class="headerlink" title="格式调整"></a>格式调整</h4><ul>
+<li>代码行缩进 <code>Ctrl+[</code> 、 <code>Ctrl+]</code></li>
+<li><code>Ctrl+C</code>、 <code>Ctrl+V</code> 复制或剪切当前行&#x2F;当前选中内容</li>
+<li>代码格式化： <code>Ctrl+Shift+P</code> 后输入 <code>format code</code></li>
+<li>上下移动一行：<code>Alt+Up</code>或 <code>Alt+Down</code></li>
+<li>向上向下复制一行： <code>Shift+Alt+Up</code>或 <code>Shift+Alt+Down</code></li>
+<li>在当前行下边插入一行 <code>Ctrl+Enter</code></li>
+<li>在当前行上方插入一行 <code>Ctrl+Shift+Enter</code></li>
+</ul>
+<h4 id="光标相关"><a href="#光标相关" class="headerlink" title="光标相关"></a>光标相关</h4><ul>
+<li>移动到行首： <code>Home</code></li>
+<li>移动到行尾： <code>End</code></li>
+<li>移动到文件结尾： <code>Ctrl+End</code></li>
+<li>移动到文件开头： <code>Ctrl+Home</code></li>
+<li>移动到定义处： <code>F12</code></li>
+<li>多行编辑(列编辑)：<code>Alt+Shift+</code>鼠标左键</li>
+<li>同时选中所有匹配： <code>Ctrl+Shift+L</code></li>
+</ul>
+<h3 id="重构代码"><a href="#重构代码" class="headerlink" title="重构代码"></a>重构代码</h3><ul>
+<li>找到所有的引用： <code>Shift+F12</code></li>
+<li>同时修改本文件中所有匹配的： <code>Ctrl+F12</code></li>
+<li>重命名：比如要修改一个方法名，可以选中后按 <code>F2</code>，输入新的名字，回车，会发现所有的文件都修改了</li>
+<li>跳转到下一个 <code>Error</code> 或 <code>Warning</code>：当有多个错误时可以按 <code>F8</code> 逐个跳转</li>
+</ul>
+<h3 id="查找替换"><a href="#查找替换" class="headerlink" title="查找替换"></a>查找替换</h3><ul>
+<li>查找 <code>Ctrl+F</code></li>
+<li>查找替换 <code>Ctrl+H</code></li>
+<li>整个文件夹中查找 <code>Ctrl+Shift+F</code></li>
+</ul>
+<h3 id="显示相关"><a href="#显示相关" class="headerlink" title="显示相关"></a>显示相关</h3><ul>
+<li>全屏：<code>F11</code></li>
+<li>侧边栏显&#x2F;隐：<code>Ctrl+B</code></li>
+<li>显示资源管理器 <code>Ctrl+Shift+E</code></li>
+<li>显示搜索 <code>Ctrl+Shift+F</code></li>
+<li>显示 <code>Debug Ctrl+Shift+D</code></li>
+</ul>
+<h1 id="二、vs-code-的常用插件"><a href="#二、vs-code-的常用插件" class="headerlink" title="二、vs code 的常用插件"></a>二、vs code 的常用插件</h1><p>1、Auto Rename Tag 修改html标签，自动帮你完成尾部闭合标签的同步修改，和webstorm一样。</p>
+<p>2、Auto Close Tag 自动闭合HTML标签</p>
+<p>4、Beautiful 格式化代码的工具</p>
+<p>5、Dash Dash是MacOS的API文档浏览器和代码段管理器</p>
+<p>6、Ejs Snippets ejs 代码提示</p>
+<p>7、ESLint 检查javascript语法错误与提示</p>
+<p>8、File Navigator 快速查找文件</p>
+<p>9、Git History(git log) 查看git log</p>
+<p>10、Gulp Snippets 写gulp时用到，gulp语法提示。</p>
+<p>11、HTML CSS Support 在HTML标签上写class智能提示当前项目所支持的样式</p>
+<p>12、HTML Snippets 超级好用且初级的H5代码片段以及提示</p>
+<p>13、Debug for Chrome 让vs code映射chrome的debug功能，静态页面都可以用vscode来打断点调试、配饰稍微复杂一点</p>
+<p>14、Document this Js的注释模板</p>
+<p>15、jQuery Code Snippets jquery提示工具</p>
+<p>16、Html2jade html模板转pug模板</p>
+<p>17、JS-CSS-HTML Formatter 格式化</p>
+<p>18、Npm intellisense require 时的包提示工具</p>
+<p>19、Open in browser 打开默认浏览器</p>
+<p>20、One Dark Theme 一个vs code的主题</p>
+<p>21、Path Intellisense 自动路径补全、默认不带这个功能</p>
+<p>22、Project Manager 多个项目之间快速切换的工具</p>
+<p>23、Pug(Jade) snippets pug语法提示</p>
+<p>24、React Components 根据文件名创建反应组件代码。</p>
+<p>25、React Native Tools reactNative工具类为React Native项目提供了开发环境。</p>
+<p>26、Stylelint css&#x2F;sass代码审查</p>
+<p>27、Typings auto installer 安装vscode 的代码提示依赖库，基于typtings的</p>
+<p>28、View In Browser 　默认浏览器查看HTML文件（快捷键Ctrl+F1可以修改）</p>
+<p>29、Vscode-icons 让vscode资源目录加上图标、必备</p>
+<p>30、VueHelper Vue2代码段（包括Vue2 api、vue-router2、vuex2）</p>
+<p>31、Vue 2 Snippets vue必备vue代码提示</p>
+<p>32、Vue-color vue语法高亮主题</p>
+<p>33、Auto-Open Markdown Preview markdown文件自动开启预览</p>
+<p>34、EverMonkey 印象笔记</p>
+<p>35、atom one dark atom的一个高亮主题(个人推荐)</p>
+<h1 id="三、常用的电脑快捷键"><a href="#三、常用的电脑快捷键" class="headerlink" title="三、常用的电脑快捷键"></a>三、常用的电脑快捷键</h1><p>1、ctrl + shift + delete 快速清除浏览器缓存</p>
+<p>2、ctrl + alt + delete 快速进入任务管理器页面</p>
+<p>3、window + L 快速锁定电脑</p>
+<p>4、window + d 所有窗口最小化</p>
+<p>5、 window + e 打开我的资源管理器(我的电脑)</p>
+<p>6、 window + f 快速打开搜索窗口</p>
+<p>7、 alt + tab 快速查看打开的应用与窗口</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vs-code/" rel="tag">vs code</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-工具/正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/01/18/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="article-date">
+  	<time datetime="2019-01-18T10:36:48.000Z" itemprop="datePublished">2019-01-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/18/%E5%B7%A5%E5%85%B7/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+        正则表达式
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><h3 id="1-1-正则表达式的web常见场合"><a href="#1-1-正则表达式的web常见场合" class="headerlink" title="1.1 正则表达式的web常见场合"></a>1.1 正则表达式的web常见场合</h3><ul>
+<li>邮箱验证</li>
+<li>用户名验证</li>
+<li>替换字符串某一部分</li>
+<li>信息采集 用来分析有效的代码段</li>
+</ul>
+<h3 id="1-2-字符串应用正则"><a href="#1-2-字符串应用正则" class="headerlink" title="1.2 字符串应用正则"></a>1.2 字符串应用正则</h3><ul>
+<li><code>string.match(reg)</code>正则查找字符串</li>
+<li><code>string.search(reg)</code> 正则查找位置</li>
+<li><code>string.replace(reg,&#39;newstr&#39;)</code>正则替换</li>
+<li><code>string.split（reg）</code>正则拆分</li>
+</ul>
+<h3 id="1-3-正则表达式3句话"><a href="#1-3-正则表达式3句话" class="headerlink" title="1.3 正则表达式3句话"></a>1.3 正则表达式3句话</h3><h4 id="1-3-1-要找什么字符？（5中方法）"><a href="#1-3-1-要找什么字符？（5中方法）" class="headerlink" title="1.3.1 要找什么字符？（5中方法）"></a>1.3.1 要找什么字符？（5中方法）</h4><ul>
+<li>字面值 比如：<code>hi</code>就是找<code>hi</code></li>
+<li>字符的集合<code>[abcd]</code>匹配<code>abdc</code>任意一个</li>
+<li>用范围来表示字符<code>[0-9] [a-z][A-Z]</code></li>
+<li>字符簇 就是系统为常用的字符集合创建的一个简写<ul>
+<li>例如：<code>\d</code> 表示<code>[0-9]</code> <code>\w</code>代表<code>[0-9a-zA-Z_]</code> <code>\s</code>代表<code>[\t\v\f\r\n]</code>（空白符）</li>
+</ul>
+</li>
+<li>补集的形式来表示字符集合<ul>
+<li>例如：<code>[0-9]</code> 补集 <code>[^0-9]</code></li>
+<li>对于字符簇只需把字母大写即可表示补集 <code>\d</code> –&gt;<code>\D</code>（非数字） <code>\w</code>–&gt;<code>\W</code> （代表<code>a-z0-9A-Z</code>之外的东西） <code>\s</code> –&gt;<code>\S</code>(代表非空白字符)</li>
+</ul>
+</li>
+<li>点代表 任意字符 (不包括换行符)</li>
+</ul>
+<h4 id="1-3-2-从哪里找-找到哪？"><a href="#1-3-2-从哪里找-找到哪？" class="headerlink" title="1.3.2 从哪里找,找到哪？"></a>1.3.2 从哪里找,找到哪？</h4><ul>
+<li><code>\b</code>单词边界 <code>\bhi</code>从单词边界开始匹配<code>hi</code></li>
+<li><code>\B</code> 单词的非边界 把单词的中间某一部分取出来 把中间含有hi的单词取出来 即<code>hi</code>不能再两端</li>
+<li><code>^</code> 从字符串的起始位置开始匹配</li>
+<li><code>$</code>匹配到字符串的额结束位置</li>
+</ul>
+<h4 id="1-3-3-找多少"><a href="#1-3-3-找多少" class="headerlink" title="1.3.3 找多少"></a>1.3.3 找多少</h4><ul>
+<li><code>*</code>表示匹配<code>0-</code>无穷<code>==</code>等价<code>(0,)</code></li>
+<li><code>+</code>表示匹配<code>1-</code>无穷 <code>==</code>等价<code>(1,)</code></li>
+<li><code>?</code>表示<code>[0,1] ==</code> 等价<code>(0,1)</code></li>
+<li><code>a(n)</code>: 字符a准确出<code>现n</code>次</li>
+<li><code>a(n,)</code>:字符<code>a</code>至少出现<code>n</code>次</li>
+<li><code>a(n,m):n</code>到<code>m</code>次</li>
+</ul>
+<h3 id="1-3-贪婪模式"><a href="#1-3-贪婪模式" class="headerlink" title="1.3 贪婪模式"></a>1.3 贪婪模式</h3><ul>
+<li>个数修饰符默认是贪婪模式 尽量多找</li>
+<li>是指在上面的个数修饰符后面加<code>?</code>，则为非贪婪模式，尽量少的找</li>
+</ul>
+<p><strong>模式</strong>：</p>
+<ul>
+<li>以匹配为例默认情况 match找到一次就结束 能否告诉匹配过程 一直找 在全文范围内一直找</li>
+<li><code>g</code> 表示全局模式 global 找所有的 而不是就找一行就结束</li>
+<li><code>i</code> ignore 忽略大小写</li>
+<li><code>s</code> 单行模式（把整篇文章看成一行）js不支持单行模式</li>
+<li><code>m</code> 多行模式</li>
+</ul>
+<h2 id="二、语法"><a href="#二、语法" class="headerlink" title="二、语法"></a>二、语法</h2><h3 id="2-1-基本元字符"><a href="#2-1-基本元字符" class="headerlink" title="2.1 基本元字符"></a>2.1 基本元字符</h3><ul>
+<li><code>.</code> ： 匹配除了换行符之外的任何单个字符</li>
+<li><code>\</code> ： 在非特殊字符之前的反斜杠表示下一个字符是特殊的</li>
+<li><code>|</code>： 逻辑或操作符</li>
+<li><code>[]</code> ：定义一个字符集合，匹配字符集合中的一个字符，在字符集合里面像 <code>.</code>，\这些字符都表示其本身</li>
+<li><code>[^]</code>：对上面一个集合取非</li>
+<li><code>-</code>：定义一个区间，例如<code>[A-Z]</code>，其首尾字符在 <code>ASCII</code> 字符集里面</li>
+</ul>
+<h3 id="2-2-数量元字符"><a href="#2-2-数量元字符" class="headerlink" title="2.2 数量元字符"></a>2.2 数量元字符</h3><ul>
+<li><code>&#123;m,n&#125;</code> ：匹配前面一个字符至少 <code>m</code> 次至多 <code>n</code> 次重复，还有<code>&#123;m&#125;</code>表示匹配 <code>m</code> 次，<code>&#123;m,&#125;</code>表示至少 <code>m</code> 次</li>
+<li><code>+</code> ： 匹配前面一个表达式一次或者多次，相当于<code>&#123;1,&#125;</code>，记忆方式追加<code>(+)</code>，起码得有一次</li>
+<li><code>*</code> ： 匹配前面一个表达式零次或者多次，相当于<code>&#123;0,&#125;</code>，记忆方式乘法<code>(*)</code>，可以一次都没有</li>
+<li><code>?</code> ： 单独使用匹配前面一个表达式零次或者一次，相当于 <code>&#123;0,1&#125;</code></li>
+</ul>
+<h3 id="2-3-位置元字符"><a href="#2-3-位置元字符" class="headerlink" title="2.3 位置元字符"></a>2.3 位置元字符</h3><ul>
+<li><code>^</code> ： 单独使用匹配表达式的开始</li>
+<li><code>\$</code>： 匹配表达式的结束</li>
+<li><code>\b</code>：匹配单词边界</li>
+<li><code>\B</code>：匹配非单词边界</li>
+<li><code>(?=p)</code>：匹配 <code>p</code> 前面的位置</li>
+<li><code>(?!p)</code>：匹配不是 <code>p</code> 前面的位置</li>
+</ul>
+<h3 id="2-4-特殊元字符"><a href="#2-4-特殊元字符" class="headerlink" title="2.4 特殊元字符"></a>2.4 特殊元字符</h3><ul>
+<li><code>\d</code>：<code>[0-9]</code>，表示一位数字，记忆方式 digit</li>
+<li><code>\D</code>：<code>[^0-9]</code>，表示一位非数字</li>
+<li><code>\s</code>：<code>[\t\v\n\r\f]</code>，表示空白符，包括空格，水平制表符（\t），垂直制表符（\v），换行符（\n），回车符（\r），换页符（\f），记忆方式 space character</li>
+<li><code>\S</code>：<code>[^\t\v\n\r\f]</code>，表示非空白符</li>
+<li><code>\w</code>：<code>[0-9a-zA-Z]</code>，表示数字大小写字母和下划线，记忆方式 word</li>
+<li><code>\W</code>：<code>[^0-9a-zA-Z]</code>，表示非单词字符</li>
+</ul>
+<h3 id="2-5-标志字符"><a href="#2-5-标志字符" class="headerlink" title="2.5 标志字符"></a>2.5 标志字符</h3><ul>
+<li><code>g</code> : 全局搜索 记忆方式global</li>
+<li><code>i</code> ：不区分大小写 记忆方式 ignore</li>
+<li><code>m</code> ：多行搜索</li>
+</ul>
+<h2 id="三、match，test，exec，search的返回值"><a href="#三、match，test，exec，search的返回值" class="headerlink" title="三、match，test，exec，search的返回值"></a>三、match，test，exec，search的返回值</h2><h3 id="3-1-match的用法"><a href="#3-1-match的用法" class="headerlink" title="3.1 match的用法"></a>3.1 match的用法</h3><p><strong>在不加全局“g”的情况下</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;wo shi zhong guo ren&quot;;</span><br><span class="line"></span><br><span class="line">console.log(str.match(/o/));</span><br><span class="line"></span><br><span class="line">// 返回的结果是：[&quot;o&quot;, index: 1, input: &quot;wo shi zhong guo ren&quot;]；</span><br></pre></td></tr></table></figure>
+
+<p><strong>在加全局“g”的情况下</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;wo shi zhong guo ren&quot;;</span><br><span class="line"></span><br><span class="line">console.log(str.match(/o/g));</span><br><span class="line"></span><br><span class="line">返回的结果是：[&quot;o&quot;, &quot;o&quot;, &quot;o&quot;]；</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-exec的用法"><a href="#3-2-exec的用法" class="headerlink" title="3.2 exec的用法"></a>3.2 exec的用法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;wo shi zhong guo ren&quot;;</span><br><span class="line"></span><br><span class="line">var re=/o/;</span><br><span class="line"></span><br><span class="line">console.log(re.exec(str));</span><br><span class="line"></span><br><span class="line">// 返回的结果是：[&quot;o&quot;, index: 1, input: &quot;wo shi zhong guo ren&quot;]；</span><br><span class="line">// exec返回的和match不加全局“g”’一样</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-test的用法"><a href="#3-3-test的用法" class="headerlink" title="3.3 test的用法"></a>3.3 test的用法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;wo shi zhong guo ren&quot;;</span><br><span class="line"></span><br><span class="line">var re=/o/;</span><br><span class="line"></span><br><span class="line">console.log(re.test(str));</span><br><span class="line"></span><br><span class="line">// 返回的结果是：true（如果找不到返回的则是false）</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-search的用法"><a href="#3-4-search的用法" class="headerlink" title="3.4 search的用法"></a>3.4 search的用法</h3><ul>
+<li>关于search用法其实很简单，它和indexOf是一样的，就是找到index，而且是从前往后数的。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;wo shi zhong guo ren&quot;;</span><br><span class="line">var re=/o/;</span><br><span class="line"></span><br><span class="line">console.log(str.search(re));</span><br><span class="line"></span><br><span class="line">返回的结果是：1；</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、应用"><a href="#四、应用" class="headerlink" title="四、应用"></a>四、应用</h2><h3 id="4-1-例1"><a href="#4-1-例1" class="headerlink" title="4.1 例1"></a>4.1 例1</h3><blockquote>
+<p>在线演示 <a target="_blank" rel="noopener" href="https://codepen.io/poetries/pen/xWMRxR">https://codepen.io/poetries/pen/xWMRxR</a></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;正则-例子1&lt;/title&gt;</span><br><span class="line">	&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">		textarea&#123;</span><br><span class="line">			width: 400px;</span><br><span class="line">			height: 200px; </span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;textarea id=&#x27;cont&#x27;&gt;&lt;/textarea&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;匹配hi&quot; onclick=&quot;t1();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;正匹配单词hi&quot; onclick=&quot;t2();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;匹配hi开头的单词但不是hi&quot; onclick=&quot;t3();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            function t1()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /hi/;//仅仅是看字符串中有没有hi</span><br><span class="line">            	alert(reg.test(cv));//满足 返回true  不满足 返回false</span><br><span class="line">            &#125;</span><br><span class="line">            function t2()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /\bhi\b/;//正则测试单词hi</span><br><span class="line">            	alert(reg.test(cv));//满足 返回true  不满足 返回false</span><br><span class="line">            &#125;</span><br><span class="line">            function t3()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /\bhi\b/;//正则测试hi开头的单词但不是hi</span><br><span class="line">            	alert(reg.test(cv));//满足 返回true  不满足 返回false</span><br><span class="line">            &#125; </span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-例2-要找什么字符串"><a href="#4-2-例2-要找什么字符串" class="headerlink" title="4.2 例2-要找什么字符串"></a>4.2 例2-要找什么字符串</h3><blockquote>
+<p>在线演示 <a target="_blank" rel="noopener" href="https://codepen.io/poetries/pen/oqmYNw">https://codepen.io/poetries/pen/oqmYNw</a></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;要找什么字符&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">    &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">    	textarea&#123;</span><br><span class="line">    	width: 400px;</span><br><span class="line">    	height: 200px; </span><br><span class="line">    	&#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;textarea id=&#x27;cont&#x27;&gt;&lt;/textarea&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;找不好的数字&quot; onclick=&quot;t1();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;有没有数字&quot; onclick=&quot;t2();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;有没有大写字母&quot; onclick=&quot;t3();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;是否全为数字&quot; onclick=&quot;t4();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            function t1()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /[347]/;// 匹配347任意一个字符的集合[abcd] 匹配abdc任意一个</span><br><span class="line">            	alert(reg.test(cv));</span><br><span class="line">            &#125;</span><br><span class="line">            function t2()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	//var reg = /[0123456789]/;</span><br><span class="line">            	//var reg = /[0-9]/;// 匹配有没有数字</span><br><span class="line">            	var reg = /\d/;// \d 表示[0-9]</span><br><span class="line">            	alert(reg.test(cv));</span><br><span class="line">            &#125;</span><br><span class="line">            function t3()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /[A-Z]/;// 匹配有没有数字</span><br><span class="line">            	alert(reg.test(cv));</span><br><span class="line">            &#125;</span><br><span class="line">            function t4()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /[^0-9]/;// 匹配非数字 0-9之外的字符  对于网上发布手机号之类的很有用 比如1300 把00换成OO 就没法认出</span><br><span class="line">            	if(reg.test(cv))&#123;</span><br><span class="line">            		alert(&#x27;有非数字存在&#x27;);</span><br><span class="line">            	&#125;else&#123;</span><br><span class="line">            		alert(&#x27;全是数字&#x27;);</span><br><span class="line">            	&#125;</span><br><span class="line">            &#125;</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-例3-从哪里开始匹配"><a href="#4-3-例3-从哪里开始匹配" class="headerlink" title="4.3 例3-从哪里开始匹配"></a>4.3 例3-从哪里开始匹配</h3><blockquote>
+<p>在线演示 <a target="_blank" rel="noopener" href="https://codepen.io/poetries/pen/jzdVOo">https://codepen.io/poetries/pen/jzdVOo</a></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;74-从哪里开始匹配&lt;/title&gt;</span><br><span class="line">	&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">		textarea&#123;</span><br><span class="line">			width: 400px;</span><br><span class="line">			height: 200px;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;textarea id=&#x27;cont&#x27;&gt;&lt;/textarea&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;匹配hi&quot; onclick=&quot;t1();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;匹配hi开头及hi开头的单词&quot; onclick=&quot;t2();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;匹配hi开头的单词但不是hi&quot; onclick=&quot;t3();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;匹配进行时的单词&quot; onclick=&quot;t4();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;匹配un前缀的反义词&quot; onclick=&quot;t5();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;匹配单词中间的hi部分&quot; onclick=&quot;t6();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;匹配输入的名字是不是lisi&quot; onclick=&quot;t7();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            function t1()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /hi/;//仅仅是看字符串中有没有hi</span><br><span class="line">            	alert(reg.test(cv));//满足 返回true  不满足 返回false</span><br><span class="line">            &#125;</span><br><span class="line">            function t2()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	//var reg = /\bhi.+/;// 错误1 匹配hi开头的单词</span><br><span class="line">            	////var reg = /\bhi\w+/;// 错误2</span><br><span class="line">            	var reg = /\bhi\w*/; </span><br><span class="line">            	alert(reg.exec(cv));//exec返回一个对象  没找到返回none</span><br><span class="line">            &#125;</span><br><span class="line">            function t3()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /\bhi/;//正则测试hi开头的单词但不是hi</span><br><span class="line">            	alert(reg.exec(cv));//exec返回一个对象  没找到返回none</span><br><span class="line">            &#125; </span><br><span class="line">            function t4()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /\b[\w]+ing\b/;//*表示匹配0-无穷  +表示匹配1-无穷</span><br><span class="line">            	alert(reg.exec(cv));</span><br><span class="line">            &#125; </span><br><span class="line">            function t5()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /\bun[\w]+\b/;//匹配un前缀的反义词</span><br><span class="line">            	alert(reg.exec(cv));</span><br><span class="line">            &#125;</span><br><span class="line">            function t6()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /\Bhi\B/;//匹配单词中间的hi部分</span><br><span class="line">            	alert(reg.exec(cv));</span><br><span class="line">            &#125;</span><br><span class="line">            function t7()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /^lisi$/;//匹配输入的名字是不是lisi</span><br><span class="line">            	alert(reg.exec(cv));</span><br><span class="line">            &#125;</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-4-例4-正则应用字符串"><a href="#4-4-例4-正则应用字符串" class="headerlink" title="4.4 例4 正则应用字符串"></a>4.4 例4 正则应用字符串</h3><blockquote>
+<p>在线演示 <a target="_blank" rel="noopener" href="https://codepen.io/poetries/pen/dmaOPz">https://codepen.io/poetries/pen/dmaOPz</a></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;正则应用字符串&lt;/title&gt;</span><br><span class="line">	&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">		textarea&#123;</span><br><span class="line">			width: 400px;</span><br><span class="line">			height: 200px; </span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;textarea id=&#x27;cont&#x27;&gt;&lt;/textarea&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;查找中间含有hi的单词&quot; onclick=&quot;t1();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;查找所有中间含有hi的单词&quot; onclick=&quot;t2();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;查找所有中间含有hi的单词，不区分大小写&quot; onclick=&quot;t3();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;替换JavaScript标签&quot; onclick=&quot;t4();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;把连接换成空连接&quot; onclick=&quot;t5();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;把每一行的结尾的数字换成#&quot; onclick=&quot;t6();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;替换goods中多余的O&quot; onclick=&quot;t7();&quot;&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            function t1()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /\Bhi\B/;//查找中间含有hi的单词</span><br><span class="line">            	alert(cv.match(reg));</span><br><span class="line">            &#125;</span><br><span class="line">            function t2()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /\Bhi\B/g;//查找所有中间含有hi的单词</span><br><span class="line">            	alert(cv.match(reg));</span><br><span class="line">            &#125;</span><br><span class="line">            function t3()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /\Bhi\B/gi;//查找所有中间含有hi的单词  g是全局 i ignore 忽略大小写</span><br><span class="line">            	alert(cv.match(reg));</span><br><span class="line">            &#125;</span><br><span class="line">            function t4()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var  reg = /&lt;script.*&lt;\/script&gt;/;//替换JavaScript标签</span><br><span class="line">            	alert(cv.replace(reg,&#x27;哈哈哈&#x27;));</span><br><span class="line">            &#125;</span><br><span class="line">            function t5()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	  /*</span><br><span class="line">                        . 代表任意,但不包括换行</span><br><span class="line">                        可以用一对反义词来匹配所有. \d\D等</span><br><span class="line">                        不能跨行（贪婪模式）</span><br><span class="line">                  */</span><br><span class="line">                 </span><br><span class="line">            	var reg = /&lt;a[\s]+[\d\D]*&lt;\/a&gt;/; //正则替换链接</span><br><span class="line">                    alert(cv.replace(reg,&#x27;&lt;a href=&quot;#&quot;&gt;文字&lt;/a&gt;&#x27;)); </span><br><span class="line">            &#125;</span><br><span class="line">            function t6()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var  reg = /\d+$/gm;//把每一行的结尾的数字换成#   m 多行模式</span><br><span class="line">            	alert(cv.replace(reg,&#x27;#&#x27;));</span><br><span class="line">            &#125;</span><br><span class="line">            function t7()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var  reg = /go&#123;3,&#125;?ds/;//替换goods中多余的O</span><br><span class="line">            	alert(cv.replace(reg,&#x27;goods&#x27;));</span><br><span class="line">            &#125;</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-5-例5-预查"><a href="#4-5-例5-预查" class="headerlink" title="4.5 例5-预查"></a>4.5 例5-预查</h3><blockquote>
+<p>在线演示 <a target="_blank" rel="noopener" href="https://codepen.io/poetries/pen/MVLbwW">https://codepen.io/poetries/pen/MVLbwW</a></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;预查&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">	&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">		textarea&#123;</span><br><span class="line">			width: 400px;</span><br><span class="line">			height: 200px; </span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;textarea id=&#x27;cont&#x27;&gt;&lt;/textarea&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;匹配进行时的单词&quot; onclick=&quot;t1();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;匹配进行时的单词的词根部分,正向预查&quot; onclick=&quot;t2();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;查找winxp,负向预查&quot; onclick=&quot;t3();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;找出un*系列单词的词根&quot; onclick=&quot;t4();&quot;&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            function t1()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /\b[\w]+ing\b/;</span><br><span class="line">            	alert(cv.match(reg));</span><br><span class="line">            &#125; </span><br><span class="line">            function t2()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /\b[\w]+(?=ing)/g;//匹配进行时的单词的词根部分  不要ing结尾  预查不消耗字符</span><br><span class="line">            	alert(cv.match(reg));</span><br><span class="line">            &#125; </span><br><span class="line">            function t3()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /\bwin(?!95)/g;//win98 win97 win95 win32 winxp win2003要求把win95过滤</span><br><span class="line">            	alert(cv.match(reg));</span><br><span class="line">            &#125; </span><br><span class="line">            function t4()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	//var reg = /\w+(?&lt;=un)/g;//找出un*系列单词的词根  js不支持向前正向预查</span><br><span class="line">            	alert(cv.match(reg));</span><br><span class="line">            &#125; </span><br><span class="line"> </span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-6-例6-反向引用"><a href="#4-6-例6-反向引用" class="headerlink" title="4.6 例6-反向引用"></a>4.6 例6-反向引用</h3><blockquote>
+<p>在线演示 <a target="_blank" rel="noopener" href="https://codepen.io/poetries/pen/LdqbVL">https://codepen.io/poetries/pen/LdqbVL</a></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;反向引用&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">	&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">		textarea&#123;</span><br><span class="line">			width: 400px;</span><br><span class="line">			height: 200px; </span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;textarea id=&#x27;cont&#x27;&gt;&lt;/textarea&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;把连接换成空连接，保留文字&quot; onclick=&quot;t1();&quot;&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            function t1()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /&lt;a[\s]+[^&gt;]+&gt;([^&lt;&gt;]+)&lt;\/a&gt;/; //链接表达式  这个一部分是子表达式 ([^&lt;&gt;]+)</span><br><span class="line">                    // alert(reg.exec(cv)); </span><br><span class="line">                    </span><br><span class="line">                alert(cv.replace(reg,&#x27;&lt;a href=&quot;#&quot;&quot;&gt;$1&lt;/a&gt;&#x27;));</span><br><span class="line">            &#125;</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-7-例7-正则练习"><a href="#4-7-例7-正则练习" class="headerlink" title="4.7 例7-正则练习"></a>4.7 例7-正则练习</h3><blockquote>
+<p>在线演示 <a target="_blank" rel="noopener" href="https://codepen.io/poetries/pen/dmaOYV">https://codepen.io/poetries/pen/dmaOYV</a></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;正则练习&lt;/title&gt;</span><br><span class="line">	&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">		textarea&#123;</span><br><span class="line">			width: 400px;</span><br><span class="line">			height: 200px; </span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;textarea id=&#x27;cont&#x27;&gt;&lt;/textarea&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;1-找首尾相同的单词&quot; onclick=&quot;t1();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;2-手机号第4位到第七位换成*&quot; onclick=&quot;t2();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;3-统一空格&quot; onclick=&quot;t3();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;4-把名字中的,去掉&quot; onclick=&quot;t4();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;5-把aaabb换成ab&quot; onclick=&quot;t5();&quot;&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">           function t1()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /\b([\w])[\w]*\1\b/g;// \1注意引用方式 [\w]任意一个 [\w]*任意多个 找首尾相同的单词</span><br><span class="line">            	/**</span><br><span class="line">            	 *  *如何引用子表达式所匹配的结果？</span><br><span class="line">             *</span><br><span class="line">             * 答： 在表达式内部 反向引用时 \n来匹配第N个子表达式的结果 子表达式当成变量来传递时，$N来匹配第N个子表达式的匹配结果</span><br><span class="line">             * </span><br><span class="line">            	 */</span><br><span class="line">            	alert(cv.match(reg));</span><br><span class="line">            &#125;</span><br><span class="line">            function t2()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /(1(3|5|8|)\d)\d&#123;4&#125;(\d&#123;4&#125;)/;//字表达式(3|5|8|)  (\d&#123;4&#125;)  &#123;4&#125;代表任意4个  </span><br><span class="line">            	// alert(cv.match(reg));//打印结果18878553070，188，3070</span><br><span class="line">            	alert(cv.replace(reg,&#x27;$1****$3&#x27;));//188****4070</span><br><span class="line">            &#125;</span><br><span class="line">            function t3()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /[ \t\u3000]+/g;//找空白符  第一个是半角的空格  \s包含所有空白符  \u3000表示 全角空格的16进制Unicode编码</span><br><span class="line">            	alert(cv.replace(reg,&#x27;,&#x27;));//</span><br><span class="line">            &#125;</span><br><span class="line">            function t4()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            var reg = /([\u4E00-\u9FA0]),([\u4E00-\u9FA0])/g;  // 找中文用Unicode编码表的中文范围</span><br><span class="line">            	alert(cv.replace(reg,&#x27;,&#x27;));</span><br><span class="line">            &#125;</span><br><span class="line">            function t5()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            var reg = //;  </span><br><span class="line">            	alert(cv.replace(reg,&#x27;,&#x27;));</span><br><span class="line">            &#125;</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-8-例8-常用正则"><a href="#4-8-例8-常用正则" class="headerlink" title="4.8 例8-常用正则"></a>4.8 例8-常用正则</h3><blockquote>
+<p>在线演示 <a target="_blank" rel="noopener" href="https://codepen.io/poetries/pen/GxzNoG">https://codepen.io/poetries/pen/GxzNoG</a></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;常用正则解答&lt;/title&gt;</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            function t1()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /(\w)\1+/g; //查找连续多个字符  把aaabbccdd换成abcd这个格式</span><br><span class="line">            						/**\1 后向引用，表示表达式中，从左往右数，第一个左括号对应的括号内的内容。</span><br><span class="line">            以此类推，\2表示第二个，\0表示整个表达式**/</span><br><span class="line">            	alert(cv.replace(reg,&#x27;$1&#x27;));</span><br><span class="line">            &#125;</span><br><span class="line">            function t2()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	//手机号正则：</span><br><span class="line">            	//1开头</span><br><span class="line">            	//358第二位</span><br><span class="line">            	//后九位</span><br><span class="line">            	var reg = /1[358]\d&#123;9&#125;/g; // 这种情况适合在一段文本中分析出手机号</span><br><span class="line">            	alert(cv.match(reg));//分析手机号</span><br><span class="line">            &#125;</span><br><span class="line">            function t3()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /^1[358]\d&#123;9&#125;$/g;</span><br><span class="line">            	alert(reg.test(cv));// test 验证手机号</span><br><span class="line">            &#125;</span><br><span class="line">            function t4()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /^\s+|\s+$/g; // | 并列 或者 去除两端空格</span><br><span class="line">            	alert(&#x27;--&#x27;+cv.replace(reg,&#x27;&#x27;)+&#x27;--&#x27;);</span><br><span class="line">            &#125;</span><br><span class="line">            //借助正则限制在一个有限范围内 防止sql注入</span><br><span class="line">            function t5()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /^[\w\u4E00-\u9FA0]&#123;4,16&#125;$/; // \u4E00-\u9FA0 中文对应的Unicode编码 验证由字母数字下划线中文组合的4-16位用户名 </span><br><span class="line">            	alert(reg.test(cv));</span><br><span class="line">            &#125;</span><br><span class="line">            function t6()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = /^[0-9a-zA-Z]\w*(\.[\w]+)*@[0-9a-zA-Z\-]+(\.[\w]+)+$/;</span><br><span class="line">            	alert(reg.test(cv));</span><br><span class="line">            &#125;</span><br><span class="line">            function t7()&#123;</span><br><span class="line">            	var cont = document.getElementById(&#x27;cont&#x27;);</span><br><span class="line">            	var cv = cont.value;</span><br><span class="line">            	var reg = //;</span><br><span class="line">            	alert(cv.replace(reg,&#x27;&#x27;));</span><br><span class="line">            &#125;</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;textarea id=&#x27;cont&#x27;&gt;&lt;/textarea&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;1-替换相同字符串&quot; onclick=&quot;t1();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;2-分析出手机号&quot; onclick=&quot;t2();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;3-验证手机号&quot; onclick=&quot;t3();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;4-去除两端空格&quot; onclick=&quot;t4();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;5-验证由字母数字下划线中文组合的4-16位用户名&quot; onclick=&quot;t5();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;6-验证邮箱&quot; onclick=&quot;t6();&quot;&gt;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;7-清空script代码&quot; onclick=&quot;t7();&quot;&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-工具/Svn与Git的区别" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/01/13/%E5%B7%A5%E5%85%B7/Svn%E4%B8%8EGit%E7%9A%84%E5%8C%BA%E5%88%AB/" class="article-date">
+  	<time datetime="2019-01-13T10:35:49.000Z" itemprop="datePublished">2019-01-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/13/%E5%B7%A5%E5%85%B7/Svn%E4%B8%8EGit%E7%9A%84%E5%8C%BA%E5%88%AB/">
+        Svn与Git的区别
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>最核心的区别<code>Git</code>是分布式的，而<code>Svn</code>不是分布的。能理解这点，上手会很容易，声明一点<code>Git</code>并不是目前唯一的分布式版本控制系统，还有比如<code>Mercurial</code>等，所以说它们差不许多。话说回来<code>Git</code>跟<code>Svn</code>一样有自己的集中式版本库和Server端，但Git更倾向于分布式开发，因为每一个开发人员的电脑上都有一个<code>Local Repository</code>,所以即使没有网络也一样可以<code>Commit</code>，查看历史版本记录，创建项 目分支等操作，等网络再次连接上Push到Server端。</p>
+</li>
+<li><p>从上面看<code>GIt</code>真的很棒，但是<code>GIt adds Complexity</code>,刚开始使用会有些疑惑，因为需要建两个<code>Repositories(Local Repositories &amp; Remote Repositories)</code>,指令很多，除此之外你需要知道哪些指令在<code>Local Repository</code>，哪些指令在<code>Remote Repository</code>。</p>
+</li>
+<li><p>Git把内容按元数据方式存储，而SVN是按文件：因为,.git目录是处于你的机器上的一个克隆版的版本库，它拥有中心版本库上所有的东西，例如标签，分支，版本记录等。.git目录的体积大小跟.svn比较，你会发现它们差距很大。</p>
+</li>
+<li><p>Git没有一个全局版本号，而SVN有：目前为止这是跟SVN相比Git缺少的最大的一个特征。</p>
+</li>
+<li><p>Git的内容的完整性要优于SVN: GIT的内容存储使用的是SHA-1哈希算法。这能确保代码内容的完整性，确保在遇到磁盘故障和网络问题时降低对版本库的破坏。</p>
+</li>
+<li><p>Git下载下来后，在OffLine状态下可以看到所有的<code>Log</code>,SVN不可以。</p>
+</li>
+<li><p>刚开始用时很狗血的一点，<code>SVN</code>必须先<code>Update</code>才能<code>Commit</code>,忘记了合并时就会出现一些错误，git还是比较少的出现这种情况。</p>
+</li>
+<li><p>克隆一份全新的目录以同样拥有五个分支来说，SVN是同时复製5个版本的文件,也就是说重复五次同样的动作。而Git只是获取文件的每个版本的 元素，然后只载入主要的分支(<code>master</code>)在我的经验,克隆一个拥有将近一万个提交(<code>commit</code>),五个分支,每个分支有大约1500个文件的 SVN,耗了将近一个小时！而Git只用了区区的1分钟！</p>
+</li>
+<li><p>版本库（repository):SVN只能有一个指定中央版本库。当这个中央版本库有问题时，所有工作成员都一起瘫痪直到版本库维修完毕或者新的版本库设立完成。而 Git可以有无限个版本库。或者，更正确的说法，每一个Git都是一个版本库，区别是它们是否拥有活跃目录（<code>Git Working Tree</code>）。如果主要版本库（例如：置於<code>GitHub</code>的版本库）发生了什麼事，工作成员仍然可以在自己的本地版本库（<code>local repository</code>）提交，等待主要版本库恢复即可。工作成员也可以提交到其他的版本库！</p>
+</li>
+<li><p>分支（<code>Branch</code>）在<code>SVN</code>，分支是一个完整的目录。且这个目录拥有完整的实际文件。如果工作成员想要开啟新的分支，那将会影响“全世界”！每个人都会拥有和你一样的分支。如果你的分支是用来进行破坏工作（安检测试），那将会像传染病一样,你改一个分支，还得让其他人重新切分支重新下载，十分狗血。而 Git，每个工作成员可以任意在自己的本地版本库开啟无限个分支。举例：当我想尝试破坏自己的程序（安检测试），并且想保留这些被修改的文件供日后使用， 我可以开一个分支，做我喜欢的事。完全不需担心妨碍其他工作成员。只要我不合并及提交到主要版本库，没有一个工作成员会被影响。等到我不需要这个分支时， 我只要把它从我的本地版本库删除即可。无痛无痒。</p>
+</li>
+<li><p>Git的分支名是可以使用不同名字的。例如：我的本地分支名为OK，而在主要版本库的名字其实是<code>master</code>。</p>
+</li>
+<li><p>最值得一提，我可以在Git的任意一个提交点（<code>commit point</code>）开启分支！（其中一个方法是使用gitk –all 可观察整个提交记录，然后在任意点开啟分支。）</p>
+</li>
+<li><p>提交（<code>Commit</code>）在<code>SVN</code>，当你提交你的完成品时，它将直接记录到中央版本库。当你发现你的完成品存在严重问题时，你已经无法阻止事情的发生了。如果网路中断，你根本没办法提交！而Git的提交完全属於本地版本库的活动。而你只需“推”（<code>git push</code>）到主要版本库即可。Git的“推”其实是在执行“同步”（Sync）。</p>
+</li>
+</ul>
+<hr>
+<p><strong>总结：</strong></p>
+<ul>
+<li><code>SVN</code>的特点是简单，只是需要一个放代码的地方时用是OK的。</li>
+<li><code>Git</code>的特点版本控制可以不依赖网络做任何事情，对分支和合并有更好的支持(当然这是开发者最关心的地方)</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-工具/RESTful API" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/01/08/%E5%B7%A5%E5%85%B7/RESTful%20API/" class="article-date">
+  	<time datetime="2019-01-08T02:26:18.000Z" itemprop="datePublished">2019-01-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/08/%E5%B7%A5%E5%85%B7/RESTful%20API/">
+        RESTful API
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、RESTful-API-简介"><a href="#一、RESTful-API-简介" class="headerlink" title="一、RESTful API 简介"></a>一、RESTful API 简介</h2><p><img src="https://poetries1.gitee.io/img-repo/2019/10/509.png" alt="img"><br><img src="https://poetries1.gitee.io/img-repo/2019/10/510.png" alt="img"><br><img src="https://poetries1.gitee.io/img-repo/2019/10/511.png" alt="img"></p>
+<p><strong>总结一下什么是RESTful架构</strong></p>
+<ul>
+<li>每一个<code>URI</code>代表一种资源</li>
+<li>客户端和服务器之间，传递这种资源的某种表现层</li>
+<li>客户端通过四个<code>HTTP</code>动词(<code>GET、POST、PUT、DELETE</code>)，对服务器端资源进行操作，实现”表现层状态转化”</li>
+</ul>
+<h2 id="二、RESTful-API-设计"><a href="#二、RESTful-API-设计" class="headerlink" title="二、RESTful API 设计"></a>二、RESTful API 设计</h2><h3 id="2-1、协议"><a href="#2-1、协议" class="headerlink" title="2.1、协议"></a>2.1、协议</h3><ul>
+<li><code>API</code>与用户的通信协议，总是使用<code>HTTPs</code>协议</li>
+</ul>
+<h3 id="2-2、域名"><a href="#2-2、域名" class="headerlink" title="2.2、域名"></a>2.2、域名</h3><ul>
+<li>应该尽量将<code>API</code>部署在专用域名之下</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://api.example.com</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果确定API很简单，不会有进一步扩展，可以考虑放在主域名下</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://example.org/api/</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3、版本（Versioning）"><a href="#2-3、版本（Versioning）" class="headerlink" title="2.3、版本（Versioning）"></a>2.3、版本（Versioning）</h3><ul>
+<li>应该将<code>API</code>的版本号放入<code>URL</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://api.example.com/v1/</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-4、路径（Endpoint）"><a href="#2-4、路径（Endpoint）" class="headerlink" title="2.4、路径（Endpoint）"></a>2.4、路径（Endpoint）</h3><ul>
+<li>表示<code>API</code>的具体网址</li>
+<li>在<code>RESTful</code>架构中，每个网址代表一种资源（<code>resource</code>），所以网址中不能有动词，只能有名词</li>
+<li>举例来说，有一个<code>API</code>提供动物园（<code>zoo</code>）的信息，还包括各种动物和雇员的信息，则它的路径应该设计成下面这样</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://api.example.com/v1/zoos</span><br><span class="line">https://api.example.com/v1/animals</span><br><span class="line">https://api.example.com/v1/employees</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-5、HTTP动词"><a href="#2-5、HTTP动词" class="headerlink" title="2.5、HTTP动词"></a>2.5、HTTP动词</h3><ul>
+<li><p>对于资源的具体操作类型，由<code>HTTP</code>动词表示</p>
+</li>
+<li><p><code>GET（SELECT）</code>：从服务器取出资源（一项或多项）。</p>
+</li>
+<li><p><code>POST（CREATE）</code>：在服务器新建一个资源。</p>
+</li>
+<li><p><code>PUT（UPDATE）</code>：在服务器更新资源（客户端提供改变后的完整资源）。</p>
+</li>
+<li><p><code>PATCH（UPDATE）</code>：在服务器更新资源（客户端提供改变的属性）。</p>
+</li>
+<li><p><code>DELETE（DELETE）</code>：从服务器删除资源。</p>
+</li>
+</ul>
+<blockquote>
+<p>下面是一些例子</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET /zoos：列出所有动物园</span><br><span class="line">POST /zoos：新建一个动物园</span><br><span class="line">GET /zoos/ID：获取某个指定动物园的信息</span><br><span class="line">PUT /zoos/ID：更新某个指定动物园的信息（提供该动物园的全部信息）</span><br><span class="line">PATCH /zoos/ID：更新某个指定动物园的信息（提供该动物园的部分信息）</span><br><span class="line">DELETE /zoos/ID：删除某个动物园</span><br><span class="line">GET /zoos/ID/animals：列出某个指定动物园的所有动物</span><br><span class="line">DELETE /zoos/ID/animals/ID：删除某个指定动物园的指定动物</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-6、过滤信息"><a href="#2-6、过滤信息" class="headerlink" title="2.6、过滤信息"></a>2.6、过滤信息</h3><blockquote>
+<p>如果记录数量很多，服务器不可能都将它们返回给用户。API应该提供参数，过滤返回结果</p>
+</blockquote>
+<ul>
+<li>下面是一些常见的参数<ul>
+<li><code>?limit=10</code>：指定返回记录的数量</li>
+<li><code>?offset=10</code>：指定返回记录的开始位置。</li>
+<li><code>?page=2&amp;per_page=100</code>：指定第几页，以及每页的记录数。</li>
+<li><code>?sortby=name&amp;order=asc</code>：指定返回结果按照哪个属性排序，以及排序顺序。</li>
+<li><code>?animal_type_id=1</code>：指定筛选条件</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>参数的设计允许存在冗余，即允许API路径和URL参数偶尔有重复。比如，<code>GET /zoo/ID/animals</code> 与 <code>GET /animals?zoo_id=ID</code> 的含义是相同的</p>
+</blockquote>
+<h3 id="2-7、状态码"><a href="#2-7、状态码" class="headerlink" title="2.7、状态码"></a>2.7、状态码</h3><blockquote>
+<p>服务器向用户返回的状态码和提示信息</p>
+</blockquote>
+<h3 id="2-8、错误处理"><a href="#2-8、错误处理" class="headerlink" title="2.8、错误处理"></a>2.8、错误处理</h3><blockquote>
+<p>如果状态码是<code>4xx</code>，就应该向用户返回出错信息。一般来说，返回的信息中将<code>error</code>作为键名，出错信息作为键值即可</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    error: &quot;Invalid API key&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-9、返回结果"><a href="#2-9、返回结果" class="headerlink" title="2.9、返回结果"></a>2.9、返回结果</h3><ul>
+<li>针对不同操作，服务器向用户返回的结果应该符合以下规范</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">GET /collection：返回资源对象的列表（数组）</span><br><span class="line">GET /collection/resource：返回单个资源对象</span><br><span class="line">POST /collection：返回新生成的资源对象</span><br><span class="line">PUT /collection/resource：返回完整的资源对象</span><br><span class="line">PATCH /collection/resource：返回完整的资源对象</span><br><span class="line">DELETE /collection/resource：返回一个空文档</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-10、Hypermedia-API"><a href="#2-10、Hypermedia-API" class="headerlink" title="2.10、Hypermedia API"></a>2.10、Hypermedia API</h3><blockquote>
+<p><code>RESTful API</code>最好做到<code>Hypermedia</code>，即返回结果中提供链接，连向其他<code>API</code>方法，使得用户不查文档，也知道下一步应该做什么</p>
+</blockquote>
+<ul>
+<li>比如，当用户向<code>api.example.com</code>的根目录发出请求，会得到这样一个文档</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;link&quot;: &#123;</span><br><span class="line">  &quot;rel&quot;:   &quot;collection https://www.example.com/zoos&quot;,</span><br><span class="line">  &quot;href&quot;:  &quot;https://api.example.com/zoos&quot;,</span><br><span class="line">  &quot;title&quot;: &quot;List of zoos&quot;,</span><br><span class="line">  &quot;type&quot;:  &quot;application/vnd.yourformat+json&quot;</span><br><span class="line">&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>上面代码表示，文档中有一个<code>link</code>属性，用户读取这个属性就知道下一步该调用什么<code>API</code>了。<code>rel</code>表示这个<code>API</code>与当前网址的关系（collection关系，并给出该collection的网址），<code>href</code>表示<code>API</code>的路径，<code>title</code>表示<code>API</code>的标题，<code>type</code>表示返回类型</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RESTful/" rel="tag">RESTful</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-工具/Mock模拟数据" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/01/04/%E5%B7%A5%E5%85%B7/Mock%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE/" class="article-date">
+  	<time datetime="2019-01-04T03:24:42.000Z" itemprop="datePublished">2019-01-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/04/%E5%B7%A5%E5%85%B7/Mock%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE/">
+        Mock
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>文章内容整理于互联网，方便学习</p>
+</blockquote>
+<h2 id="一、学前预热"><a href="#一、学前预热" class="headerlink" title="一、学前预热"></a>一、学前预热</h2><blockquote>
+<p>为了做到前后端并行开发，数据<code>mock</code>就成为环境搭建的重要一环</p>
+</blockquote>
+<h3 id="1-1-Web应用前后端分离"><a href="#1-1-Web应用前后端分离" class="headerlink" title="1.1 Web应用前后端分离"></a>1.1 Web应用前后端分离</h3><ul>
+<li>后台向前台提供<code>API</code>接口,只负责数据的提供和计算，而完全不处理展现</li>
+<li>前台通过<code>Http(Ajax)</code>请求获取数据,　在浏览器端动态构建界面显示数据</li>
+</ul>
+<h3 id="1-2-利用Node-express提供模拟数据"><a href="#1-2-利用Node-express提供模拟数据" class="headerlink" title="1.2 利用Node+express提供模拟数据"></a>1.2 利用Node+express提供模拟数据</h3><ul>
+<li>优点：可以在浏览器端访问</li>
+<li>缺点：如果是打包发布就无法访问模拟数据, 只能是测试时使用</li>
+</ul>
+<blockquote>
+<p>修改build&#x2F;dev-server.js</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//加载json数据</span><br><span class="line">var apiData = require(&#x27;../src/mock/data.json&#x27;)</span><br><span class="line">var home = apiData.home;</span><br><span class="line"></span><br><span class="line">//得到路由器</span><br><span class="line">var apiRouter = express.Router()</span><br><span class="line"></span><br><span class="line">//注册路由</span><br><span class="line">apiRouter.get(&#x27;/home&#x27;, function (req, res) &#123;</span><br><span class="line">    res.json(&#123;</span><br><span class="line">      code: 0,   //0代表正确数据</span><br><span class="line">      data: seller</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">//启用路由</span><br><span class="line">app.use(&#x27;/api&#x27;, apiRouter)</span><br><span class="line"></span><br><span class="line">//访问http://localhost:8080/api/home</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-利用mockjs提供模拟数据"><a href="#1-3-利用mockjs提供模拟数据" class="headerlink" title="1.3 利用mockjs提供模拟数据"></a>1.3 利用mockjs提供模拟数据</h3><blockquote>
+<p>Mockjs: 用来拦截ajax请求, 生成随机数据返回</p>
+</blockquote>
+<ul>
+<li>优点：不可以在浏览器端访问</li>
+<li>缺点：打包发布运行模拟接口也是可以用的</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import Mock from &#x27;mockjs&#x27;  </span><br><span class="line">import apiData from &#x27;./data.json&#x27;</span><br><span class="line"></span><br><span class="line">Mock.mock(&#x27;/api2/seller&#x27;, &#123;code:0, data:apiData.seller&#125;)</span><br><span class="line">Mock.mock(&#x27;/api2/goods&#x27;, &#123;code:0, data:apiData.goods&#125;)</span><br><span class="line">Mock.mock(&#x27;/api2/ratings&#x27;, &#123;code:0, data:apiData.ratings&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4-使用postman工具测试接口"><a href="#1-4-使用postman工具测试接口" class="headerlink" title="1.4 使用postman工具测试接口"></a>1.4 使用postman工具测试接口</h3><ul>
+<li><code>postman</code>是用来测试<code>API</code>接口的<code>chrome</code>插件</li>
+<li><code>postman</code>也是一个活接口文档</li>
+</ul>
+<h3 id="1-5-ajax请求mock数据接口"><a href="#1-5-ajax请求mock数据接口" class="headerlink" title="1.5 ajax请求mock数据接口"></a>1.5 ajax请求mock数据接口</h3><ul>
+<li><code>vue-resource</code>是用于<code>ajax</code>请求的<code>vue</code>插件</li>
+<li><code>axios</code>是浏览器&#x2F;服务器端通用的<code>ajax</code>请求库</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//使用示例</span><br><span class="line"></span><br><span class="line">import VueResource from &#x27;vue-resource&#x27; </span><br><span class="line">Vue.use(VueResource)</span><br><span class="line"></span><br><span class="line">//组件对象多了$http属性, 使用它发送ajax请求</span><br><span class="line">this.$http.get(&#x27;/api2/seller&#x27;).then((response) =&gt; &#123;</span><br><span class="line">  console.log(response.body)</span><br><span class="line">&#125;, (response) =&gt; &#123;</span><br><span class="line">  console.log(&#x27;失败了&#x27;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">import axios from &#x27;axios&#x27;  </span><br><span class="line">axios.get(&#x27;/api2/seller&#x27;).then((response) =&gt; &#123;</span><br><span class="line">  console.log(response.body)</span><br><span class="line">&#125;, (response) =&gt; &#123;</span><br><span class="line">  console.log(&#x27;失败了&#x27;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、数据mock思路"><a href="#二、数据mock思路" class="headerlink" title="二、数据mock思路"></a>二、数据mock思路</h2><ul>
+<li>在<code>client</code>端处数据<code>mock</code></li>
+<li>在<code>server</code>端<code>mock</code></li>
+</ul>
+<blockquote>
+<ul>
+<li>第一种方式拦截了请求的发出，直接返回<code>mock</code>的数据，而第二种方式请求则真实地发出，只是在<code>server</code>端进行<code>route</code>拦截</li>
+<li>前后端分离的方式，就是在传统开发模式中加了一个<code>node</code>层，这样数据<code>mock</code>完全可以在<code>node server</code>端完成，基本思路如下</li>
+</ul>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1480597-db916b41fde14ca3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="mock"></p>
+<h3 id="2-1-mock思路说明"><a href="#2-1-mock思路说明" class="headerlink" title="2.1 mock思路说明"></a>2.1 mock思路说明</h3><ul>
+<li>只有线下开发模式，才会需要进行数据<code>mock</code></li>
+<li>根据请求的<code>url</code>，拼接形成一个<code>file path</code></li>
+<li>为了避免<code>node</code>缓存，删除<code>require.cache(path)</code></li>
+<li>读取<code>require(path)</code> ，如果该文件不存在或读取失败，则跳转到失败路由。这样简单的数据<code>mock</code>就实现了</li>
+</ul>
+<h3 id="2-2-代码描述"><a href="#2-2-代码描述" class="headerlink" title="2.2 代码描述"></a>2.2 代码描述</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">// 伪代码</span><br><span class="line">if (process.env.NODE_ENV === &#x27;development&#x27;) &#123;</span><br><span class="line">  router.set(&#x27;/api/*&#x27;, mockapi)</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">function mockapi(req, res, opts) &#123;</span><br><span class="line">    var basePath = url.parse(req.url).pathname;</span><br><span class="line">         </span><br><span class="line">    try &#123;</span><br><span class="line">        var findPath = require.resolve(prefixPath + basePath + &#x27;.js&#x27;);</span><br><span class="line">        delete require.cache[findPath]</span><br><span class="line">        var result = require(findPath);</span><br><span class="line">    &#125; catch (err) &#123;</span><br><span class="line">        return next(err);</span><br><span class="line">    &#125;</span><br><span class="line">    if (typeof result === &#x27;function&#x27;) &#123;</span><br><span class="line">        return result(req, res, opts);</span><br><span class="line">    &#125;</span><br><span class="line">    if (typeof result.status === &#x27;undefined&#x27; || typeof result.body === &#x27;undefined&#x27;) &#123;</span><br><span class="line">        next(new Error(&#x27;status 或 body 不存在&#x27;))</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    res.writeHead(result.status, &#123;</span><br><span class="line">        &#x27;Content-Type&#x27;: &#x27;application/json;charset=UTF-8&#x27;</span><br><span class="line">    &#125;);</span><br><span class="line">     </span><br><span class="line">    res.write(JSON.stringify(result.body))</span><br><span class="line">    res.end();</span><br><span class="line">    cb()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、Mock-js使用详解"><a href="#三、Mock-js使用详解" class="headerlink" title="三、Mock.js使用详解"></a>三、Mock.js使用详解</h2><h3 id="3-1-Mock-js实现的功能"><a href="#3-1-Mock-js实现的功能" class="headerlink" title="3.1 Mock.js实现的功能"></a>3.1 Mock.js实现的功能</h3><ul>
+<li>让前端攻城师独立于后端进行开发</li>
+<li>通过随机数据，模拟各种场景</li>
+<li>不需要修改既有代码，就可以拦截 <code>Ajax</code> 请求，返回模拟的响应数据</li>
+<li>支持生成随机的文本、数字、布尔值、日期、邮箱、链接、图片、颜色等。</li>
+</ul>
+<h3 id="3-2-Mock安装"><a href="#3-2-Mock安装" class="headerlink" title="3.2 Mock安装"></a>3.2 Mock安装</h3><h4 id="3-2-1-Node下使用"><a href="#3-2-1-Node下使用" class="headerlink" title="3.2.1 Node下使用"></a>3.2.1 Node下使用</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 安装</span><br><span class="line">npm install mockjs</span><br><span class="line">// 使用 Mock</span><br><span class="line">var Mock = require(&#x27;mockjs&#x27;)</span><br><span class="line">var data = Mock.mock(&#123;</span><br><span class="line">    // 属性 list 的值是一个数组，其中含有 1 到 10 个元素</span><br><span class="line">    &#x27;list|1-10&#x27;: [&#123;</span><br><span class="line">        // 属性 id 是一个自增数，起始值为 1，每次增 1</span><br><span class="line">        &#x27;id|+1&#x27;: 1</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;)</span><br><span class="line">// 输出结果</span><br><span class="line">console.log(JSON.stringify(data, null, 4))</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-2-RequireJS-AMD"><a href="#3-2-2-RequireJS-AMD" class="headerlink" title="3.2.2 RequireJS (AMD)"></a>3.2.2 RequireJS (AMD)</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// 配置 Mock 路径</span><br><span class="line">require.config(&#123;</span><br><span class="line">    paths: &#123;</span><br><span class="line">        mock: &#x27;http://mockjs.com/dist/mock&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">// 加载 Mock</span><br><span class="line">require([&#x27;mock&#x27;], function(Mock)&#123;</span><br><span class="line">    // 使用 Mock</span><br><span class="line">    var data = Mock.mock(&#123;</span><br><span class="line">        &#x27;list|1-10&#x27;: [&#123;</span><br><span class="line">            &#x27;id|+1&#x27;: 1</span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;)</span><br><span class="line">    // 输出结果</span><br><span class="line">    document.body.innerHTML +=</span><br><span class="line">        &#x27;&lt;pre&gt;&#x27; +</span><br><span class="line">        JSON.stringify(data, null, 4) +</span><br><span class="line">        &#x27;&lt;/pre&gt;&#x27;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-使用语法"><a href="#3-3-使用语法" class="headerlink" title="3.3 使用语法"></a>3.3 使用语法</h3><ul>
+<li>&#96;&#96;&#96;<br>Mock.js<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">   </span><br><span class="line"></span><br><span class="line">  的语法规范包括两部分</span><br><span class="line"></span><br><span class="line">  - 数据模板定义规范</span><br><span class="line">  - 数据占位符定义规范</span><br><span class="line"></span><br><span class="line">#### 3.3.1 数据模板定义规范</span><br><span class="line"></span><br><span class="line">- 数据模板中的每个属性由 3 部分构成：属性名、生成规则、属性值</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+&#x2F;&#x2F; 属性名   name<br>&#x2F;&#x2F; 生成规则 rule<br>&#x2F;&#x2F; 属性值   value<br>‘name|rule’: value<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 属性名 和 生成规则 之间用竖线 `|` 分隔</span><br><span class="line">- 生成规则 是可选的</span><br><span class="line">- 生成规则 有 7 种格式</span><br><span class="line">  - `&#x27;name|min-max&#x27;: value`</span><br><span class="line">  - `&#x27;name|count&#x27;: value`</span><br><span class="line">  - `&#x27;name|min-max.dmin-dmax&#x27;: value`</span><br><span class="line">  - `&#x27;name|min-max.dcount&#x27;: value`</span><br><span class="line">  - `&#x27;name|count.dmin-dmax&#x27;: value`</span><br><span class="line">  - `&#x27;name|count.dcount&#x27;: value`</span><br><span class="line">  - `&#x27;name|+step&#x27;: value`</span><br><span class="line">- 生成规则 的 含义 需要依赖 属性值的类型 才能确定</span><br><span class="line">- 属性值 中可以含有 `@`占位符</span><br><span class="line">- 属性值 还指定了最终值的初始值和类型</span><br><span class="line"></span><br><span class="line">#### 3.3.2 生成规则和示例</span><br><span class="line"></span><br><span class="line">- 属性值是字符串 `String`</span><br><span class="line"></span><br><span class="line">  - ```</span><br><span class="line">    &#x27;name|min-max&#x27;: string</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>通过重复 <code>string</code>生成一个字符串，重复次数大于等于<code>min</code>，小于等于 <code>max</code></p>
+</li>
+<li><pre><code>&#39;name|count&#39;: string
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    - 通过重复 `string`生成一个字符串，重复次数等于 `count`。</span><br><span class="line"></span><br><span class="line">- 属性值是数字`Number`</span><br><span class="line"></span><br><span class="line">  - ```</span><br><span class="line">    &#x27;name|+1&#x27;: number</span><br></pre></td></tr></table></figure>
+
+- 属性值自动加 `1`，初始值为 `number`
+</code></pre>
+</li>
+<li><p>&#96;&#96;&#96;<br>‘name|min-max’: number</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  - 生成一个大于等于 `min`、小于等于 `max`的整数，属性值 `number` 只是用来确定类型</span><br><span class="line"></span><br><span class="line">- ```</span><br><span class="line">  &#x27;name|min-max.dmin-dmax&#x27;: number</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>生成一个浮点数，整数部分大于等于<code>min</code>、小于等于 <code>max</code>，小数部分保留 <code>dmin</code> 到 <code>dmax</code> 位</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Mock.mock(&#123;</span><br><span class="line">    &#x27;number1|1-100.1-10&#x27;: 1,</span><br><span class="line">    &#x27;number2|123.1-10&#x27;: 1,</span><br><span class="line">    &#x27;number3|123.3&#x27;: 1,</span><br><span class="line">    &#x27;number4|123.10&#x27;: 1.123</span><br><span class="line">&#125;)</span><br><span class="line">// =&gt;</span><br><span class="line">&#123;</span><br><span class="line">    &quot;number1&quot;: 12.92,</span><br><span class="line">    &quot;number2&quot;: 123.51,</span><br><span class="line">    &quot;number3&quot;: 123.777,</span><br><span class="line">    &quot;number4&quot;: 123.1231091814</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>属性值是布尔型 <code>Boolean</code></p>
+<ul>
+<li>&#96;&#96;&#96;<br>‘name|1’: boolean<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  - 随机生成一个布尔值，值为 `true` 的概率是 `1/2`，值为 `false` 的概率同样是 `1/2`</span><br><span class="line"></span><br><span class="line">- ```</span><br><span class="line">  &#x27;name|min-max&#x27;: value</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>随机生成一个布尔值，值为 <code>value</code> 的概率是<code>min / (min + max)</code>，值为 <code>!value</code>的概率是 <code>max / (min + max)</code>\</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>属性值是对象 <code>Object</code></p>
+<ul>
+<li>&#96;&#96;&#96;<br>‘name|count’: object<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  - 从属性值 `object`中随机选取 `count`个属性</span><br><span class="line"></span><br><span class="line">- ```</span><br><span class="line">  &#x27;name|min-max&#x27;: object</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>从属性值 <code>object</code>中随机选取 <code>min</code> 到 <code>max</code> 个属性</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>属性值是数组 <code>Array</code></p>
+<ul>
+<li><pre><code>&#39;name|1&#39;: array
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  - 从属性值 `array` 中随机选取 `1`个元素，作为最终值</span><br><span class="line"></span><br><span class="line">- ```</span><br><span class="line">  &#x27;name|+1&#x27;: array</span><br></pre></td></tr></table></figure>
+
+- 从属性值 `array`中顺序选取 `1` 个元素，作为最终值
+</code></pre>
+</li>
+<li><p>&#96;&#96;&#96;<br>‘name|min-max’: array</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  - 通过重复属性值`array` 生成一个新数组，重复次数大于等于 `min`，小于等于 `max`</span><br><span class="line"></span><br><span class="line">- ```</span><br><span class="line">  &#x27;name|count&#x27;: array</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过重复属性值 <code>array</code>生成一个新数组，重复次数为 <code>count</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>属性值是函数 <code>Function</code></p>
+<ul>
+<li>&#96;&#96;&#96;<br>‘name’: function<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    - 执行函数 `function`，取其返回值作为最终的属性值，函数的上下文为属性 `&#x27;name&#x27;` 所在的对象</span><br><span class="line"></span><br><span class="line">- 属性值是正则表达式 `RegExp`</span><br><span class="line"></span><br><span class="line">  - ```</span><br><span class="line">    &#x27;name&#x27;: regexp</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>根据正则表达式 <code>regexp</code> 反向生成可以匹配它的字符串。用于生成自定义格式的字符串</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Mock.mock(&#123;</span><br><span class="line">    &#x27;regexp1&#x27;: /[a-z][A-Z][0-9]/,</span><br><span class="line">    &#x27;regexp2&#x27;: /\w\W\s\S\d\D/,</span><br><span class="line">    &#x27;regexp3&#x27;: /\d&#123;5,10&#125;/</span><br><span class="line">&#125;)</span><br><span class="line">// =&gt;</span><br><span class="line">&#123;</span><br><span class="line">    &quot;regexp1&quot;: &quot;pJ7&quot;,</span><br><span class="line">    &quot;regexp2&quot;: &quot;F)\fp1G&quot;,</span><br><span class="line">    &quot;regexp3&quot;: &quot;561659409&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-3-3-数据占位符定义规范"><a href="#3-3-3-数据占位符定义规范" class="headerlink" title="3.3.3 数据占位符定义规范"></a>3.3.3 数据占位符定义规范</h4><blockquote>
+<p>占位符,只是在属性值字符串中占个位置，并不出现在最终的属性值中</p>
+</blockquote>
+<ul>
+<li>占位符 的格式为</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@占位符</span><br><span class="line">@占位符(参数 [, 参数])</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>用 <code>@</code>来标识其后的字符串是 占位符</li>
+<li>占位符 引用的是 <code>Mock.Random</code> 中的方法</li>
+<li>通过 <code>Mock.Random.extend()</code> 来扩展自定义占位符</li>
+<li>占位符 也可以引用 数据模板 中的属性</li>
+<li>占位符 会优先引用 数据模板 中的属性</li>
+<li>占位符 支持 相对路径 和 绝对路径</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Mock.mock(&#123;</span><br><span class="line">    name: &#123;</span><br><span class="line">        first: &#x27;@FIRST&#x27;,</span><br><span class="line">        middle: &#x27;@FIRST&#x27;,</span><br><span class="line">        last: &#x27;@LAST&#x27;,</span><br><span class="line">        full: &#x27;@first @middle @last&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">// =&gt;</span><br><span class="line">&#123;</span><br><span class="line">    &quot;name&quot;: &#123;</span><br><span class="line">        &quot;first&quot;: &quot;Charles&quot;,</span><br><span class="line">        &quot;middle&quot;: &quot;Brenda&quot;,</span><br><span class="line">        &quot;last&quot;: &quot;Lopez&quot;,</span><br><span class="line">        &quot;full&quot;: &quot;Charles Brenda Lopez&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-Mock-mock"><a href="#3-4-Mock-mock" class="headerlink" title="3.4 Mock.mock()"></a>3.4 Mock.mock()</h3><h4 id="3-4-1-Mock-mock-template"><a href="#3-4-1-Mock-mock-template" class="headerlink" title="3.4.1 Mock.mock( template )"></a>3.4.1 Mock.mock( template )</h4><ul>
+<li>根据数据模板生成模拟数据</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- （必选）加载 Mock --&gt;</span><br><span class="line">&lt;script src=&quot;http://mockjs.com/dist/mock.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">// Mock.mock( template )</span><br><span class="line">var template = &#123;</span><br><span class="line">    &#x27;title&#x27;: &#x27;Syntax Demo&#x27;,</span><br><span class="line"></span><br><span class="line">    &#x27;string1|1-10&#x27;: &#x27;★&#x27;,</span><br><span class="line">    &#x27;string2|3&#x27;: &#x27;value&#x27;,</span><br><span class="line"></span><br><span class="line">    &#x27;number1|+1&#x27;: 100,</span><br><span class="line">    &#x27;number2|1-100&#x27;: 100,</span><br><span class="line">    &#x27;number3|1-100.1-10&#x27;: 1,</span><br><span class="line">    &#x27;number4|123.1-10&#x27;: 1,</span><br><span class="line">    &#x27;number5|123.3&#x27;: 1,</span><br><span class="line">    &#x27;number6|123.10&#x27;: 1.123,</span><br><span class="line"></span><br><span class="line">    &#x27;boolean1|1&#x27;: true,</span><br><span class="line">    &#x27;boolean2|1-2&#x27;: true,</span><br><span class="line"></span><br><span class="line">    &#x27;object1|2-4&#x27;: &#123;</span><br><span class="line">        &#x27;110000&#x27;: &#x27;北京市&#x27;,</span><br><span class="line">        &#x27;120000&#x27;: &#x27;天津市&#x27;,</span><br><span class="line">        &#x27;130000&#x27;: &#x27;河北省&#x27;,</span><br><span class="line">        &#x27;140000&#x27;: &#x27;山西省&#x27;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#x27;object2|2&#x27;: &#123;</span><br><span class="line">        &#x27;310000&#x27;: &#x27;上海市&#x27;,</span><br><span class="line">        &#x27;320000&#x27;: &#x27;江苏省&#x27;,</span><br><span class="line">        &#x27;330000&#x27;: &#x27;浙江省&#x27;,</span><br><span class="line">        &#x27;340000&#x27;: &#x27;安徽省&#x27;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#x27;array1|1&#x27;: [&#x27;AMD&#x27;, &#x27;CMD&#x27;, &#x27;KMD&#x27;, &#x27;UMD&#x27;],</span><br><span class="line">    &#x27;array2|1-10&#x27;: [&#x27;Mock.js&#x27;],</span><br><span class="line">    &#x27;array3|3&#x27;: [&#x27;Mock.js&#x27;],</span><br><span class="line"></span><br><span class="line">    &#x27;function&#x27;: function() &#123;</span><br><span class="line">        return this.title</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var data = Mock.mock(template)</span><br><span class="line"></span><br><span class="line">$(&#x27;&lt;pre&gt;&#x27;).text(JSON.stringify(data, null, 4))</span><br><span class="line">    .appendTo(&#x27;body&#x27;)</span><br><span class="line">//res</span><br><span class="line">&#123;</span><br><span class="line">    &quot;title&quot;: &quot;Syntax Demo&quot;,</span><br><span class="line">    &quot;string1&quot;: &quot;★★★&quot;,</span><br><span class="line">    &quot;string2&quot;: &quot;valuevaluevalue&quot;,</span><br><span class="line">    &quot;number1&quot;: 100,</span><br><span class="line">    &quot;number2&quot;: 48,</span><br><span class="line">    &quot;number3&quot;: 99.05,</span><br><span class="line">    &quot;number4&quot;: 123.6,</span><br><span class="line">    &quot;number5&quot;: 123.516,</span><br><span class="line">    &quot;number6&quot;: 123.1236370317,</span><br><span class="line">    &quot;boolean1&quot;: false,</span><br><span class="line">    &quot;boolean2&quot;: true,</span><br><span class="line">    &quot;object1&quot;: &#123;</span><br><span class="line">        &quot;120000&quot;: &quot;天津市&quot;,</span><br><span class="line">        &quot;130000&quot;: &quot;河北省&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;object2&quot;: &#123;</span><br><span class="line">        &quot;320000&quot;: &quot;江苏省&quot;,</span><br><span class="line">        &quot;330000&quot;: &quot;浙江省&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;array1&quot;: &quot;KMD&quot;,</span><br><span class="line">    &quot;array2&quot;: [</span><br><span class="line">        &quot;Mock.js&quot;</span><br><span class="line">    ],</span><br><span class="line">    &quot;array3&quot;: [</span><br><span class="line">        &quot;Mock.js&quot;,</span><br><span class="line">        &quot;Mock.js&quot;,</span><br><span class="line">        &quot;Mock.js&quot;</span><br><span class="line">    ],</span><br><span class="line">    &quot;function&quot;: &quot;Syntax Demo&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-4-2-Mock-mock-rurl-template"><a href="#3-4-2-Mock-mock-rurl-template" class="headerlink" title="3.4.2 Mock.mock( rurl, template )"></a>3.4.2 Mock.mock( rurl, template )</h4><ul>
+<li>记录数据模板。当拦截到匹配 <code>rurl</code> 的 <code>Ajax</code> 请求时，将根据数据模板 <code>template</code>生成模拟数据，并作为响应数据返回</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- （必选）加载 Mock --&gt;</span><br><span class="line">&lt;script src=&quot;http://mockjs.com/dist/mock.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">// Mock.mock(rurl, template)</span><br><span class="line">Mock.mock(/\.json/, &#123;</span><br><span class="line">    &#x27;list|1-10&#x27;: [&#123;</span><br><span class="line">        &#x27;id|+1&#x27;: 1,</span><br><span class="line">        &#x27;email&#x27;: &#x27;@EMAIL&#x27;</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;)</span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url: &#x27;1.json&#x27;,</span><br><span class="line">    dataType: &#x27;json&#x27;</span><br><span class="line">&#125;).done(function(data, status, jqXHR)&#123;</span><br><span class="line">    $(&#x27;&lt;pre&gt;&#x27;).text(JSON.stringify(data, null, 4))</span><br><span class="line">        .appendTo(&#x27;body&#x27;)</span><br><span class="line">&#125;)</span><br><span class="line">&#123;</span><br><span class="line">    &quot;list&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;id&quot;: 1,</span><br><span class="line">            &quot;email&quot;: &quot;k.sejuwxvego@xcwc.中国互联.公司&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;id&quot;: 2,</span><br><span class="line">            &quot;email&quot;: &quot;f.hjns@rhivyrvhpb.ve&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;id&quot;: 3,</span><br><span class="line">            &quot;email&quot;: &quot;g.bdwuuhm@czoybmyp.ms&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;id&quot;: 4,</span><br><span class="line">            &quot;email&quot;: &quot;n.tkgs@javvkxz.bf&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-4-3-Mock-mock-rurl-function-options"><a href="#3-4-3-Mock-mock-rurl-function-options" class="headerlink" title="3.4.3 Mock.mock( rurl, function( options ) )"></a>3.4.3 Mock.mock( rurl, function( options ) )</h4><ul>
+<li>记录用于生成响应数据的函数。当拦截到匹配 <code>rurl</code> 的 <code>Ajax</code> 请求时，函数 <code>function(options)</code>将被执行，并把执行结果作为响应数据返回</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">// Mock.mock(rurl, function(options))</span><br><span class="line">Mock.mock(/\.json/, function(options) &#123;</span><br><span class="line">    return options</span><br><span class="line">&#125;)</span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url: &#x27;hello.json&#x27;,</span><br><span class="line">    dataType: &#x27;json&#x27;</span><br><span class="line">&#125;).done(function(data, status, jqXHR) &#123;</span><br><span class="line">    $(&#x27;&lt;pre&gt;&#x27;).text(JSON.stringify(data, null, 4))</span><br><span class="line">        .appendTo(&#x27;body&#x27;)</span><br><span class="line">&#125;)</span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url: &#x27;hello.json&#x27;,</span><br><span class="line">    dataType: &#x27;json&#x27;,</span><br><span class="line">    data: &#123;</span><br><span class="line">        foo: 1,</span><br><span class="line">        bar: 2,</span><br><span class="line">        faz: 3</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).done(function(data, status, jqXHR) &#123;</span><br><span class="line">    $(&#x27;&lt;pre&gt;&#x27;).text(JSON.stringify(data, null, 4))</span><br><span class="line">        .appendTo(&#x27;body&#x27;)</span><br><span class="line">&#125;)</span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url: &#x27;hello.json&#x27;,</span><br><span class="line">    type: &#x27;post&#x27;,</span><br><span class="line">    dataType: &#x27;json&#x27;,</span><br><span class="line">    data: &#123;</span><br><span class="line">        foo: 1,</span><br><span class="line">        bar: 2,</span><br><span class="line">        faz: 3</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).done(function(data, status, jqXHR) &#123;</span><br><span class="line">    $(&#x27;&lt;pre&gt;&#x27;).text(JSON.stringify(data, null, 4))</span><br><span class="line">        .appendTo(&#x27;body&#x27;)</span><br><span class="line">&#125;)</span><br><span class="line">&#123;</span><br><span class="line">    &quot;url&quot;: &quot;hello.json?foo=1&amp;bar=2&amp;faz=3&quot;,</span><br><span class="line">    &quot;type&quot;: &quot;GET&quot;,</span><br><span class="line">    &quot;body&quot;: null</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">    &quot;url&quot;: &quot;hello.json&quot;,</span><br><span class="line">    &quot;type&quot;: &quot;GET&quot;,</span><br><span class="line">    &quot;body&quot;: null</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">    &quot;url&quot;: &quot;hello.json&quot;,</span><br><span class="line">    &quot;type&quot;: &quot;POST&quot;,</span><br><span class="line">    &quot;body&quot;: &quot;foo=1&amp;bar=2&amp;faz=3&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-4-4-Mock-setup"><a href="#3-4-4-Mock-setup" class="headerlink" title="3.4.4 Mock.setup()"></a>3.4.4 Mock.setup()</h4><ul>
+<li>&#96;&#96;&#96;<br>Mock.setup( settings )<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  - 配置拦截 `Ajax` 请求时的行为。支持的配置项有：`timeout`</span><br><span class="line"></span><br><span class="line">&gt; 指定被拦截的 `Ajax` 请求的响应时间，单位是毫秒。值可以是正整数，例如 `400`，表示 `400` 毫秒 后才会返回响应内容；也可以是横杠 `&#x27;-&#x27;` 风格的字符串，例如 `&#x27;200-600&#x27;`，表示响应时间介于 `200` 和 `600` 毫秒之间。默认值是`&#x27;10-100&#x27;`</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+Mock.setup({<br>  timeout: 400<br>})<br>Mock.setup({<br>  timeout: ‘200-600’<br>})<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 目前，接口 `Mock.setup( settings )`仅用于配置 `Ajax` 请求</span><br><span class="line"></span><br><span class="line">#### 3.4.5 Mock.Random</span><br><span class="line"></span><br><span class="line">- `Mock.Random` 是一个工具类，用于生成各种随机数据</span><br><span class="line">- `Mock.Random`的方法在数据模板中称为『占位符』，书写格式为 `@`占位符(参数 [, 参数])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+var Random &#x3D; Mock.Random<br>Random.email()<br>&#x2F;&#x2F; &#x3D;&gt; “<a href="mailto:&#110;&#46;&#x63;&#x6c;&#x61;&#114;&#x6b;&#x40;&#x6d;&#x69;&#x6c;&#x6c;&#x65;&#114;&#46;&#105;&#x6f;">&#110;&#46;&#x63;&#x6c;&#x61;&#114;&#x6b;&#x40;&#x6d;&#x69;&#x6c;&#x6c;&#x65;&#114;&#46;&#105;&#x6f;</a>“<br>Mock.mock(‘@email’)<br>&#x2F;&#x2F; &#x3D;&gt; “<a href="mailto:&#x79;&#46;&#x6c;&#x65;&#x65;&#x40;&#x6c;&#x65;&#119;&#x69;&#115;&#46;&#111;&#x72;&#x67;">&#x79;&#46;&#x6c;&#x65;&#x65;&#x40;&#x6c;&#x65;&#119;&#x69;&#115;&#46;&#111;&#x72;&#x67;</a>“<br>Mock.mock( { email: ‘@email’ } )<br>&#x2F;&#x2F; &#x3D;&gt; { email: “<a href="mailto:&#x76;&#46;&#x6c;&#101;&#119;&#x69;&#x73;&#64;&#104;&#x61;&#x6c;&#x6c;&#46;&#x67;&#111;&#118;">&#x76;&#46;&#x6c;&#101;&#119;&#x69;&#x73;&#64;&#104;&#x61;&#x6c;&#x6c;&#46;&#x67;&#111;&#118;</a>“ }<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 四、简单构建一套mock-server</span><br><span class="line"></span><br><span class="line">&gt; 为了更好的分工合作，让前端能在不依赖后端环境的情况下进行开发，其中一种手段就是为前端开发者提供一个 web 容器，这个本地环境就是 mock-server</span><br><span class="line"></span><br><span class="line">**一个比较好的 mock-server 该有的能力**</span><br><span class="line"></span><br><span class="line">- 与线上环境一致的接口地址，每次构建前端代码时不需要修改调用接口的代码</span><br><span class="line">- 所改即所得，具有热更新的能力，每次增加修改 `mock` 接口时不需要重启 `mock` 服务，更不用重启前端构建服务</span><br><span class="line">- 能配合 `Webpack`</span><br><span class="line">- `mock` 数据可以由工具生成不需要自己手动写</span><br><span class="line">- 能模拟 `POST`、`GET` 请求</span><br><span class="line"></span><br><span class="line">**搭建主要思路**</span><br><span class="line"></span><br><span class="line">&gt; 以 `json-server` 作为 `mock` 服务器， `mock.js` 生成`mock` 数据，利用 `gulp + nodemon + browser-sync` 监听`mock`文件的改动重启 `node` 服务，刷新浏览器，以此达到一种相对完美的 `mock-server`要求</span><br><span class="line"></span><br><span class="line">### 4.1 json-server 搭配 mock.js</span><br><span class="line"></span><br><span class="line">- 这里以`Webpack` 的前端工程为例</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+cnpm install json-server mockjs –save<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 在项目根目录新建 `mock`文件夹，新建 `mock/db.js` 作为 `mock` 数据源，`mock/server.js`作为 `mock`服务，`mock/routes.js`重写路由表</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+var Mock &#x3D; require(‘mockjs’);</li>
+</ul>
+<p>module.exports &#x3D; {<br>  getComment: Mock.mock({<br>    “error”: 0,<br>    “message”: “success”,<br>    “result|40”: [{<br>      “author”: “@name”,<br>      “comment”: “@cparagraph”,<br>      “date”: “@datetime”<br>    }]<br>  }),<br>  addComment: Mock.mock({<br>    “error”: 0,<br>    “message”: “success”,<br>    “result”: []<br>  })<br>};</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 这里我们利用 `mock.js` 生成 `mock` 数据，可以尽可能的还原真实数据，还可以减少数据构造的复杂度</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>&#x2F;&#x2F; routes.js<br>module.exports &#x3D; {<br>  “&#x2F;comment&#x2F;get.action”: “&#x2F;getComment”,<br>  “&#x2F;comment&#x2F;add.action”: “&#x2F;addComment”<br>}<br>&#x2F;&#x2F; server.js<br>const jsonServer &#x3D; require(‘json-server’)<br>const db &#x3D; require(‘.&#x2F;db.js’)<br>const routes &#x3D; require(‘.&#x2F;routes.js’)<br>const port &#x3D; 3000;</p>
+<p>const server &#x3D; jsonServer.create()<br>const router &#x3D; jsonServer.router(db)<br>const middlewares &#x3D; jsonServer.defaults()<br>const rewriter &#x3D; jsonServer.rewriter(routes)</p>
+<p>server.use(middlewares)<br>&#x2F;&#x2F; 将 POST 请求转为 GET<br>server.use((request, res, next) &#x3D;&gt; {<br>  request.method &#x3D; ‘GET’;<br>  next();<br>})</p>
+<p>server.use(rewriter) &#x2F;&#x2F; 注意：rewriter 的设置一定要在 router 设置之前<br>server.use(router)</p>
+<p>server.listen(port, () &#x3D;&gt; {<br>  console.log(‘open mock server at localhost:’ + port)<br>})</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 启动服务</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>$ node mock&#x2F;server.js</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 打开 `http://localhost:3000/comment/get.action`即可查看到我们想要的数据</span><br><span class="line"></span><br><span class="line">![image.png](http://upload-images.jianshu.io/upload_images/1480597-7c4747bf268572ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">&gt; 是不是这样就算搭建完了我们的 `mock-server` ？不，并没有。我们可以尝试修改一下 `db.js` 的文件内容，刷新浏览器发现 `mock` 数据并没有像我们想象的那样修改。那也就是说每次当我们需要添加 /修改 `mock` 数据使都需要重启一次 `mock` 服务</span><br><span class="line"></span><br><span class="line">### 4.2 端口代理</span><br><span class="line"></span><br><span class="line">&gt; 通过 `Webpack` 配置 `proxy` 代理</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>module.exports &#x3D; {</p>
+<p>  devServer: {<br>    &#x2F;&#x2F;其实很简单的，只要配置这个参数就可以了<br>    proxy: {<br>      ‘&#x2F;api&#x2F;‘: {<br>        target: ‘<a href="http://localhost:3000&#39;">http://localhost:3000&#39;</a>,<br>          changeOrigin: true,<br>        pathRewrite: {<br>          ‘^&#x2F;api’: ‘’<br>        }<br>      }<br>    }<br>  }<br>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 接着在代码里进行 `ajax`请求就可以写成，这里以 `axios` 为例子</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>function getComments () {<br>  axios.get(‘api&#x2F;comment&#x2F;get.action’, {}).then((res) &#x3D;&gt; {<br>    console.log(res.data)<br>  })<br>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 4.3 文件改动自动刷新</span><br><span class="line"></span><br><span class="line">&gt; 我们希望更改 `mock`文件能和 `webpack` 热更新一样，所改即所得。这里我使用了 `nodemon`，利用 `gulp` 建立自动执行的任务。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>cnpm install gulp gulp-nodemon browser-sync –save<br>&#x2F;&#x2F; gulpfile.js 的代码如下<br>onst path &#x3D; require(‘path’);<br>const gulp &#x3D; require(‘gulp’);<br>const nodemon &#x3D; require(‘gulp-nodemon’);<br>const browserSync &#x3D; require(‘browser-sync’).create();<br>const server &#x3D; path.resolve(__dirname, ‘mock’);</p>
+<p>&#x2F;&#x2F; browser-sync 配置，配置里启动 nodemon 任务<br>gulp.task(‘browser-sync’, [‘nodemon’], function() {<br>  browserSync.init(null, {<br>    proxy: “<a href="http://localhost:8080&quot;">http://localhost:8080&quot;</a>, &#x2F;&#x2F; 这里的端口和 webpack 的端口一致<br>    port: 8081<br>  });<br>});</p>
+<p>&#x2F;&#x2F; browser-sync 监听文件<br>gulp.task(‘mock’, [‘browser-sync’], function() {<br>  gulp.watch([‘.&#x2F;mock&#x2F;db.js’, ‘.&#x2F;mock&#x2F;**’], [‘bs-delay’]);<br>});</p>
+<p>&#x2F;&#x2F; 延时刷新<br>gulp.task(‘bs-delay’, function() {<br>  setTimeout(function() {<br>    browserSync.reload();<br>  }, 1000);<br>});</p>
+<p>&#x2F;&#x2F; 服务器重启<br>gulp.task(‘nodemon’, function(cb) {<br>  &#x2F;&#x2F; 设个变量来防止重复重启<br>  var started &#x3D; false;<br>  var stream &#x3D; nodemon({<br>    script: ‘.&#x2F;mock&#x2F;server.js’,<br>    &#x2F;&#x2F; 监听文件的后缀<br>    ext: “js”,<br>    env: {<br>      ‘NODE_ENV’: ‘development’<br>    },<br>    &#x2F;&#x2F; 监听的路径<br>    watch: [<br>      server<br>    ]<br>  });<br>  stream.on(‘start’, function() {<br>    if (!started) {<br>      cb();<br>      started &#x3D; true;<br>    }<br>  }).on(‘crash’, function() {<br>    console.error(‘application has crashed!\n’)<br>    stream.emit(‘restart’, 10)<br>  })<br>});</p>
+<p>&#96;&#96;&#96;</p>
+<ul>
+<li>这样以后我们在构建我们 <code>Webpack</code> 工程时只需要先执行 <code>npm run dev</code></li>
+<li>之后新建 <code>terminal</code> 执行 <code>gulp mock</code></li>
+<li>就可以搭建一个随改随变的 <code>mock-server</code> 环境</li>
+</ul>
+<p><strong>完整的代码详情</strong> <a target="_blank" rel="noopener" href="https://github.com/poetries/mock-server">https://github.com/poetries/mock-server</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mock/" rel="tag">Mock</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-工具/hexo-搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/12/26/%E5%B7%A5%E5%85%B7/hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="article-date">
+  	<time datetime="2018-12-26T06:28:16.000Z" itemprop="datePublished">2018-12-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/26/%E5%B7%A5%E5%85%B7/hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">
+        hexo搭建博客
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、概念"><a href="#1、概念" class="headerlink" title="1、概念"></a>1、概念</h2><p>Hexo是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。即把用户的markdown文件，按照指定的主题解析成静态网页。<br><strong>超快速度</strong><br>Node.js 所带来的超快生成速度，让上百个页面在几秒内瞬间完成渲染。</p>
+<p><strong>支持 Markdown</strong><br>Hexo 支持 GitHub Flavored Markdown 的所有功能，甚至可以整合 Octopress 的大多数插件。</p>
+<p><strong>一键部署</strong><br>只需一条指令即可部署到 GitHub Pages, Heroku 或其他平台。</p>
+<p><strong>插件和可扩展性</strong><br>强大的 API 带来无限的可能，与数种模板引擎（EJS，Pug，Nunjucks）和工具（Babel，PostCSS，Less&#x2F;Sass）轻易集成</p>
+<h2 id="2、安装"><a href="#2、安装" class="headerlink" title="2、安装"></a>2、安装</h2><p>安装使用hexo<strong>之前需要先安装Node.js（注意版本兼容）和Git</strong>，当已经安装了Node.js和npm(npm是node.js的包管理工具，一般下载node会自带npm)。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>可以通过以下命令在终端查看主机中是否安装了node.js和npm</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ node --version    #检查是否安装了node.js</span><br><span class="line">$ npm --version     #检查是否安装了npm</span><br><span class="line">$ git --version     #检查是否安装了git</span><br></pre></td></tr></table></figure>
+<h2 id="3、建站"><a href="#3、建站" class="headerlink" title="3、建站"></a>3、建站</h2><p>安装完Hexo之后，进入一个空文件夹，执行下列命令，Hexo将会在指定目录中新建所需要的文件，指定的目录即为Hexo的工作站</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p>新建完成之后，指定目录中的情况如下</p>
+<p>.<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br>|   ├── _drafts<br>|   └── _posts<br>└── themes<br>3.1. _config.yml<br>网站的配置信息，您可以在此配置大部分的参数。 配置参数讲解</p>
+<p>3.2. package.json<br>应用程序的信息，以及需要安装的模块信息。</p>
+<p>3.3. scaffolds<br>模版文件夹。新建文章时，Hexo 会根据 scaffold 中的模板文件来建立新的文件。Hexo的模板是指在新建的markdown文件中默认填充的内容。例如，如果修改scaffold&#x2F;post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。也就是说，通过hexo命令每新建一个文章，都会包含指定模板文件中的内容。</p>
+<p>官网模板详述</p>
+<p>3.4. source<br>资源文件夹是存放用户资源的地方，如markdown文章。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。</p>
+<p>注意：除 _posts 文件夹之外，开头命名为 _ (下划线)的文件 &#x2F; 文件夹和隐藏的文件将会被忽略。<br>3.5. themes<br>主题文件夹。Hexo 会根据主题来解析source目录中的markdown文件生成静态页面。官网主题详述</p>
+<h2 id="4、写作"><a href="#4、写作" class="headerlink" title="4、写作"></a>4、写作</h2><p>假设我们的文章名为 “hello hexo markdwon”，在命令行键入以下命令即可：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &quot;hello hexo markdown&quot;</span><br></pre></td></tr></table></figure>
+<p>上述命令的结果是在 .&#x2F;hexo&#x2F;source&#x2F;_posts 路径下新建了一个 hello-hexo-markdown.md 文件。</p>
+<p>可以执行下列命令来创建一篇新文章。</p>
+<p>$ hexo new [layout] <title><br>可以在命令中指定文章的布局（layout），不指定默认为 post，也可以通过修改 _config.yml 中的 default_layout 参数来指定默认布局。创建的新文章会自动加上指定布局对应的模板文件中的内容。</p>
+<p>4.1. 布局（Layout）<br>Hexo 有三种默认布局：post、page 和 draft，它们分别对应不同的路径，而自定义的其他布局和 post 相同，都将储存到 source&#x2F;_posts 文件夹。</p>
+<p>布局路径postsource&#x2F;_postspagesourcedraftsource&#x2F;_drafts</p>
+<p>如果你不想你的文章被处理，你可以将 Front-Matter 中的layout: 设为 false 。</p>
+<p>4.2. 模版（Scaffold）<br>在新建文章时，Hexo 会根据 scaffolds 文件夹内相对应的文件来建立文件，例如：</p>
+<p>$ hexo new photo “My Gallery”<br>在执行这行指令时，Hexo 会尝试在 scaffolds 文件夹中寻找 photo.md，并根据其内容建立文章，以下是您可以在模版中使用的变量：</p>
+<p>变量描述layout布局title标题date文件建立日期</p>
+<p>4.3. Front-matter<br>Front-matter是文件最上方以 — 分隔的区域，用于指定个别文件的变量，举例来说：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World</span><br><span class="line">date: 2013/7/13 20:46:25</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>注意：一般Front-matter使用的yaml语法，yaml语法需要注意空格，如title: Hello World冒号需要有一个空格，当然除YAML 外，你也可以使用 JSON 来编写 Front-matter。<br>以下是预先定义的参数，您可在模板中使用这些参数值并加以利用。</p>
+<p>参数描述默认值layout布局title标题date建立日期文件建立日updated更新日期文件更新日期comments开启文章的评论功能truetags标签（不适用于分页）categories分类（不适用于分页）permalink覆盖文章网址</p>
+<p>分类和标签</p>
+<p>只有文章支持分类和标签，您可以在 Front-matter 中设置。在其他系统中，分类和标签听起来很接近，但是在 Hexo 中两者有着明显的差别：分类具有顺序性和层次性而标签没有顺序和层次。<br>···<br>categories:</p>
+<ul>
+<li>Diary<br>tags:</li>
+<li>PS3</li>
+<li>Games<br>···<br>WordPress支持对一篇文章设置多个分类，而且这些分类可以是同级的，也可以是父子分类。但是Hexo不支持指定多个同级分类。下面的指定方法：<br>···<br>categories:<br>Diary<br>Life<br>···<br>会使分类Life成为Diary的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类.</li>
+</ul>
+<p>4.4. 文章摘要<br>设置文章摘要，我们只需在想显示为摘要的内容之后添
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+        <p class="article-more-link">
+          <a  href="/2018/12/26/%E5%B7%A5%E5%85%B7/hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more">learn more >></a>
+        </p>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/11/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/13/">Next &amp;raquo;</a>
+    </nav>
+  
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 mr.杜
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: true,
+		isPost: false,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
