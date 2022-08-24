@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>vue-计算属性与数据监听 | Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、监听属性 我们在工作中常常需要监听某一个属性值的变化，这个时候我们就需要用到了监听属性watch  1.1 基础版监听 场景如下：输入框输入你的年龄，如果年龄在0-15岁提示信息：你还是个小孩，如果年龄在 15-25岁，提示信息：你已经是个少年，如果年龄在25岁以上，提示信息：你已经长大了  12345678910111213141516171819202122232425262728&lt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-计算属性与数据监听">
+<meta property="og:url" content="http://example.com/2018/08/02/Vue/vue-%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%9B%91%E5%90%AC/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、监听属性 我们在工作中常常需要监听某一个属性值的变化，这个时候我们就需要用到了监听属性watch  1.1 基础版监听 场景如下：输入框输入你的年龄，如果年龄在0-15岁提示信息：你还是个小孩，如果年龄在 15-25岁，提示信息：你已经是个少年，如果年龄在25岁以上，提示信息：你已经长大了  12345678910111213141516171819202122232425262728&lt;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-08-02T01:52:31.000Z">
+<meta property="article:modified_time" content="2022-06-06T10:48:30.000Z">
+<meta property="article:author" content="mr.杜">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="https://img1.baidu.com/it/u=412709218,617594518&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=504&amp;h=500" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">mr.杜</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Event-Loop/" style="font-size: 10px;">Event Loop</a> <a href="/tags/Graphviz/" style="font-size: 10px;">Graphviz</a> <a href="/tags/Mock/" style="font-size: 10px;">Mock</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/RESTful/" style="font-size: 10px;">RESTful</a> <a href="/tags/React/" style="font-size: 19.29px;">React</a> <a href="/tags/Redux/" style="font-size: 11.43px;">Redux</a> <a href="/tags/async-await/" style="font-size: 10px;">async/await</a> <a href="/tags/css/" style="font-size: 13.57px;">css</a> <a href="/tags/echart/" style="font-size: 10px;">echart</a> <a href="/tags/es6/" style="font-size: 16.43px;">es6</a> <a href="/tags/eslint/" style="font-size: 10px;">eslint</a> <a href="/tags/git/" style="font-size: 15.71px;">git</a> <a href="/tags/glup/" style="font-size: 10.71px;">glup</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 14.29px;">html</a> <a href="/tags/http/" style="font-size: 17.14px;">http</a> <a href="/tags/javascript/" style="font-size: 18.57px;">javascript</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 10.71px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 12.86px;">nodejs</a> <a href="/tags/python/" style="font-size: 10.71px;">python</a> <a href="/tags/qiankun/" style="font-size: 10px;">qiankun</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/serveless/" style="font-size: 10px;">serveless</a> <a href="/tags/typescript/" style="font-size: 12.14px;">typescript</a> <a href="/tags/vs-code/" style="font-size: 11.43px;">vs code</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/vue3/" style="font-size: 10px;">vue3</a> <a href="/tags/webpack/" style="font-size: 17.86px;">webpack</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 13.57px;">优化</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10.71px;">前端</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 15px;">小程序</a> <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 10px;">抓包</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 10px;">正则表达式</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 12.86px;">浏览器</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" style="font-size: 10.71px;">移动端</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.57px;">设计模式</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://img1.baidu.com/it/u=412709218,617594518&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=504&amp;h=500" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Vue/vue-计算属性与数据监听" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/08/02/Vue/vue-%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%9B%91%E5%90%AC/" class="article-date">
+  	<time datetime="2018-08-02T01:52:31.000Z" itemprop="datePublished">2018-08-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue-计算属性与数据监听
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E6%A1%86%E6%9E%B6/">框架</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、监听属性"><a href="#一、监听属性" class="headerlink" title="一、监听属性"></a>一、监听属性</h2><blockquote>
+<p>我们在工作中常常需要监听某一个属性值的变化，这个时候我们就需要用到了监听属性<code>watch</code></p>
+</blockquote>
+<h3 id="1-1-基础版监听"><a href="#1-1-基础版监听" class="headerlink" title="1.1 基础版监听"></a>1.1 基础版监听</h3><blockquote>
+<p>场景如下：输入框输入你的年龄，如果年龄在0-15岁提示信息：你还是个小孩，如果年龄在 15-25岁，提示信息：你已经是个少年，如果年龄在25岁以上，提示信息：你已经长大了</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line"> &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  年齡：&lt;input type=&quot;number&quot; v-model=&quot;age&quot;&gt;&lt;br&gt;</span><br><span class="line">  提示信息：&lt;span&gt;&#123;&#123;infoMsg&#125;&#125;&lt;/span&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line"> data() &#123;</span><br><span class="line">  return &#123;</span><br><span class="line">   age: &quot;&quot;,</span><br><span class="line">   infoMsg:&quot;&quot;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;,</span><br><span class="line"> watch:&#123;</span><br><span class="line">  age:function(val,oldval)&#123;</span><br><span class="line">   if(val&gt;0 &amp;&amp; val&lt;15)&#123;</span><br><span class="line">    this.infoMsg=&quot;你还是个小孩&quot;</span><br><span class="line">   &#125;else if(val&gt;15 &amp;&amp; val&lt;25)&#123;</span><br><span class="line">    this.infoMsg=&quot;你已经是个少年&quot;</span><br><span class="line">   &#125;else&#123;</span><br><span class="line">    this.infoMsg=&quot;你已经长大了&quot;</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-进阶版监听"><a href="#1-2-进阶版监听" class="headerlink" title="1.2 进阶版监听"></a>1.2 进阶版监听</h3><blockquote>
+<p>下面我们改变一下需求：基础规则不变，但是因为后台数据库的更改,我们需要提交一个这样的数据结构</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">  return &#123;</span><br><span class="line">   info: &#123;</span><br><span class="line">    age: &quot;&quot;</span><br><span class="line">   &#125;,</span><br><span class="line">   infoMsg: &quot;&quot;</span><br><span class="line">  &#125;;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>由于我们监听的是对象<code>info</code>中的属性<code>age</code>值的变化，所以我们需要使用到的是深度监听，具体代码如下</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line"> &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  年齡：&lt;input type=&quot;number&quot; v-model=&quot;info.age&quot;&gt;&lt;br&gt;</span><br><span class="line">  提示信息：&lt;span&gt;&#123;&#123;infoMsg&#125;&#125;&lt;/span&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line"> data() &#123;</span><br><span class="line">  return &#123;</span><br><span class="line">   info: &#123;</span><br><span class="line">    age: &quot;&quot;</span><br><span class="line">   &#125;,</span><br><span class="line">   infoMsg: &quot;&quot;</span><br><span class="line">  &#125;;</span><br><span class="line"> &#125;,</span><br><span class="line"> watch: &#123;</span><br><span class="line">  info: &#123;</span><br><span class="line">   handler: function(val, oldval) &#123;</span><br><span class="line">    var that = this;</span><br><span class="line">    if (val.age &gt; 0 &amp;&amp; val.age &lt; 15) &#123;</span><br><span class="line">     that.infoMsg = &quot;你还是个小孩&quot;;</span><br><span class="line">    &#125; else if (val.age &gt; 15 &amp;&amp; val.age &lt; 25) &#123;</span><br><span class="line">     that.infoMsg = &quot;你已经是个少年&quot;;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">     that.infoMsg = &quot;你已经长大了&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">   &#125;,</span><br><span class="line">   deep: true</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>这里的<code>function</code>不能使用箭头函数替代，如果使用箭头函数的话，<code>this</code>的指向会是全局</li>
+<li>你会注意到这里多加入一个属性是<code>deep</code>，它的含义表示是否开启深度监听，如果开启值为<code>true</code>，反之为<code>false</code></li>
+</ul>
+<h3 id="1-3-高级版监听"><a href="#1-3-高级版监听" class="headerlink" title="1.3 高级版监听"></a>1.3 高级版监听</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line"> &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  年齡：&lt;input type=&quot;number&quot; v-model=&quot;info.age&quot;&gt;&lt;br&gt;</span><br><span class="line">  提示信息：&lt;span&gt;&#123;&#123;infoMsg&#125;&#125;&lt;/span&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line"> data() &#123;</span><br><span class="line">  return &#123;</span><br><span class="line">   info: &#123;</span><br><span class="line">    age: &quot;&quot;,</span><br><span class="line">    name: &quot;&quot;,</span><br><span class="line">    hobit: &quot;&quot;</span><br><span class="line">   &#125;,</span><br><span class="line">   infoMsg: &quot;&quot;</span><br><span class="line">  &#125;;</span><br><span class="line"> &#125;,</span><br><span class="line"> computed: &#123;</span><br><span class="line">  ageval: function() &#123;</span><br><span class="line">   return this.info.age;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;,</span><br><span class="line"> watch: &#123;</span><br><span class="line">  ageval: &#123;</span><br><span class="line">   handler: function(val, oldval) &#123;</span><br><span class="line">    var that = this;</span><br><span class="line">    if (val &gt; 0 &amp;&amp; val &lt; 15) &#123;</span><br><span class="line">     that.infoMsg = &quot;你还是个小孩&quot;;</span><br><span class="line">    &#125; else if (val &gt; 15 &amp;&amp; val &lt; 25) &#123;</span><br><span class="line">     that.infoMsg = &quot;你已经是个少年&quot;;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">     that.infoMsg = &quot;你已经长大了&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">   &#125;,</span><br><span class="line">   deep: true</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这次我们监听的是计算属性<code>ageval</code>，而计算属性返回的则是<code>info</code>对象中<code>age</code>的值，与第二次的代码进行比较我们可以发现两次代码中监听的一个是对象<code>info</code>，一个是<code>info</code>对象中<code>age</code>的值</p>
+</blockquote>
+<h2 id="二、计算属性"><a href="#二、计算属性" class="headerlink" title="二、计算属性"></a>二、计算属性</h2><h3 id="2-1-什么是计算属性"><a href="#2-1-什么是计算属性" class="headerlink" title="2.1 什么是计算属性"></a>2.1 什么是计算属性</h3><blockquote>
+<p>模板内的表达式非常便利，但是设计它们的初衷是用于简单运算的。在模板中放入太多的逻辑会让模板过重且难以维护。例如</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;example&quot;&gt;</span><br><span class="line">  &#123;&#123; message.split(&#x27;&#x27;).reverse().join(&#x27;&#x27;) &#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>遇到复杂逻辑时应该使用Vue特带的计算属性<code>computed</code>来进行处理</p>
+</blockquote>
+<h3 id="2-2-计算属性的用法"><a href="#2-2-计算属性的用法" class="headerlink" title="2.2 计算属性的用法"></a>2.2 计算属性的用法</h3><blockquote>
+<p>在一个计算属性里可以完成各种复杂的逻辑，包括运算、函数调用等，只要最终返回一个结果就可以</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;example&quot;&gt;</span><br><span class="line">  &lt;p&gt;Original message: &quot;&#123;&#123; message &#125;&#125;&quot;&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;Computed reversed message: &quot;&#123;&#123; reversedMessage &#125;&#125;&quot;&lt;/p&gt;　&lt;!--我们把复杂处理放在了计算属性里面了--&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">var vm = new Vue(&#123;</span><br><span class="line">    el: &#x27;#example&#x27;,</span><br><span class="line">    data: &#123;</span><br><span class="line">        message: &#x27;Hello&#x27;</span><br><span class="line">    &#125;,</span><br><span class="line">    computed: &#123;</span><br><span class="line">        reversedMessage: function () &#123;</span><br><span class="line">            // `this` 指向 vm 实例</span><br><span class="line">            return this.message.split(&#x27;&#x27;).reverse().join(&#x27;&#x27;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>计算属性还可以依赖多个Vue 实例的数据，只要其中任一数据变化，计算属性就会重新执行，视图也会更新</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;button @click=&quot;add()&quot;&gt;补充货物1&lt;/button&gt;</span><br><span class="line">    &lt;div&gt;总价为：&#123;&#123;price&#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">var app = new Vue(&#123;        </span><br><span class="line">       el: &#x27;#app&#x27;, </span><br><span class="line">   data: &#123;</span><br><span class="line">       package1: &#123;</span><br><span class="line">           count: 5,</span><br><span class="line">           price: 5</span><br><span class="line">       &#125;,</span><br><span class="line">       package2: &#123;</span><br><span class="line">           count: 10,</span><br><span class="line">           price: 10</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    computed: &#123;</span><br><span class="line">     price: function()&#123;</span><br><span class="line">         return this.package1.count*this.package1.price+this.package2.count*this.package2.price　　//总价随着货物或价格的改变会重新计算</span><br><span class="line">     &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;   //对象的方法</span><br><span class="line">        add: function()&#123;</span><br><span class="line">            this.package1.count++</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>每一个计算属性都包含一个<code>getter</code> 和一个<code>setter</code> ，我们上面的两个示例都是计算属性的默认用法， 只是利用了<code>getter</code> 来读取</li>
+<li>在你需要时，也可以提供一个<code>setter</code> 函数， 当手动修改计算属性的值就像修改一个普通数据那样时，就会触发<code>setter</code> 函数，执行一些自定义的操作，例如</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">var vm = new Vue(&#123;</span><br><span class="line">    el: &#x27;#demo&#x27;,</span><br><span class="line">    data: &#123;</span><br><span class="line">        firstName: &#x27;Foo&#x27;,</span><br><span class="line">        lastName: &#x27;Bar&#x27;</span><br><span class="line">    &#125;,</span><br><span class="line">    computed: &#123;</span><br><span class="line">        fullName: &#123;</span><br><span class="line">            // getter</span><br><span class="line">            get: function () &#123;</span><br><span class="line">                return this.firstName + &#x27; &#x27; + this.lastName</span><br><span class="line">            &#125;,</span><br><span class="line">            // setter</span><br><span class="line">            set: function (newValue) &#123;</span><br><span class="line">                var names = newValue.split(&#x27; &#x27;);</span><br><span class="line">                this.firstName = names[0];</span><br><span class="line">                this.lastName = names[names.length - 1];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">//现在再运行 vm.fullName = &#x27;John Doe&#x27; 时，setter 会被调用，vm.firstName 和 vm.lastName 也会相应地被更新。</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>绝大多数情况下，我们只会用默认的<code>getter</code> 方法来读取一个计算属性，在业务中很少用到<code>setter</code>,所以在声明一个计算属性时，可以直接使用默认的写法，不必将<code>getter</code> 和<code>setter</code>都声明</p>
+</blockquote>
+<h3 id="2-3-计算属性缓存"><a href="#2-3-计算属性缓存" class="headerlink" title="2.3 计算属性缓存"></a>2.3 计算属性缓存</h3><blockquote>
+<p>除了使用计算属性外，我们也可以通过在表达式中调用方法来达到同样的效果</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;&#123;&#123;reverseTitle()&#125;&#125;&lt;/div&gt;</span><br><span class="line">// 在组件中</span><br><span class="line">methods: &#123;</span><br><span class="line">  reverseTitle: function () &#123;</span><br><span class="line">    return this.title.split(&#x27;&#x27;).reverse().join(&#x27;&#x27;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>我们可以将同一函数定义为一个方法而不是一个计算属性，两种方式的最终结果确实是完全相同的。只是一个使用<code>reverseTitle()</code>取值，一个使用<code>reverseTitle</code>取值。</li>
+<li>然而，不同的是计算属性是基于它们的依赖进行缓存的。计算属性只有在它的相关依赖发生改变时才会重新求值。</li>
+<li>这就意味着只要 <code>title</code>还没有发生改变，多次访问<code>reverseTitle</code>计算属性会立即返回之前的计算结果，而不必再次执行函数。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;&#123;&#123;reverseTitle&#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;div&gt;&#123;&#123;reverseTitle1()&#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;button @click=&quot;add()&quot;&gt;补充货物1&lt;/button&gt;</span><br><span class="line">&lt;div&gt;总价为：&#123;&#123;price&#125;&#125;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    computed: &#123;</span><br><span class="line">      reverseTitle: function()&#123;</span><br><span class="line">          return this.title.split(&#x27;&#x27;).reverse().join(&#x27;&#x27;)　　//而使用计算属性，只要title没变，页面渲染是不会重新进这里来计算的，而是使用了缓存。</span><br><span class="line">      &#125;,</span><br><span class="line">      price: function()&#123;</span><br><span class="line">         return this.package1.count*this.package1.price+this.package2.count*this.package2.price</span><br><span class="line">      &#125;</span><br><span class="line">     &#125;,</span><br><span class="line">    methods: &#123;   //对象的方法</span><br><span class="line">    add: function()&#123;</span><br><span class="line">        this.package1.count++</span><br><span class="line">    &#125;,</span><br><span class="line">    reverseTitle1: function()&#123;</span><br><span class="line">        return this.title.split(&#x27;&#x27;).reverse().join(&#x27;&#x27;)　　//点击补充货物，也会进这个方法，再次计算。不是刷新，而是只要页面渲染，就会进方法里重新计算。</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>相比之下，每当触发重新渲染时，调用方法将总会再次执行函数。</li>
+<li>我们为什么需要缓存？假设我们有一个性能开销比较大的的计算属性 A，它需要遍历一个巨大的数组并做大量的计算。然后我们可能有其他的计算属性依赖于 A</li>
+<li>如果没有缓存，我们将不可避免的多次执行 A 的<code>getter</code>！如果你不希望有缓存，请用方法来替代</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/08/05/Vue/vue-%E8%B7%AF%E7%94%B1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          vue-路由
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/31/Vue/vue-%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue-核心知识总结</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 mr.杜
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
